@@ -44,10 +44,14 @@
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'cider_mill' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
+
+		<?php if ( has_post_thumbnail( 'featured_image' ) ) {
+			the_post_thumbnail( 'featured_image' );
+		} ?>
+
 	</header><!-- #masthead -->
 
-	if ( has_post_thumbnail() ) {
-		the_post_thumbnail();
-	}
+
+
 
 	<div id="content" class="site-content">
