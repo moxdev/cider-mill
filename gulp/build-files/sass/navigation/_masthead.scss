@@ -1,0 +1,168 @@
+// masthead.scss
+
+#masthead {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    // border-bottom: 5px solid #939597;
+    @include padding-left-right;
+    padding-top: 0.9375rem;
+    .site-branding {
+        display: flex;
+        #logo svg {
+            max-width: 175px;
+            display: block;
+            @include respond-to(small) {
+                max-width: 200px;
+                margin-bottom: .5em;
+            };
+        }
+    }
+    .main-navigation {
+        .close {
+            display: none;
+        }
+        .masthead-phone {
+            .callout {
+                display: none;
+                // color: $color__brand-4;
+            }
+            a {
+                text-decoration: none;
+                // color: $color__brand-1;
+            }
+        }
+        button {
+            display: block;
+            margin-left: auto;
+            background: transparent;
+            // color: $color__brand-2;
+            font-size: 0.9375rem;
+            padding-right: 0;
+        }
+        .menu-menu-container {
+            ul {
+                display: none;
+                .current-menu-item {
+                    a {
+                        // color: $color__brand-1;
+                    }
+                }
+                li {
+                    list-style: none;
+                    a {
+                        text-decoration: none;
+                        // color: $color__brand-2;
+                    }
+                }
+            }
+        }
+    }
+    .toggled {
+        position:fixed;
+        top:0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        min-height:100vh;
+        min-width:100vh;
+        // background:$color__brand-1;
+        overflow:hidden;
+        z-index:9999;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+
+        .masthead-phone, .menu-toggle {
+            display: none;
+        }
+
+        .menu-menu-container {
+            text-align: left;
+            padding-top: 1.5em;
+
+            ul {
+                display: block !important;
+                list-style: none;
+                margin: 0 auto;
+                .current-menu-item {
+                    color: #fff;
+                }
+
+                li {
+                    display: block;
+
+                    a {
+                        color:#fff;
+                        display:block;
+                        padding:8px 0;
+                        text-decoration:none;
+                        font-size: 1.5rem;
+                        &:hover, &:visited, &:active, :link {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include respond-to(medium) {
+        align-items: center;
+        .site-branding {
+            display: block;
+            text-align: left;
+            #logo {
+                svg {
+                    max-width: 275px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .main-navigation {
+            .masthead-phone {
+                text-align: right;
+                .callout {
+                    display: block;
+                    font-size: 1.188rem;
+                    // font-family: $font__alt-bold;
+                }
+                a {
+                    font-size: 1.838rem;
+                }
+            }
+            button {
+                display: none;
+            }
+            .menu-menu-container {
+                ul {
+                    display: inline-flex;
+                    margin: auto;
+
+                    li {
+                        padding: .5em;
+                        &:last-child {
+                            padding-right: 0;
+                        }
+                        a {
+                            font-size: 1.063rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include respond-to(large) {
+        .main-navigation {
+            .menu-menu-container {
+                ul {
+                    li {
+                        a {
+                            font-size: 1.25rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+} // #masthead
