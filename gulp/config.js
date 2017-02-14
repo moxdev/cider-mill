@@ -14,7 +14,7 @@
             7. Set files to delete to go back to the pre-build state (reset.js)
 */
 
-var projectURL = 'http://localhost:8888/INSERT_URL_HERE/';
+var projectURL = 'http://localhost:8888/cider/';
 
 module.exports = {
     browserSyncOptions: {
