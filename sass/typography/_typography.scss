@@ -1,4 +1,10 @@
-body,
+body {
+    color: $color__brand-brown;
+    font-family: $font__light;
+    @include font-size(1);
+    line-height: $line-height-body;
+}
+
 button,
 input,
 select,

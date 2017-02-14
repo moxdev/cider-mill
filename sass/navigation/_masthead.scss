@@ -1,18 +1,19 @@
 // masthead.scss
 
 #masthead {
+    background-color: $color__brand-brown;
+    color: #fff;
     width: 100%;
     height: auto;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    // border-bottom: 5px solid #939597;
+    border-bottom: 5px solid $color__brand-pink;
     @include padding-left-right;
-    padding-top: 0.9375rem;
     .site-branding {
-        display: flex;
-        #logo svg {
-            max-width: 175px;
+        flex: 2;
+        svg {
+            max-width: 120px;
             display: block;
             @include respond-to(small) {
                 max-width: 200px;
@@ -21,40 +22,40 @@
         }
     }
     .main-navigation {
-        .close {
-            display: none;
-        }
+        align-self: center;
         .masthead-phone {
-            .callout {
-                display: none;
-                // color: $color__brand-4;
+            display: none;
+            span {
+                color: #fff;
             }
             a {
                 text-decoration: none;
-                // color: $color__brand-1;
+                color: #fff;
             }
         }
         button {
             display: block;
             margin-left: auto;
-            background: transparent;
-            // color: $color__brand-2;
-            font-size: 0.9375rem;
-            padding-right: 0;
+            background: $color__brand-red;
+            font-family: $font__light;
+            font-size: .9rem;
+            padding: .5 em .5em;
+            text-transform: uppercase;
         }
         .menu-menu-container {
             ul {
                 display: none;
                 .current-menu-item {
                     a {
-                        // color: $color__brand-1;
+                        color: $color__brand-pink;
                     }
                 }
                 li {
                     list-style: none;
                     a {
                         text-decoration: none;
-                        // color: $color__brand-2;
+                        color: #fff;
+                        text-transform: capitalize;
                     }
                 }
             }
@@ -122,11 +123,8 @@
         .main-navigation {
             .masthead-phone {
                 text-align: right;
-                .callout {
-                    display: block;
-                    font-size: 1.188rem;
-                    // font-family: $font__alt-bold;
-                }
+                display: block;
+                font-size: 1.188rem;
                 a {
                     font-size: 1.838rem;
                 }

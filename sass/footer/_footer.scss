@@ -1,5 +1,13 @@
 // footer.scss
 
 .site-footer {
+    background-color: $color__brand-red;
+    color: #fff;
+    min-width: 200px;
+    border-top: 5px solid #fff;
+    border-bottom: 5px solid #fff;
+    h1 {
+        color: #fff;
+    }
 
 }

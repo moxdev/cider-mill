@@ -1,3 +1,22 @@
 .page-template-frontpage {
 
+    .entry-header {
+        padding-top: 1.5em;
+        line-height: 1;
+        h1 {
+            color: $color__brand-red;
+            font-family: $font__alex;
+            font-size: 3.438rem;
+
+            span {
+                color: $color__brand-brown;
+                font-family: $font__bold;
+                font-size: 2rem;
+            }
+        }
+        h2 {
+            @include reset;
+            font-size: 1.313rem;
+        }
+    }
 }

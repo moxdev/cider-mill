@@ -1,2 +1,22 @@
-$size__site-main: 100%;
-$size__site-sidebar: 25%;
+// $size__site-main: 100%;
+// $size__site-sidebar: 25%;
+#page {
+
+    .site-content {
+        @include padding-left-right;
+        background-color: #fff;
+        border-bottom: 5px solid $color__brand-brown;
+        .content-wrapper {
+            @include max-width(1500px);
+            .featured-image {
+                margin:0;
+                padding:0;
+                img {
+                    display: block;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+

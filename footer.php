@@ -10,14 +10,13 @@
  */
 
 ?>
-
+    </div><!-- .content-wrapper -->
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'cider_mill' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'cider_mill' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'cider_mill' ), 'cider_mill', '<a href="https://automattic.com/" rel="designer">Millennium Marketing Soultions</a>' ); ?>
+            <h1>Look at me I'm a footer</h1>
+
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
