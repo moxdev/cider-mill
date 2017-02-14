@@ -5,10 +5,10 @@ $color__brand-pink: #e6ccb7;
 
 
 # Fonts
-$font__alex: font-family: 'AlexBrush-Regular', sans-serif;
-$font__light: font-family: 'SourceSansPro-Light', sans-serif;
-$font__semi: font-family: 'SourceSansPro-Semibold', sans-serif;
-$font__bold: font-family: 'SourceSansPro-Bold', sans-serif;
+$font__alex: 'AlexBrush-Regular', sans-serif;
+$font__light: 'SourceSansPro-Light', sans-serif;
+$font__semi: 'SourceSansPro-Semibold', sans-serif;
+$font__bold: 'SourceSansPro-Bold', sans-serif;
 
 # Breakpoints
 $breakpoints: (
@@ -19,5 +19,12 @@ $breakpoints: (
   'medium'     : ( min-width:  960px ),
   'large'      : ( min-width: 1200px ),
   'x-large'    : ( min-width: 1500px ),
-  'xx-large'   : ( min-width: 1800px ),
+  'xx-large'   : ( min-width: 1800px )
 );
+
+# Font sizes
+
+## fp header
+21px = 1.313rem
+32px = 2rem
+55px = 3.438rem

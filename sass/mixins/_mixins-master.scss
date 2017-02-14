@@ -4,8 +4,8 @@
     font-size: $sizeValue * 1rem;
 }
 
-@mixin max-width($max-width) {
-  max-width: $max-width;
+@mixin max-width($maxwidth) {
+  max-width: $maxwidth;
   margin-left: auto;
   margin-right: auto;
 }
