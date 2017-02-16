@@ -7,11 +7,16 @@
  * @package Cider_Mill_Apartments
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-}
 ?>
 
 <aside id="secondary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+        <?php if ( is_active_sidebar( 'sidebar-1' ) ) :
+            dynamic_sidebar( 'sidebar-1' );
+
+        else :
+            if ( function_exists( 'cider_mill_sidebar_content' ) ) {
+                cider_mill_sidebar_content();
+            }
+
+        endif; ?>
 </aside><!-- #secondary -->

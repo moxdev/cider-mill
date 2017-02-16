@@ -283,6 +283,11 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
+ * Load sidebar content for the global sidebar file.
+ */
+require get_template_directory() . '/inc/sidebar-content.php';
+
+/**
  * INCLUDE PLUGINS
  */
 

@@ -1,8 +1,21 @@
-.widget {
-	margin: 0 0 1.5em;
+#secondary {
 
-	/* Make sure select elements fit in widgets. */
-	select {
-		max-width: 100%;
-	}
+    .sidebar-wrapper {
+
+        h1 {
+            text-transform: uppercase;
+        }
+
+        .sidebar-specials {
+
+        }
+
+        .sidebar-events {
+
+        }
+
+        .sidebar-pets {
+
+        }
+    }
 }
