@@ -9,6 +9,7 @@ $font__alex: 'AlexBrush-Regular', sans-serif;
 $font__light: 'SourceSansPro-Light', sans-serif;
 $font__semi: 'SourceSansPro-Semibold', sans-serif;
 $font__bold: 'SourceSansPro-Bold', sans-serif;
+$font__regular: 'SourceSansPro-Regular', sans-serif;
 
 # Breakpoints
 $breakpoints: (
@@ -28,3 +29,5 @@ $breakpoints: (
 21px = 1.313rem
 32px = 2rem
 55px = 3.438rem
+
+<a class="mm4" href="https://www.mm4solutions.com/" target="_blank" id="mms">Website by Millennium Marketing Solutions</a>

@@ -11,20 +11,28 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
-        <?php $headline = get_field( 'headline_text' ); ?>
-        <?php $secondary = get_field( 'secondary_headline_text' ); ?>
-        <?php $tag = get_field( 'headline_tagline' ); ?>
+            <?php if ( get_field( 'headline_text' )){ ?>
+                <?php $headline = get_field( 'headline_text' ); ?>
+                <?php $secondary = get_field( 'secondary_headline_text' ); ?>
+                <?php $tag = get_field( 'headline_tagline' ); ?>
 
-        <?php if( $headline ) : ?>
-            <h1><?php echo $headline; ?><span> <?php echo $secondary; ?></span></h1>
-            <h2><?php echo $tag; ?></h2
-        <?php endif; ?>
+                <h1><?php echo $headline; ?><span> <?php echo $secondary; ?></span></h1>
+                <h2><?php echo $tag; ?></h2><?php
 
+                } elseif ( get_field ( 'on_page_title' )){
+                    echo '<h1 class="entry-title">' . get_field( 'on_page_title' ) . '</h1>';
+                } else {
+                    the_title( '<h1 class="entry-title">', '</h1>' );
+                }?>
     </header><!-- .entry-header -->
 
     <div class="entry-content">
         <?php
             the_content();
+
+            if ( function_exists( 'cider_mill_content_tagline' ) ) {
+                cider_mill_content_tagline();
+            }
 
             wp_link_pages( array(
                 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'cider_mill' ),

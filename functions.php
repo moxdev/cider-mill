@@ -42,6 +42,7 @@ function cider_mill_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'featured-image', 1500, 500, TRUE );
+	add_image_size( 'sidebar-image', 100, 100, TRUE );
 
 
 	// This theme uses wp_nav_menu() in one location.
@@ -145,6 +146,7 @@ if( function_exists('acf_add_options_page') ) {
         'page_title'    => 'Global Settings',
         'menu_title'    => 'Global Website Information',
         'menu_slug'     => 'global-info',
+        'icon_url'   	=> 'dashicons-phone',
         'capability'    => 'edit_posts',
         'redirect'      => true
     ));
@@ -154,6 +156,22 @@ if( function_exists('acf_add_options_page') ) {
         'menu_title'    => 'Contact Info',
         'menu_slug'     => 'contact-info',
         'parent_slug'   => 'global-info',
+    ));
+
+    acf_add_options_page(array(
+        'page_title'    => 'Global Settings',
+        'menu_title'    => 'Specials',
+        'menu_slug'     => 'specials',
+        'icon_url'      => 'dashicons-tag',
+        'capability'    => 'edit_posts',
+        'redirect'      => true
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Sidebar Information',
+        'menu_title'    => 'Sidebar',
+        'menu_slug'     => 'sidebar',
+        'parent_slug'   => 'specials'
     ));
 }
 
@@ -286,6 +304,11 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load sidebar content for the global sidebar file.
  */
 require get_template_directory() . '/inc/sidebar-content.php';
+
+/**
+ * Load sidebar content for the global sidebar file.
+ */
+require get_template_directory() . '/inc/content-tagline.php';
 
 /**
  * INCLUDE PLUGINS

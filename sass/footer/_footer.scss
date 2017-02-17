@@ -1,13 +1,54 @@
 // footer.scss
 
 .site-footer {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+    @include padding-left-right;
     background-color: $color__brand-red;
     color: #fff;
-    min-width: 200px;
+    text-align: center;
     border-top: 5px solid #fff;
     border-bottom: 5px solid #fff;
+
     h1 {
         color: #fff;
     }
 
-}
+    .contact-section {
+
+        .schema-section {
+            .contact-numbers {
+                padding-top: 1em;
+            }
+        }
+
+
+        .hours {
+
+        }
+    }
+
+    .icons-section {
+        .social {
+
+        }
+
+        .brand {
+
+        }
+
+        .translate {
+
+        }
+
+        .mm4 {
+
+        }
+    }
+
+
+
+
+
+} // site-footer

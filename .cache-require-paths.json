@@ -2890,7 +2890,8 @@
     "./tunnel": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/browser-sync/lib/tunnel.js",
     "browser-sync-client": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/browser-sync-client/index.js",
     "browser-sync-ui": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/browser-sync-ui/index.js",
-    "./options": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/browser-sync/lib/options.js"
+    "./options": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/browser-sync/lib/options.js",
+    "./snippet": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/browser-sync/lib/snippet.js"
   },
   "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/browser-sync/lib/hooks.js": {
     "../lodash.custom": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/browser-sync/lodash.custom.js",
@@ -2939,7 +2940,8 @@
     "connect": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/connect/index.js",
     "serve-static": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/serve-static/index.js",
     "easy-extender": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/easy-extender/index.js",
-    "./config": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/browser-sync/lib/config.js"
+    "./config": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/browser-sync/lib/config.js",
+    "opn": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/opn/index.js"
   },
   "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/dev-ip/lib/dev-ip.js": {
     "os": "os"
@@ -3547,7 +3549,10 @@
   },
   "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/browser-sync-ui/lib/async.js": {
     "immutable": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/immutable/dist/immutable.js",
-    "url": "url"
+    "url": "url",
+    "./server": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/browser-sync-ui/lib/server.js",
+    "server-destroy": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/server-destroy/index.js",
+    "./client-elements": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/browser-sync-ui/lib/client-elements.js"
   },
   "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/browser-sync-ui/lib/hooks.js": {
     "fs": "fs",
@@ -3612,7 +3617,8 @@
     "path": "path"
   },
   "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/browser-sync-ui/lib/plugins/network-throttle/network-throttle.js": {
-    "immutable": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/immutable/dist/immutable.js"
+    "immutable": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/immutable/dist/immutable.js",
+    "./targets": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/browser-sync-ui/lib/plugins/network-throttle/targets.js"
   },
   "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/browser-sync/lib/public/public-utils.js": {
     "../../lodash.custom": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/browser-sync/lodash.custom.js"
@@ -8858,5 +8864,29 @@
     "fs": "fs",
     "path": "path",
     "immutable": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/immutable/dist/immutable.js"
+  },
+  "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/browser-sync-ui/lib/server.js": {
+    "http": "http",
+    "fs": "fs",
+    "path": "path",
+    "./config": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/browser-sync-ui/lib/config.js",
+    "zlib": "zlib",
+    "crypto": "crypto",
+    "connect-history-api-fallback": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/connect-history-api-fallback/lib/index.js"
+  },
+  "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/connect-history-api-fallback/lib/index.js": {
+    "url": "url"
+  },
+  "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/browser-sync-ui/lib/client-elements.js": {
+    "fs": "fs"
+  },
+  "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/opn/index.js": {
+    "path": "path",
+    "child_process": "child_process",
+    "object-assign": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/object-assign/index.js",
+    "pinkie-promise": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/pinkie-promise/index.js"
+  },
+  "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/negotiator/index.js": {
+    "./lib/encoding": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/node_modules/negotiator/lib/encoding.js"
   }
 }

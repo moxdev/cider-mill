@@ -57,9 +57,10 @@
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
+		<?php if ( has_post_thumbnail() ) { ?>
+			<figure class="featured-image">
+				<?php echo the_post_thumbnail('featured-image'); ?>
+			</figure><?php
+		} ?>
 		<div class="content-wrapper">
-			<?php if ( has_post_thumbnail() ) { ?>
-				<figure class="featured-image">
-					<?php echo the_post_thumbnail('featured-image'); ?>
-				</figure><?php
-			} ?>
+

@@ -22,6 +22,10 @@
 		<?php
 			the_content();
 
+			if ( function_exists( 'cider_mill_content_tagline' ) ) {
+			    cider_mill_content_tagline();
+			}
+
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'cider_mill' ),
 				'after'  => '</div>',

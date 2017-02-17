@@ -1,0 +1,47 @@
+#page {
+
+    .site-content {
+        @include padding-left-right;
+        background-color: #fff;
+        border-bottom: 5px solid $color__brand-brown;
+
+        .featured-image {
+            margin:0;
+            padding:0;
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        .content-wrapper {
+            @include max-width(1500px);
+            display: flex;
+            flex-direction: column;
+
+            .content-tagline {
+                font-family: $font__semi;
+            }
+
+            #primary {
+                flex: 2;
+                order:2;
+            }
+
+            #secondary {
+                flex: 1;
+                order:1;
+
+            }
+        }
+    }
+
+    .footer-tagline {
+        @include padding-left-right;
+        h1 {
+            color: #ffffff;
+            text-align: center;
+            font-family: $font__alex;
+        }
+    }
+}
