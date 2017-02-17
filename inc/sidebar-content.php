@@ -62,7 +62,7 @@ function cider_mill_sidebar_content() {
                         <?php endif; ?>
 
                         <?php if( !empty($pf_image) ): ?>
-                            <img src="<?php echo $pf_image['url']; ?>" alt="<?php echo $pf_image['alt']; ?>">
+                            <img src="<?php echo $pf_image['sizes']['thumbnail']; ?>" alt="<?php echo $pf_image['alt']; ?>">
                         <?php endif; ?>
                     </div>
 
