@@ -164,7 +164,9 @@ if( function_exists('acf_add_options_page') ) {
         'menu_slug'     => 'specials',
         'icon_url'      => 'dashicons-tag',
         'capability'    => 'edit_posts',
-        'redirect'      => true
+        'redirect'      => true,
+        'position'      => 4
+
     ));
 
     acf_add_options_sub_page(array(
@@ -304,6 +306,11 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load sidebar content for the global sidebar file.
  */
 require get_template_directory() . '/inc/sidebar-content.php';
+
+/**
+ * Load sidebar content for the global sidebar file.
+ */
+require get_template_directory() . '/inc/specials-sidebar.php';
 
 /**
  * Load sidebar content for the global sidebar file.

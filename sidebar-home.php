@@ -10,13 +10,7 @@
 ?>
 
 <aside id="secondary" class="widget-area" role="complementary">
-        <?php if ( is_active_sidebar( 'sidebar-1' ) ) :
-            dynamic_sidebar( 'sidebar-1' );
-
-        else :
-            if ( function_exists( 'cider_mill_specials_sidebar' ) ) {
-                cider_mill_specials_sidebar();
-            }
-
-        endif; ?>
+        <?php if ( function_exists( 'cider_mill_sidebar_content' ) ) {
+            cider_mill_sidebar_content();
+        } ?>
 </aside><!-- #secondary -->
