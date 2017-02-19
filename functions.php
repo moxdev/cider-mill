@@ -151,12 +151,13 @@ if( function_exists('acf_add_options_page') ) {
         'redirect'      => true
     ));
 
-    acf_add_options_sub_page(array(
-        'page_title'    => 'Contact Information',
-        'menu_title'    => 'Contact Info',
-        'menu_slug'     => 'contact-info',
-        'parent_slug'   => 'global-info',
-    ));
+    	acf_add_options_sub_page(array(
+    	    'page_title'    => 'Contact Information',
+    	    'menu_title'    => 'Contact Info',
+    	    'menu_slug'     => 'contact-info',
+    	    'parent_slug'   => 'global-info',
+    	));
+
     // Specials Section
     acf_add_options_page(array(
         'page_title'    => 'Specials Settings',
@@ -168,12 +169,13 @@ if( function_exists('acf_add_options_page') ) {
         'position'      => 20
     ));
 
-    acf_add_options_sub_page(array(
-        'page_title'    => 'Sidebar Information',
-        'menu_title'    => 'Sidebar',
-        'menu_slug'     => 'sidebar',
-        'parent_slug'   => 'specials'
-    ));
+    	acf_add_options_sub_page(array(
+    	    'page_title'    => 'Sidebar Information',
+    	    'menu_title'    => 'Sidebar',
+    	    'menu_slug'     => 'sidebar',
+    	    'parent_slug'   => 'specials'
+    	));
+
     // Floorplan Section
     acf_add_options_page(array(
         'page_title'    => 'Floorplans Settings',
@@ -185,12 +187,26 @@ if( function_exists('acf_add_options_page') ) {
         'position'      => 21
     ));
 
-    acf_add_options_sub_page(array(
-        'page_title'    => 'Floorplan Sections',
-        'menu_title'    => 'Floorplan',
-        'menu_slug'     => 'floorplan',
-        'parent_slug'   => 'floorplans'
-    ));
+    	acf_add_options_sub_page(array(
+    	    'page_title'    => 'One Bedroom Floorplans Section',
+    	    'menu_title'    => 'One Bedroom',
+    	    'menu_slug'     => 'one_bedroom_floorplan',
+    	    'parent_slug'   => 'floorplans'
+    	));
+
+    	acf_add_options_sub_page(array(
+    	    'page_title'    => 'Two Bedroom Floorplans Section',
+    	    'menu_title'    => 'Two Bedroom',
+    	    'menu_slug'     => 'two_bedroom_floorplan',
+    	    'parent_slug'   => 'floorplans'
+    	));
+
+    	acf_add_options_sub_page(array(
+    	    'page_title'    => 'Three Bedroom Floorplans Section',
+    	    'menu_title'    => 'Three Bedroom',
+    	    'menu_slug'     => 'three_bedroom_floorplan',
+    	    'parent_slug'   => 'floorplans'
+    	));
 }
 
 /**
