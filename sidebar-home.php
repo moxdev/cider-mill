@@ -1,6 +1,6 @@
 <?php
 /**
- * The sidebar containing the main widget area
+ * Custom sidebar for the homepage
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
@@ -10,7 +10,7 @@
 ?>
 
 <aside id="secondary" class="widget-area" role="complementary">
-        <?php if ( function_exists( 'cider_mill_sidebar_content' ) ) {
-            cider_mill_sidebar_content();
+        <?php if ( function_exists( 'cider_mill_homepage_sidebar' ) ) {
+            cider_mill_homepage_sidebar();
         } ?>
 </aside><!-- #secondary -->

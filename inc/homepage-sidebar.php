@@ -1,15 +1,15 @@
 <?php
 /**
- * Sidebar Content
+ * Homepage Sidebar Content
  *
  * @package Cider_Mill_Apartments
  */
 
-function cider_mill_sidebar_content() {
+function cider_mill_homepage_sidebar() {
     // check if the flexible content field has rows of data
-    if( have_rows('sidebar_content') ): ?>
+    if( have_rows('homepage_sidebar') ): ?>
         <div class="sidebar-wrapper">
-            <?php while ( have_rows('sidebar_content') ) : the_row();
+            <?php while ( have_rows('homepage_sidebar') ) : the_row();
 
                 if( get_row_layout() == 'sidebar_specials' ):
 
@@ -62,7 +62,7 @@ function cider_mill_sidebar_content() {
                         <?php endif; ?>
 
                         <?php if( !empty($pf_image) ): ?>
-                            <img src="<?php echo $pf_image['sizes']['thumbnail']; ?>" alt="<?php echo $pf_image['alt']; ?>">
+                            <img src="<?php echo $pf_image['sizes']['sidebar-image']; ?>" alt="<?php echo $pf_image['alt']; ?>">
                         <?php endif; ?>
                     </div>
 

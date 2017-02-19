@@ -14,7 +14,7 @@
             7. Set files to delete to go back to the pre-build state (reset.js)
 */
 
-var projectURL = 'http://localhost:8888/cider/';
+var projectURL = 'http://www.cidermill.dev/';
 // var projectURL = 'http://www.cidermill.dev/';
 
 module.exports = {

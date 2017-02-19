@@ -138,10 +138,10 @@ function cider_mill_scripts() {
 add_action( 'wp_enqueue_scripts', 'cider_mill_scripts' );
 
 /**
- * Global Website Information ( ACF Options )
+ * Custom ACF Options
  */
 if( function_exists('acf_add_options_page') ) {
-
+	// Company Information Section
     acf_add_options_page(array(
         'page_title'    => 'Global Settings',
         'menu_title'    => 'Global Website Information',
@@ -157,16 +157,15 @@ if( function_exists('acf_add_options_page') ) {
         'menu_slug'     => 'contact-info',
         'parent_slug'   => 'global-info',
     ));
-
+    // Specials Section
     acf_add_options_page(array(
-        'page_title'    => 'Global Settings',
+        'page_title'    => 'Specials Settings',
         'menu_title'    => 'Specials',
         'menu_slug'     => 'specials',
         'icon_url'      => 'dashicons-tag',
         'capability'    => 'edit_posts',
         'redirect'      => true,
-        'position'      => 4
-
+        'position'      => 20
     ));
 
     acf_add_options_sub_page(array(
@@ -174,6 +173,23 @@ if( function_exists('acf_add_options_page') ) {
         'menu_title'    => 'Sidebar',
         'menu_slug'     => 'sidebar',
         'parent_slug'   => 'specials'
+    ));
+    // Floorplan Section
+    acf_add_options_page(array(
+        'page_title'    => 'Floorplans Settings',
+        'menu_title'    => 'Floorplans',
+        'menu_slug'     => 'floorplans',
+        'icon_url'      => 'dashicons-building',
+        'capability'    => 'edit_posts',
+        'redirect'      => true,
+        'position'      => 21
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Floorplan Sections',
+        'menu_title'    => 'Floorplan',
+        'menu_slug'     => 'floorplan',
+        'parent_slug'   => 'floorplans'
     ));
 }
 
@@ -219,7 +235,7 @@ function cider_mill_create_custom_posts() {
 		'public'                => true,
 		'show_ui'               => true,
 		'show_in_menu'          => true,
-		'menu_position'         => 20,
+		'menu_position'         => 22,
 		'menu_icon'             => 'dashicons-location',
 		'show_in_admin_bar'     => false,
 		'show_in_nav_menus'     => false,
@@ -305,7 +321,7 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
  * Load sidebar content for the global sidebar file.
  */
-require get_template_directory() . '/inc/sidebar-content.php';
+require get_template_directory() . '/inc/homepage-sidebar.php';
 
 /**
  * Load sidebar content for the global sidebar file.
@@ -316,6 +332,11 @@ require get_template_directory() . '/inc/specials-sidebar.php';
  * Load sidebar content for the global sidebar file.
  */
 require get_template_directory() . '/inc/content-tagline.php';
+
+/**
+ * Load sidebar content for the global sidebar file.
+ */
+require get_template_directory() . '/inc/floorplans.php';
 
 /**
  * INCLUDE PLUGINS

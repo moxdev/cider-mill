@@ -7,9 +7,9 @@
 
 function cider_mill_specials_sidebar() {
     // check if the flexible content field has rows of data
-    if( have_rows('sidebar_content', 'options') ): ?>
+    if( have_rows('specials_sidebar', 'options') ): ?>
         <div class="sidebar-wrapper">
-            <?php while ( have_rows('sidebar_content', 'options') ) : the_row();
+            <?php while ( have_rows('specials_sidebar', 'options') ) : the_row();
 
                 if( get_row_layout() == 'sidebar_specials'):
 
@@ -62,7 +62,7 @@ function cider_mill_specials_sidebar() {
                         <?php endif; ?>
 
                         <?php if( !empty($pf_image) ): ?>
-                            <img src="<?php echo $pf_image['sizes']['thumbnail']; ?>" alt="<?php echo $pf_image['alt']; ?>">
+                            <img src="<?php echo $pf_image['sizes']['sidebar-image']; ?>" alt="<?php echo $pf_image['alt']; ?>">
                         <?php endif; ?>
                     </div>
 
