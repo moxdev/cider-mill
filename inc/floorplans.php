@@ -15,14 +15,27 @@ function cider_mill_one_bedroom_floorplan() {
 
             $desc = get_sub_field('description', 'options');
             $sqft = get_sub_field('square_footage', 'options');
-            $image = get_sub_field('floorplan_image', 'options');
+            $img = get_sub_field('floorplan_image', 'options');
             $url = get_sub_field('availability_link', 'options'); ?>
 
             <div class="floorplan">
-                <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="">
-                <div class="description"><?php echo $desc; ?></div>
-                <div class="sqft"><?php echo $sqft; ?></div>
-                <a href="<?php echo $url; ?>"><button class="availability-link">view all availability &raquo;</button></a>
+
+                <?php if( !empty($img) ): ?>
+                    <a href="<?php echo $img['url']; ?>" class="fp-trigger" data-imagelightbox="c"><img src="<?php echo $img['sizes']['thumbnail']; ?>" alt="<?php echo $img['alt']; ?>" description="<?php echo $img['description']; ?>"></a>
+                <?php endif; ?>
+
+                <?php if( !empty($desc) ) : ?>
+                    <div class="description"><?php echo $desc; ?></div>
+                <?php endif; ?>
+
+                <?php if( !empty($sqft) ) : ?>
+                    <div class="sqft"><?php echo $sqft; ?></div>
+                <?php endif; ?>
+
+                <?php if( !empty($url) ) : ?>
+                    <a href="<?php echo $url; ?>"><button class="availability-link">view all availability &raquo;</button></a>
+                <?php endif; ?>
+
             </div>
 
         <?php endwhile; ?>
@@ -39,14 +52,27 @@ function cider_mill_two_bedroom_floorplan() {
 
             $desc = get_sub_field('description', 'options');
             $sqft = get_sub_field('square_footage', 'options');
-            $image = get_sub_field('floorplan_image', 'options');
+            $img = get_sub_field('floorplan_image', 'options');
             $url = get_sub_field('availability_link', 'options'); ?>
 
             <div class="floorplan">
-                <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="">
-                <div class="description"><?php echo $desc; ?></div>
-                <div class="sqft"><?php echo $sqft; ?></div>
-                <a href="<?php echo $url; ?>"><button class="availability-link">view all availability &raquo;</button></a>
+
+                <?php if( !empty($img) ): ?>
+                    <a href="<?php echo $img['url']; ?>" class="fp-trigger" data-imagelightbox="c"><img src="<?php echo $img['sizes']['thumbnail']; ?>" alt="<?php echo $img['alt']; ?>" description="<?php echo $img['description']; ?>"></a>
+                <?php endif; ?>
+
+                <?php if( !empty($desc) ) : ?>
+                    <div class="description"><?php echo $desc; ?></div>
+                <?php endif; ?>
+
+                <?php if( !empty($sqft) ) : ?>
+                    <div class="sqft"><?php echo $sqft; ?></div>
+                <?php endif; ?>
+
+                <?php if( !empty($url) ) : ?>
+                    <a href="<?php echo $url; ?>"><button class="availability-link">view all availability &raquo;</button></a>
+                <?php endif; ?>
+
             </div>
 
         <?php endwhile; ?>
@@ -63,14 +89,27 @@ function cider_mill_three_bedroom_floorplan() {
 
             $desc = get_sub_field('description', 'options');
             $sqft = get_sub_field('square_footage', 'options');
-            $image = get_sub_field('floorplan_image', 'options');
+            $img = get_sub_field('floorplan_image', 'options');
             $url = get_sub_field('availability_link', 'options'); ?>
 
             <div class="floorplan">
-                <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="">
-                <div class="description"><?php echo $desc; ?></div>
-                <div class="sqft"><?php echo $sqft; ?></div>
-                <a href="<?php echo $url; ?>"><button class="availability-link">view all availability &raquo;</button></a>
+
+                <?php if( !empty($img) ): ?>
+                    <a href="<?php echo $img['url']; ?>" class="fp-trigger" data-imagelightbox="c"><img src="<?php echo $img['sizes']['thumbnail']; ?>" alt="<?php echo $img['alt']; ?>" description="<?php echo $img['description']; ?>"></a>
+                <?php endif; ?>
+
+                <?php if( !empty($desc) ) : ?>
+                    <div class="description"><?php echo $desc; ?></div>
+                <?php endif; ?>
+
+                <?php if( !empty($sqft) ) : ?>
+                    <div class="sqft"><?php echo $sqft; ?></div>
+                <?php endif; ?>
+
+                <?php if( !empty($url) ) : ?>
+                    <a href="<?php echo $url; ?>"><button class="availability-link">view all availability &raquo;</button></a>
+                <?php endif; ?>
+
             </div>
 
         <?php endwhile; ?>
@@ -81,10 +120,11 @@ function cider_mill_three_bedroom_floorplan() {
 function cider_mill_floorplan_listing() { ?>
     <div id="floorplans-section">
         <div class="floorplans-wrapper">
+            <div class='fp-models'>
 
-            <?php if ( function_exists( 'cider_mill_one_bedroom_floorplan' ) ) {
-                cider_mill_one_bedroom_floorplan();
-            } ?>
+                <?php if ( function_exists( 'cider_mill_one_bedroom_floorplan' ) ) {
+                    cider_mill_one_bedroom_floorplan();
+                } ?>
 
             <?php if ( function_exists( 'cider_mill_two_bedroom_floorplan' ) ) {
                 cider_mill_two_bedroom_floorplan();
@@ -93,6 +133,9 @@ function cider_mill_floorplan_listing() { ?>
             <?php if ( function_exists( 'cider_mill_three_bedroom_floorplan' ) ) {
                 cider_mill_three_bedroom_floorplan();
             } ?>
+
+            </div>
+
 
         </div><!-- floorplans-wrapper -->
     </div><!-- floorplans-section -->

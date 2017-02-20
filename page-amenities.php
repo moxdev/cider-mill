@@ -24,6 +24,11 @@ get_header(); ?>
                 endif;
 
             endwhile; // End of the loop.
+
+            if ( function_exists( 'cider_mill_features_amenities' ) ) {
+                cider_mill_features_amenities();
+            }
+
             ?>
 
         </main><!-- #main -->

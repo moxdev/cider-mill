@@ -1,5 +1,39 @@
 .page-template-frontpage {
 
+    figure {
+        @include reset;
+        max-height: 300px;
+        display: flex;            /* establish flex container */
+        flex-direction: column;   /* stack flex items vertically */
+        position: relative;       /* establish neares positioned ancenstor for absolute positioning */
+        overflow: hidden;
+
+        .background-image {
+
+            img {
+
+            }
+        }
+
+        h1 {
+            color:#fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+            margin:0;
+            padding:0;
+
+        }
+
+        .center-aligned {
+            display: flex;
+            align-items: center;
+            justify-content:center;
+        }
+    }
+
     .entry-header {
         padding-top: 1.5em;
         line-height: 1;

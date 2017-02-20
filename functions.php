@@ -124,11 +124,11 @@ function cider_mill_scripts() {
 		wp_enqueue_script( 'cider_mill-contact-directions-map', get_template_directory_uri() . '/plugins/map-directions.js', array('jquery'), false, true );
 	}
 
-	if ( is_page_template( 'page-floorplans.php' )  || is_page_template( 'page-gallery.php' ) ) {
+	if ( is_page_template( 'page-floorplans.php' )  || is_page_template( 'page-photo-gallery.php' ) ) {
 
 		wp_enqueue_script( 'cider_mill-imagelightbox', get_template_directory_uri() . '/js/min/imagelightbox-min.js', array('jquery'), false, true );
 
-		wp_enqueue_script( 'cider_mill-lightbox', get_template_directory_uri() . '/js/min/lightbox-min.js', array('cider_mill-imagelightbox'), false, true );
+		wp_enqueue_script( 'cider_mill-lightbox', get_template_directory_uri() . '/js/lightbox.js', array('cider_mill-imagelightbox'), false, true );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -358,6 +358,28 @@ require get_template_directory() . '/inc/floorplans.php';
  * Load sidebar content for the global sidebar file.
  */
 require get_template_directory() . '/inc/contact-page-content.php';
+
+/**
+ * Load sidebar content for the global sidebar file.
+ */
+require get_template_directory() . '/inc/community-page-list.php';
+
+/**
+ * Load sidebar content for the global sidebar file.
+ */
+require get_template_directory() . '/inc/community-page-map.php';
+
+/**
+ * Load sidebar content for the global sidebar file.
+ */
+require get_template_directory() . '/inc/photo-gallery.php';
+
+/**
+ * Load sidebar content for the global sidebar file.
+ */
+require get_template_directory() . '/inc/featured-image.php';
+
+
 
 /**
  * INCLUDE PLUGINS

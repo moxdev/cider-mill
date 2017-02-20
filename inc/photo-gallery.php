@@ -6,41 +6,28 @@
  * @package Cider_Mill_Apartments
  */
 
-
-
-//gallery example
-
-function mm4_you_photo_gallery() {
+function cider_mill_photo_gallery() {
     if( is_page_template('page-photo-gallery.php') ) {
         if( function_exists('get_field') ) {
-            if( have_rows('images') ): ?>
-                <div id="gallery-main">
+            $images = get_field('photo_gallery');
+
+            if( $images ): ?>
+            <div class="photo-gallery-section">
+                <div class="gallery-wrapper">
                     <ul>
-                    <?php while ( have_rows('images') ) : the_row(); ?>
-                        <li>
-                        <?php $imageArr = get_sub_field('gallery_image');
-                        $image = wp_get_attachment_image_src($imageArr[id], 'gallery-main'); ?>
-                        <img src="<?php echo $image[0] ?>" alt="<?php echo $imageArr[alt]; ?>">
+                    <?php foreach( $images as $image ): ?>
+                         <li>
+                            <?php if( $image ): ?>
+                                <a href="<?php echo $image['url']; ?>" class="fp-trigger" data-imagelightbox="c"><img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $img['alt']; ?>" description="<?php echo $image['description']; ?>"></a>
+                            <?php endif; ?>
+                            <p><?php echo $image['caption']; ?></p>
                         </li>
-                    <?php endwhile; ?>
+                    <?php endforeach; ?>
                     </ul>
-                    <button class="carousel-btn" id="prev" aria-controls="galery-main" aria-label="Previous">Previous</button>
-                    <button class="carousel-btn" id="next" aria-controls="gallery-main" aria-label="Next">Next</button>
-                </div>
-            <?php endif;
-            if( have_rows('images') ): ?>
-                <div id="gallery-thumbs">
-                    <ul>
-                    <?php while ( have_rows('images') ) : the_row(); ?>
-                        <li><a href="#">
-                        <?php $imageArr = get_sub_field('gallery_image');
-                        $image = wp_get_attachment_image_src($imageArr[id], 'gallery-thumb'); ?>
-                        <img src="<?php echo $image[0] ?>" alt="<?php echo $imageArr[title]; ?>">
-                        </a></li>
-                    <?php endwhile; ?>
-                    </ul>
-                </div>
-            <?php endif;
-        }
+            <?php endif; ?>
+
+                </div><!-- gallery-wrapper -->
+            </div><!-- photo-gallery-section -->
+        <?php }
     }
 }
