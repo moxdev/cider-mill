@@ -355,6 +355,11 @@ require get_template_directory() . '/inc/content-tagline.php';
 require get_template_directory() . '/inc/floorplans.php';
 
 /**
+ * Load sidebar content for the global sidebar file.
+ */
+require get_template_directory() . '/inc/contact-page-content.php';
+
+/**
  * INCLUDE PLUGINS
  */
 
