@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"tex",
+				"text-align"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"fon",
+				"font-family"
+			],
+			[
+				"color",
+				"color__brand-red"
+			],
+			[
+				"head",
+				"headline"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
 				"cide",
 				"cider_mill"
 			],
@@ -40,24 +68,12 @@
 				"max-width"
 			],
 			[
-				"tex",
-				"text-decoration"
-			],
-			[
-				"text",
-				"text-decoration"
-			],
-			[
 				"mar",
 				"margin-top"
 			],
 			[
 				"margin",
 				"margin-bottom"
-			],
-			[
-				"font",
-				"font-size"
 			],
 			[
 				"tbal",
@@ -70,10 +86,6 @@
 			[
 				"padding",
 				"padding-top"
-			],
-			[
-				"fon",
-				"font-size"
 			],
 			[
 				"end",
@@ -118,10 +130,6 @@
 			[
 				"pad",
 				"padding"
-			],
-			[
-				"color",
-				"color__brand-1"
 			],
 			[
 				"backgroun",
@@ -344,27 +352,89 @@
 	"buffers":
 	[
 		{
-			"file": "template-parts/content-page.php",
-			"settings":
-			{
-				"buffer_size": 1201,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "header.php",
-			"settings":
-			{
-				"buffer_size": 1935,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "*project-notes/notes.md",
 			"settings":
 			{
-				"buffer_size": 27,
-				"encoding": "UTF-8",
+				"buffer_size": 900,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sass/mixins/_mixins-master.scss",
+			"settings":
+			{
+				"buffer_size": 2069,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "footer.php",
+			"settings":
+			{
+				"buffer_size": 15230,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<div itemscope itemtype=\"http://schema.org/LocalBusiness\">\n  <h1><span itemprop=\"name\">Beachwalk Beachwear & Giftware</span></h1>\n  <span itemprop=\"description\"> A superb collection of fine gifts and clothing\n  to accent your stay in Mexico Beach.</span>\n  <div itemprop=\"address\" itemscope itemtype=\"http://schema.org/PostalAddress\">\n    <span itemprop=\"streetAddress\">3102 Highway 98</span>\n    <span itemprop=\"addressLocality\">Mexico Beach</span>,\n    <span itemprop=\"addressRegion\">FL</span>\n  </div>\n  Phone: <span itemprop=\"telephone\">850-648-4200</span>\n</div>",
+			"settings":
+			{
+				"buffer_size": 567,
+				"line_ending": "Unix",
+				"name": "<div itemscope itemtype=\"http://schema.org/LocalBu"
+			}
+		},
+		{
+			"file": "sass/site/structure/_structure.scss",
+			"settings":
+			{
+				"buffer_size": 929,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sass/footer/_footer.scss",
+			"settings":
+			{
+				"buffer_size": 662,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\n/**\n * Country Place Apartments functions and definitions\n *\n * @package Country Place Apartments\n */\n\n/**\n * Set the content width based on the theme's design and stylesheet.\n */\nif ( ! isset( $content_width ) ) {\n    $content_width = 640; /* pixels */\n}\n\nif ( ! function_exists( 'country_place_apartments_setup' ) ) :\n/**\n * Sets up theme defaults and registers support for various WordPress features.\n *\n * Note that this function is hooked into the after_setup_theme hook, which\n * runs before the init hook. The init hook is too late for some features, such\n * as indicating support for post thumbnails.\n */\nfunction country_place_apartments_setup() {\n\n    /*\n     * Make theme available for translation.\n     * Translations can be filed in the /languages/ directory.\n     * If you're building a theme based on Country Place Apartments, use a find and replace\n     * to change 'country-place-apartments' to the name of your theme in all the template files\n     */\n    load_theme_textdomain( 'country-place-apartments', get_template_directory() . '/languages' );\n\n    // Add default posts and comments RSS feed links to head.\n    add_theme_support( 'automatic-feed-links' );\n\n    /*\n     * Enable support for Post Thumbnails on posts and pages.\n     *\n     * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails\n     */\n    add_theme_support( 'post-thumbnails' );\n    add_image_size('home-page-highlight', 925, 435, true);\n    add_image_size('gallery-main', 1200, 550, true);\n    add_image_size('gallery-thumb', 250, 150, true);\n    add_image_size('floor-plan-thumb', 300, 9999, false);\n\n    // This theme uses wp_nav_menu() in one location.\n    register_nav_menus( array(\n        'primary' => __( 'Primary Menu', 'country-place-apartments' ),\n    ) );\n\n    /*\n     * Switch default core markup for search form, comment form, and comments\n     * to output valid HTML5.\n     */\n    add_theme_support( 'html5', array(\n        'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',\n    ) );\n\n    /*\n     * Enable support for Post Formats.\n     * See http://codex.wordpress.org/Post_Formats\n     */\n    add_theme_support( 'post-formats', array(\n        'aside', 'image', 'video', 'quote', 'link',\n    ) );\n\n    // Set up the WordPress core custom background feature.\n    add_theme_support( 'custom-background', apply_filters( 'country_place_apartments_custom_background_args', array(\n        'default-color' => 'ffffff',\n        'default-image' => '',\n    ) ) );\n}\nendif; // country_place_apartments_setup\nadd_action( 'after_setup_theme', 'country_place_apartments_setup' );\n\n/**\n * Register widget area.\n *\n * @link http://codex.wordpress.org/Function_Reference/register_sidebar\n */\nfunction country_place_apartments_widgets_init() {\n    register_sidebar( array(\n        'name'          => __( 'Global Sidebar', 'country_place_apartments' ),\n        'id'            => 'sidebar-global',\n        'before_widget' => '<aside id=\"%1$s\" class=\"widget %2$s\">',\n        'after_widget'  => '</aside>',\n        'before_title'  => '<h3 class=\"widget-title\">',\n        'after_title'   => '</h3>',\n    ) );\n    \n    register_sidebar( array(\n        'name'          => __( 'Blog Sidebar', 'country_place_apartments' ),\n        'id'            => 'sidebar-blog',\n        'before_widget' => '<aside id=\"%1$s\" class=\"widget %2$s\">',\n        'after_widget'  => '</aside>',\n        'before_title'  => '<h3 class=\"widget-title\">',\n        'after_title'   => '</h3>',\n    ) );\n}\nadd_action( 'widgets_init', 'country_place_apartments_widgets_init' );\n\n/**\n * Enqueue scripts and styles.\n */\nfunction country_place_apartments_scripts() {\n    wp_enqueue_style( 'country-place-apartments-style', get_stylesheet_uri() );\n\n    wp_enqueue_script( 'country-place-apartments-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );\n    wp_enqueue_script( 'country-place-apartments-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );\n    //wp_enqueue_script( 'country-place-apartments-jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', array(), '20141125', true );\n    wp_enqueue_script( 'country-place-apartments-modernizr', get_template_directory_uri() . '/js/modernizr.custom.80561.js', array(), '20141125', true );\n    wp_enqueue_script( 'country-place-apartments-disable-right-click', get_template_directory_uri() . '/js/no-rt-clk.js', array(), '20150529', true );\n    \n    wp_enqueue_script( 'country-place-apartments-resident-portal', get_template_directory_uri() . '/js/resident-portal.js', array(), '20150813', true );\n    \n    if(is_page_template('frontpage.php')) {\n        wp_enqueue_script( 'country-place-apartments-home-highlights', get_template_directory_uri() . '/js/home-highlights.js', array(), '20141125', true );\n    }\n    \n    if(is_page_template('page-floor-plans-detail.php')) {\n        wp_enqueue_script( 'country-place-apartments-fancybox', get_template_directory_uri() . '/js/floorplans.js', array(), '20141202', true );\n        wp_enqueue_script( 'country-place-apartments-yardi-fps-ajax', get_template_directory_uri() . '/js/yardi-floor-plan-request.js', array(), '20150814', true );\n    }\n    \n    if(is_page_template('page-contact.php') || is_page_template('page-area-map.php')) {\n        wp_enqueue_script( 'country-place-apartments-google-map-api', 'https://maps.google.com/maps/api/js?sensor=false', array(), '', true );\n    }\n    \n    if(is_page_template('page-contact.php')) {\n        wp_enqueue_script( 'country-place-apartments-jquery-ui', get_template_directory_uri() . '/js/jquery-ui.min.js', array(), '20141112', true );\n        wp_enqueue_script( 'country-place-apartments-lib', get_template_directory_uri() . '/js/validate.min.js', array(), '20141111', true );\n        wp_enqueue_script( 'country-place-apartments-validate', get_template_directory_uri() . '/js/form-validate-yardi.js', array(), '20141111', true );\n        wp_enqueue_script( 'country-place-apartments-directions', get_template_directory_uri() . '/js/map-directions.js', array(), '20141112', true );\n    }\n    \n    if(is_page_template('page-photo-gallery.php')) {\n        wp_enqueue_script( 'country-place-apartments-flexslider', get_template_directory_uri() . '/js/jquery.flexslider-min.js', array(), '20141118', true );\n    }\n    \n    if(is_page_template('page-area-map.php')) {\n        wp_enqueue_script( 'country-place-apartments-area-map-spider-markers', get_template_directory_uri() . '/js/oms.min.js', array(), '20141119', true );\n        wp_enqueue_script( 'country-place-apartments-area-map', get_template_directory_uri() . '/js/area-map.js', array(), '20141118', true );\n    }\n\n    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {\n        wp_enqueue_script( 'comment-reply' );\n    }\n}\nadd_action( 'wp_enqueue_scripts', 'country_place_apartments_scripts' );\n\n/**\n * Implement the Custom Header feature.\n */\n//require get_template_directory() . '/inc/custom-header.php';\n\n/**\n * Custom template tags for this theme.\n */\nrequire get_template_directory() . '/inc/template-tags.php';\n\n/**\n * Custom functions that act independently of the theme templates.\n */\nrequire get_template_directory() . '/inc/extras.php';\n\n/**\n * Customizer additions.\n */\nrequire get_template_directory() . '/inc/customizer.php';\n\n/**\n * Load Jetpack compatibility file.\n */\nrequire get_template_directory() . '/inc/jetpack.php';\n\n/**\n * Include the TGM_Plugin_Activation class.\n */\nrequire_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';\n\nadd_action( 'tgmpa_register', 'country_place_apartments_register_required_plugins' );\n\nfunction country_place_apartments_register_required_plugins() {\n\n    $plugins = array(\n        \n        array(\n            'name'      => 'Advanced Custom Fields',\n            'slug'      => 'advanced-custom-fields',\n            'required'  => true,\n        )\n    );\n\n    $theme_text_domain = 'country-place-apartments';\n    $config = array(\n        'domain'            => $theme_text_domain,          // Text domain - likely want to be the same as your theme.\n    );\n\n    tgmpa( $plugins, $config );\n}\n\n/**\n * COMMENTING OFF FOR PAGES\n */\nfunction default_comments_off( $data ) {\n    if( $data['post_type'] == 'page' && $data['post_status'] == 'auto-draft' ) {\n        $data['comment_status'] = 0;\n    } \n    return $data;\n}\nadd_filter( 'wp_insert_post_data', 'default_comments_off' );\n\n/**\n * THINGS WE WILL USE GLOBALLY\n */\nadd_action('admin_menu', 'country_place_apartments_add_gcf_interface');\n\nfunction country_place_apartments_add_gcf_interface() {\n    add_options_page('Global Website Information', 'Global Website Information', '8', 'functions', 'country_place_apartments_edit_global_custom_fields');\n}\n\nfunction country_place_apartments_edit_global_custom_fields() {?>\n    <form method=\"post\" action=\"options.php\">\n    <?php wp_nonce_field('update-options') ?>\n        <h2>Contact Information</h2>\n        <p>Address:<br>\n        <input type=\"text\" name=\"add\" size=\"45\" value=\"<?php echo get_option('add'); ?>\"></p>\n        \n        <p>City:<br>\n        <input type=\"text\" name=\"city\" size=\"45\" value=\"<?php echo get_option('city'); ?>\"></p>\n        \n        <p>State:<br>\n        <input type=\"text\" name=\"state\" size=\"45\" value=\"<?php echo get_option('state'); ?>\"></p>\n        \n        <p>Zip:<br>\n        <input type=\"text\" name=\"zip\" size=\"45\" value=\"<?php echo get_option('zip'); ?>\"></p>\n        \n        <p>Phone:<br>\n        <input type=\"text\" name=\"phone\" size=\"45\" value=\"<?php echo get_option('phone'); ?>\"></p>\n        \n        <p>Residents Phone:<br>\n        <input type=\"text\" name=\"residents_phone\" size=\"45\" value=\"<?php echo get_option('residents_phone'); ?>\"></p>\n        \n        <p>Email Address(es) for Contact Form Submittal:<br>\n        (Separate multiple email addresses with a comma and replace the \"@\" symbol with \"_AT_\")<br>\n        <input type=\"text\" name=\"email_address\" size=\"45\" value=\"<?php echo get_option('email_address'); ?>\"></p>\n        \n        <br>\n        <h2>Social Media</h2>\n        <p>Facebook URL:<br>\n        <input type=\"text\" name=\"fb\" size=\"45\" value=\"<?php echo get_option('fb'); ?>\"></p>\n        \n        <p>Twitter URL:<br>\n        <input type=\"text\" name=\"tw\" size=\"45\" value=\"<?php echo get_option('tw'); ?>\"></p>\n        \n        <p>Google+ URL:<br>\n        <input type=\"text\" name=\"goo\" size=\"45\" value=\"<?php echo get_option('goo'); ?>\"></p>\n        \n        <br>\n        <h2>External Links</h2>\n        <p>Link to Online Application:<br>\n        <input type=\"text\" name=\"online-apply\" size=\"45\" value=\"<?php echo get_option('online-apply'); ?>\"></p>\n        \n        <h2>External Links</h2>\n        <p>Link to Resident Corner:<br>\n        <input type=\"text\" name=\"res-corner\" size=\"45\" value=\"<?php echo get_option('res-corner'); ?>\"></p>\n        \n        <input type=\"hidden\" name=\"action\" value=\"update\">\n        <input type=\"hidden\" name=\"page_options\" value=\"add, city, state, zip, phone, residents_phone, email_address, fb, tw, goo, online-apply, res-corner\">\n        \n        <p><input type=\"submit\" name=\"Submit\" value=\"Update Options\"></p>\n        \n    </form>\n<?php }\n\n/**\n * CUSTOM POST STUFF\n */\n\nfunction country_place_apartments_create_custom_posts() {\n    register_post_type( 'home-page-highlights', \n        array(\n            'labels' => array(\n                'name' => __( 'Home Page Highlights' ),\n                'add_new' => __( 'Add New Highlight' ),\n                'add_new_item' => __( 'Add New Highlight' ),\n                'edit' => __( 'Edit' )\n            ),\n            'supports' => array( 'title', 'editor', 'thumbnail'),\n            'public' => true,\n            'menu_position' =>5,\n            'menu_icon' => 'dashicons-star-filled',\n            'has_archive' => false\n        )\n    );\n    register_post_type( 'specials', \n        array(\n            'labels' => array(\n                'name' => __( 'Specials' ),\n                'add_new' => __( 'Add New Special' ),\n                'add_new_item' => __( 'Add New Special' ),\n                'edit' => __( 'Edit' )\n            ),\n            'supports' => array( 'title', 'editor'),\n            'public' => true,\n            'menu_position' =>5,\n            'menu_icon' => 'dashicons-tag',\n            'has_archive' => false\n        )\n    );\n    register_post_type( 'landmarks', \n        array(\n            'labels' => array(\n                'name' => __( 'Area Landmarks' ),\n                'add_new' => __( 'Add New Landmark' ),\n                'add_new_item' => __( 'Add New Landmark' ),\n                'edit' => __( 'Edit' )\n            ),\n            'supports' => array( 'title'),\n            'public' => true,\n            'menu_position' =>5,\n            'menu_icon' => 'dashicons-location-alt',\n            'has_archive' => false\n        )\n    );\n    register_post_type( 'floor-plans', \n        array(\n            'labels' => array(\n                'name' => __( 'Floor Plans' ),\n                'singular_name' => __( 'Floor Plan' ),\n                'add_new' => __( 'Add New Plan' ),\n                'add_new_item' => __( 'Add New Floor Plan' ),\n                'edit' => __( 'Edit' )\n            ),\n            'supports' => array( 'title', 'thumbnail'),\n            'public' => true,\n            'menu_position' =>5,\n            'menu_icon' => 'dashicons-admin-network',\n            'has_archive' => false\n        )\n    );\n}\nadd_action( 'init', 'country_place_apartments_create_custom_posts' );\n\nfunction country_place_apartments_create_taxonomies() {\n    register_taxonomy(\n        'landmark-type',\n        'landmarks',\n        array(\n            'labels' => array(\n                'name' => 'Landmark Types',\n                'add_new_item' => 'Add New Landmark Type',\n            ),\n            'show_ui' => true,\n            'show_tagcloud' => false,\n            'hierarchical' => true,\n            'has_archive'=>false\n        )\n    );\n    register_taxonomy(\n        'floor-plan-types',\n        'floor-plans',\n        array(\n            'labels' => array(\n                'name' => 'Floor Plan Types',\n                'add_new_item' => 'Add New Type',\n            ),\n            'show_ui' => true,\n            'show_tagcloud' => false,\n            'hierarchical' => true\n        )\n    );\n}\nadd_action( 'init', 'country_place_apartments_create_taxonomies', 0 );\n\n/**\n * SIDEBARS\n */\n\nfunction country_place_apartments_custom_sidebar_content() {\n    $side_content = get_field('sidebar_content');\n    if($side_content) {?>\n    <aside class=\"side-content\">\n    <?php echo $side_content; ?>\n    </aside>\n    <?php } ?>\n    <?php if(is_page_template('page-contact.php')) { ?>\n    <div id=\"map-canvas\"></div>\n    <form id=\"directions\" action=\"\">\n        <label for=\"start\">Enter Your Starting Address</label>\n        <input type=\"text\" size=\"75\" id=\"start\" name=\"start\" value=\"\">\n        <input type=\"hidden\" id=\"end\" name=\"end\" value=\"3900 Blackburn Lane, Burtonsville, MD 20866\">\n        <input type=\"button\" onclick=\"calcRoute();\" value=\"Get Directions\" class=\"btn\">\n    </form>\n    <div id=\"directions-panel\"></div>\n    <?php } \n}\n\n/**\n * SUBNAV\n */\nfunction country_place_apartments_subnav() {\n    global $post;\n    $children = get_pages('child_of='.$post->ID);\n    $subnavTitle = get_field('subnav_title', $post->ID);\n    if( count( $children ) != 0 ) {?>\n    <aside class=\"subnav-wrapper\">\n        <?php if($subnavTitle) : echo '<h2>' . $subnavTitle . '</h2>'; else : echo '<h2>See Also</h2>'; endif; ?>\n        <nav class=\"subnav\">\n            <ul>\n            <?php wp_list_pages('child_of=' . $post->ID . '&title_li=&sort_column=menu_order&depth=1'); ?>\n            </ul>\n        </nav>\n        <?php //if(is_page_template('page-floor-plans-main.php')): ?><!-- <a href=\"https://units.realtydatatrust.com/Unittype.aspx?ils=6566&propID=49350&tname=PropertySite\" target=\"_blank\" class=\"availablity-link\">View All Rates &amp; Availability</a>--><?php //endif; ?>\n    </aside>\n    <?php } else {\n    $pageID = $post->post_parent;\n    $postName = get_post($pageID);\n    $subnavTitle = get_field('subnav_title', $pageID);\n    $parentTitle = $postName->post_title;\n    $permalink = get_permalink($pageID);\n    if(is_page() && $post->post_parent) {?>\n    <aside class=\"subnav-wrapper\">\n        <?php if($subnavTitle) : echo '<h2>' . $subnavTitle . '</h2>'; else : echo '<h2>' . $parentTitle . '</h2>'; endif; ?>\n        <nav class=\"subnav\">\n            <ul>\n            <?php wp_list_pages('child_of=' . $pageID . '&title_li=&sort_column=menu_order&depth=1'); ?>\n            </ul>\n        </nav>\n        <?php //if(is_page_template('page-floor-plans-detail.php')): ?><!-- <a href=\"https://units.realtydatatrust.com/Unittype.aspx?ils=6566&propID=49350&tname=PropertySite\" target=\"_blank\" class=\"availablity-link\">View All Rates &amp; Availability</a>--><?php //endif; ?>\n    </aside>\n    <?php }\n    }\n}\n\n/**\n * SPECIALS\n */\n \n function country_place_apartments_amenities() {\n     if(is_page_template('page-floor-plans-detail.php') ) {\n         $amenities = get_field('amenities');\n         if($amenities) { ?>\n         <aside class=\"apt-amenities side-content\">\n         <?php echo $amenities; ?>\n         </aside>\n         <?php }\n     }\n}\n\n/**\n * SPECIALS\n */\n \n function country_place_apartments_specials() {\n     if( is_page_template('page-floor-plans-main.php') || is_page_template('page-floor-plans-detail.php') ) {\n \n    $args=array(\n        'posts_per_page' => 1, \n        'post_type' => 'specials'\n    );\n    $my_query = null;\n    $my_query = new WP_Query($args); ?>\n    <?php if( $my_query->have_posts() ) { \n    while ($my_query->have_posts()) : $my_query->the_post(); ?>\n    <div class=\"current-special\">\n        <div>\n            <h2>Specials</h2>\n            <h3><?php the_title(); ?></h3>\n            <?php the_content(); ?>\n        </div>\n    </div>\n    <?php endwhile;\n    } else { ?>\n        <div class=\"current-special\">\n            <h2>Specials</h2>\n            <p>Please visit our leasing office or <a href=\"/contact-country-place-apartments/\">contact us</a> for any current specials.</p>\n        </div>\n    <?php }\n    wp_reset_query();\n     }\n}\n\n/**\n * CONTACT FORM\n */\n \n/*function country_place_apartments_contact_form() {\n    if(is_page_template('page-contact.php')) { ?>\n        <form id=\"form-contact\" action=\"/thank-you/\" method=\"post\">\n            <?php $recipients = get_option('email_address'); ?>\n            <input type=\"hidden\" value=\"<?php echo $recipients; ?>\" name=\"recipients\" id=\"recipients\">\n            <label for=\"names\" class=\"required\"><span class=\"asterisk\">*</span> Name(s):</label>\n            <input type=\"text\" id=\"names\" name=\"names\" size=\"50\" class=\"required\">\n            <label for=\"phone\">Phone:</label>\n            <input type=\"tel\" id=\"phone\" name=\"phone\" size=\"15\">\n            <label for=\"email\" class=\"required\"><span class=\"asterisk\">*</span> Email:</label>\n            <input type=\"email\" id=\"email\" name=\"email\" size=\"40\" class=\"required\">\n            <label for=\"apt-size\">Apartment Desired:</label>\n            <select id=\"apt-size\" name=\"apt-size\">\n                <option value=\"\" selected>Please choose</option>\n                <option value=\"1 Bedroom\">1 Bedroom</option>\n                <option value=\"2 Bedroom\">2 Bedroom</option>\n                <option value=\"3 Bedroom\">3 Bedroom</option>\n            </select>\n            <label for=\"date\">Desired Move In Date:</label>\n            <input type=\"text\" id=\"date\" name=\"date\" size=\"15\">\n            <label for=\"comments\">Comments:</label>\n            <textarea rows=\"6\" id=\"comments\" name=\"comments\"></textarea>\n            <label for=\"spam\" class=\"honey\">What is 1 plus two + 4?</label>\n            <input name=\"spam\" type=\"text\" size=\"4\" id=\"spam\" maxlength=\"4\" class=\"honey\">\n            <div class=\"error-box\"></div>\n            <input type=\"submit\" value=\"Submit\" class=\"submit\">\n        </form>\n    <?php }\n}*/\n\nfunction country_place_apartments_contact_form() { ?>\n    <form id=\"leadForm\" name=\"leadForm\">\n        <input type=\"hidden\" name=\"requestType\" id=\"requestType\" value=\"lead\">\n        <input type=\"hidden\" name=\"message\" id=\"message\" value=\"New%20Prospect\">\n        <input type=\"hidden\" name=\"source\" id=\"source\" value=\"Country%20Place%20Website\">\n        <input type=\"hidden\" name=\"secondarySource\" id=\"secondarySource\" value=\"\">\n        <input type=\"hidden\" name=\"addr1\" id=\"addr1\" value=\"3900%20Blackburn%20Lane\">\n        <input type=\"hidden\" name=\"addr2\" id=\"addr2\" value=\"\">\n        <input type=\"hidden\" name=\"state\" id=\"state\" value=\"MD\">\n        <input type=\"hidden\" name=\"zipCode\" id=\"zipCode\" value=\"20866\">\n        <input type=\"hidden\" name=\"propertyCode\" id=\"propertyCode\" value=\"p0472524\">\n        <input type=\"hidden\" name=\"propertyId\" id=\"propertyId\" value=\"462825\">\n        <input type=\"hidden\" name=\"username\" id=\"username\" value=\"jtippett@mm4solutions.com\">\n        <input type=\"hidden\" name=\"password\" id=\"password\" value=\"tippett1234\">\n        <label for=\"firstName\"><span class=\"asterisk\">*</span> First Name:</label>\n        <input name=\"firstName\" type=\"text\" id=\"firstName\" maxlength=\"80\" size=\"50\">\n        <label for=\"lastName\"><span class=\"asterisk\">*</span> Last Name:</label>\n        <input type=\"text\" name=\"lastName\" id=\"lastName\" maxlength=\"80\" size=\"50\">\n        <label for=\"email\"><span class=\"asterisk\">*</span> Email:</label>\n        <input type=\"email\" name=\"email\" id=\"email\" maxlength=\"80\" size=\"40\">\n        <label for=\"phone\">Phone:</label>\n        <input type=\"tel\" name=\"phone\" id=\"phone\" maxlength=\"17\" size=\"15\">\n        <input type=\"submit\" value=\"Submit\">\n        <div id=\"error-box\"></div>\n        <div id=\"response-message\"></div>\n    </form>\n<?php }\n\n/**\n * HOME PAGE HIGHLIGHTS\n */\n\nfunction country_place_apartments_home_highlights() {\n    if(is_page_template('frontpage.php')) { \n    $args=array(\n        'posts_per_page' => 4, \n        'post_type' => 'home-page-highlights'\n    );\n    $my_query = null;\n    $my_query = new WP_Query($args); ?>\n    <?php if( $my_query->have_posts() ) : ?>\n    <div id=\"highlight-wrapper\">\n        <a href=\"<?php echo esc_url( home_url( '/' ) ); ?>\" rel=\"home\"><img src=\"<?php echo get_template_directory_uri() . '/imgs/logo.svg'; ?>\" alt=\"Country Place Apartments\"></a>\n        <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>\n            <div class=\"home-highlight\">\n                <?php if(has_post_thumbnail()) {\n                    the_post_thumbnail('home-page-highlight');\n                } ?>\n                <div class=\"highlight-content\">\n                    <h3><?php the_title(); ?></h3>\n                    <?php the_content(); ?>\n                </div>\n                <span class=\"plus-minus\">+</span>\n            </div>\n        <?php endwhile; ?>\n    </div>\n    <?php else: echo 'Sorry, there are currently no highlights published.';\n    endif;\n    wp_reset_query(); ?>\n    <?php }\n}\n\n/**\n * AREA MAP\n */\n\nfunction country_place_apartments_community_map_tax_listing() {\n    if( is_page_template('page-area-map.php') ) {\n        global $post;\n        $post_type = 'landmarks';\n        $tax = 'landmark-type';\n        $tax_terms = get_terms($tax);\n        $cats = array();\n        if ($tax_terms) {\n            foreach ($tax_terms  as $tax_term) {    \n                $name = $tax_term->name;\n                $slug = $tax_term->slug;\n                $count = $tax_term->count;\n                $catDetails = array ($name, $slug, $count);\n                array_push($cats, $catDetails);\n            }\n        }\n        //echo json_encode($cats);\n        //print_r($cats);\n        \n        $args=array(\n            'post_type' => $post_type,\n            'post_status' => 'publish',\n            'posts_per_page' => -1,\n            'caller_get_posts'=> 1\n        );\n        \n        $poi = array();\n        $my_query = null;\n        $my_query = new WP_Query($args);\n        if( $my_query->have_posts() ): while ($my_query->have_posts()) : $my_query->the_post();\n        $title = get_the_title();\n        $lat = get_field('latitude');\n        $lng = get_field('longitude');\n        $add = get_field('address');\n        $add2 = get_field('address_2');\n        $phone = get_field('phone');\n        $url = get_field('landmark_website');\n        if($url) {\n            $urlStr = $url;\n        } else {\n            $urlStr = '';\n        }\n        $adtlDetails = get_field('additional_details');\n        if($adtlDetails) {\n            $adtlDetailsStr = $adtlDetails;\n        } else {\n            $adtlDetailsStr = '';\n        }\n        $id = get_the_ID();\n        $term_list = wp_get_post_terms($id, 'landmark-type');\n        if($term_list) {\n            foreach ($term_list as $term_list) {\n                $slug = $term_list->slug;\n            }\n        }\n        $details = array ($title, $lat, $lng, $add, $add2, $phone, $urlStr, $adtlDetailsStr, $slug);\n        array_push($poi, $details);\n        endwhile;\n        endif;\n        wp_reset_query();\n        //print_r($poi)?>\n        <script>var categories = <?php echo json_encode($cats); ?>; var locations = <?php echo json_encode($poi); ?></script>\n    <?php }\n}\n\nadd_action( 'wp_footer', 'country_place_apartments_community_map_tax_listing' );\n\n//Remove option for no type from radio button for taxonomies plugin\nadd_filter('radio-buttons-for-taxonomies-no-term-landmark-type', '__return_FALSE' );\nadd_filter('radio-buttons-for-taxonomies-no-term-floor-plan-types', '__return_FALSE' );",
+			"settings":
+			{
+				"buffer_size": 25550,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "functions.php",
+			"settings":
+			{
+				"buffer_size": 11940,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "imgs/tag.svg",
+			"settings":
+			{
+				"buffer_size": 412,
 				"line_ending": "Unix"
 			}
 		}
@@ -492,16 +562,42 @@
 		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content",
 		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes",
 		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill",
-		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/inc",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/*project-notes",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/imgs",
 		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/plugins/mm4-you-contact-form/inc",
 		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/plugins/mm4-you-contact-form/js",
-		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/plugins/mm4-you-contact-form/js/min"
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/variables-site",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/template-parts"
 	],
 	"file_history":
 	[
-		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/functions.php",
-		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/inc/customizer.php",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/typography/_fonts.scss",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/variables-site/_typography.scss",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/secondary/_widgets.scss",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/typography/_headings.scss",
 		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/frontpage.php",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/inc/content-tagline.php",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/template-parts/content-page.php",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_frontpage.scss",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/functions.php",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/template-parts/content-home.php",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/variables-site/_colors.scss",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/navigation/_masthead.scss",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/_site.scss",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/variables-site/_structure.scss",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/header.php",
+		"/Users/GraphicDesigner/Library/Application Support/Sublime Text 3/Packages/User/php-snippets/if-end.sublime-snippet",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/gulpfile.js",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/gulp/config.js",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/footer.php",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/typography/_typography.scss",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/style.scss",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/typography/_copy.scss",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/mixins/_mixins-master.scss",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/cider-mill.sublime-project",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/style.css",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/package.json",
+		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/inc/customizer.php",
 		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/inc/photo-gallery.php",
 		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/page-contact.php",
 		"/Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/page-floorplans.php",
@@ -602,31 +698,7 @@
 		"/Users/GraphicDesigner/Documents/Projects/js-30/flex-gallery/index.html",
 		"/Users/GraphicDesigner/Documents/Projects/js-30/array-cardio-1/index.html",
 		"/Users/GraphicDesigner/Documents/Projects/js-30/css-js-variables/index.html",
-		"/Users/GraphicDesigner/Documents/Projects/js-30/js-clock/index.html",
-		"/Users/GraphicDesigner/Documents/Projects/js-30/drumkit/style.css",
-		"/Users/GraphicDesigner/Documents/Projects/js-30/drumkit/index.html",
-		"/Users/GraphicDesigner/Sites/htdocs/islandit/wp-content/themes/mm4-you/sidebar.php",
-		"/Users/GraphicDesigner/Sites/htdocs/islandit/wp-content/themes/mm4-you/template-parts/content-single.php",
-		"/Users/GraphicDesigner/Documents/Logins/Logins-Passwords.md",
-		"/Users/GraphicDesigner/Sites/htdocs/islandit/wp-content/themes/mm4-you/header.php",
-		"/Users/GraphicDesigner/Sites/htdocs/islandit/wp-content/themes/mm4-you/single.php",
-		"/Users/GraphicDesigner/Sites/htdocs/islandit/wp-content/themes/mm4-you/template-parts/content-page.php",
-		"/Users/GraphicDesigner/Sites/htdocs/islandit/wp-content/themes/mm4-you/plugins/mm4-you-contact-form/mm4-you-cf.php",
-		"/Users/GraphicDesigner/Sites/htdocs/islandit/wp-content/themes/mm4-you/functions.php",
-		"/Users/GraphicDesigner/Documents/Notes/go_live_notes/wp-wrap-up-tasks.md",
-		"/Users/GraphicDesigner/Sites/htdocs/islandit/wp-content/themes/mm4-you/template-parts/content.php",
-		"/Users/GraphicDesigner/Sites/htdocs/islandit/wp-content/themes/mm4-you/index.php",
-		"/Users/GraphicDesigner/Sites/htdocs/islandit/wp-content/themes/mm4-you/page-custom-sidebar-page.php",
-		"/Users/GraphicDesigner/Sites/htdocs/islandit/wp-content/themes/mm4-you/footer.php",
-		"/Users/GraphicDesigner/Sites/htdocs/islandit/wp-content/themes/mm4-you/imgs/icon-menu-white.svg",
-		"/Users/GraphicDesigner/Library/Application Support/Sublime Text 3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
-		"/Users/GraphicDesigner/Sites/htdocs/islandit/wp-content/themes/mm4-you/fonts/SourceSansPro-Semibold/styles.css",
-		"/Users/GraphicDesigner/Sites/htdocs/islandit/wp-content/themes/mm4-you/fonts/SourceSansPro-Regular/styles.css",
-		"/Users/GraphicDesigner/Sites/htdocs/islandit/wp-content/themes/mm4-you/fonts/SourceSansPro-Bold/styles.css",
-		"/Users/GraphicDesigner/Sites/htdocs/islandit/wp-content/themes/mm4-you/fonts/SourceSansPro-Black/styles.css",
-		"/Users/GraphicDesigner/Sites/htdocs/portabello/wp-content/themes/mm4/*project-notes/todo.mdown",
-		"/Users/GraphicDesigner/Sites/htdocs/portabello/wp-content/themes/mm4/plugins/mm4-you-contact-form/mm4-you-cf.php",
-		"/Users/GraphicDesigner/Sites/htdocs/portabello/wp-content/themes/mm4/sass/page-templates/floorplans/_floorplan-listing.scss"
+		"/Users/GraphicDesigner/Documents/Projects/js-30/js-clock/index.html"
 	],
 	"find":
 	{
@@ -645,6 +717,31 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"specials",
+			"hours",
+			"_",
+			"day",
+			"address",
+			"850-648-4200",
+			" ?>",
+			"zip",
+			"Street",
+			"street",
+			"<?php",
+			"address",
+			"get_field",
+			"content_tagline",
+			"500",
+			"'Source",
+			"hello",
+			"$color__link",
+			"$font__pre",
+			"$font__code",
+			"$font__line-height-body",
+			"'Sou",
+			"'Sour",
+			"'Sou",
+			"'Alex",
 			"mm4",
 			"argument",
 			"slastReply",
@@ -747,32 +844,7 @@
 			"bottom",
 			"side-address-1",
 			".map-canvas",
-			"widget",
-			"highlight",
-			"link",
-			"form-quick-contact-wrapper",
-			"h3",
-			"h1",
-			"hot-jobs",
-			"home-highlight",
-			"widget",
-			"aside",
-			"colophon",
-			"aside",
-			"custom-sidebar-wysiwyg",
-			"sidebar",
-			"footer",
-			"background",
-			"footer",
-			"span",
-			"Widgets",
-			"more-link",
-			"read",
-			"p",
-			"helv",
-			"ftr-phone",
-			"site-info",
-			"highlights"
+			"widget"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -790,250 +862,24 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 9,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "template-parts/content-page.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1201,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								531,
-								531
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"bs_sintax": "php",
-							"buffer_scroll_name": "cae9c657",
-							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tabs_extra_last_activated": 1487004419.11,
-							"tabs_extra_last_activated_sheet_index": 0,
-							"tabs_extra_spawned": true,
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "header.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1935,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1860,
-								1860
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"bs_sintax": "php",
-							"buffer_scroll_name": "88906938",
-							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tabs_extra_last_activated": 1487021739.65,
-							"tabs_extra_last_activated_sheet_index": 1,
-							"tabs_extra_spawned": true,
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 171.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "*project-notes/notes.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 27,
+						"buffer_size": 900,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								27,
-								27
+								701,
+								701
 							]
 						],
 						"settings":
@@ -1044,12 +890,27 @@
 							{
 								"close":
 								{
+									"1":
+									[
+										700,
+										701
+									]
 								},
 								"icon":
 								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.round"
+									]
 								},
 								"open":
 								{
+									"1":
+									[
+										680,
+										681
+									]
 								},
 								"unmatched":
 								{
@@ -1121,15 +982,1084 @@
 							"remote_loading": false,
 							"synced": false,
 							"syntax": "Packages/Markdown Extended/Syntaxes/Markdown Extended.sublime-syntax",
-							"tabs_extra_last_activated": 1487021739.69,
-							"tabs_extra_last_activated_sheet_index": 2,
+							"tabs_extra_last_activated": 1487366108.56,
+							"tabs_extra_last_activated_sheet_index": 0,
+							"tabs_extra_moving":
+							[
+								3,
+								0
+							],
 							"tabs_extra_spawned": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "sass/mixins/_mixins-master.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2069,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								194,
+								194
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										239,
+										240
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.curly"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										170,
+										171
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"bs_sintax": "scss",
+							"buffer_scroll_name": "1f266977",
+							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"spell_check": true,
+							"synced": false,
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 2,
+							"tabs_extra_last_activated": 1487366180.73,
+							"tabs_extra_last_activated_sheet_index": 1,
+							"tabs_extra_moving":
+							[
+								3,
+								0
+							],
+							"tabs_extra_spawned": true,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "footer.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15230,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15129,
+								15129
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										15154,
+										15156
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/tag.png",
+										"brackethighlighter.tag"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										15127,
+										15129
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"bs_sintax": "php",
+							"buffer_scroll_name": "9ade9c5e",
+							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"spell_check": true,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tabs_extra_last_activated": 1487370132.53,
+							"tabs_extra_last_activated_sheet_index": 2,
+							"tabs_extra_moving":
+							[
+								3,
+								0
+							],
+							"tabs_extra_spawned": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 132.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"bs_sintax": "plain text",
+							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
+							"default_dir": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content",
+							"incomplete_sync": null,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tabs_extra_last_activated": 1487363901.95,
+							"tabs_extra_last_activated_sheet_index": 2
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 567,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								567,
+								567
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<div itemscope itemtype=\"http://schema.org/LocalBu",
+							"bracket_highlighter.busy": false,
+							"bs_sintax": "plain text",
+							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
+							"default_dir": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content",
+							"incomplete_sync": null,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tabs_extra_last_activated": 1487363832.91,
+							"tabs_extra_last_activated_sheet_index": 3
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "sass/site/structure/_structure.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 929,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								800,
+								800
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										926,
+										927
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.curly"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										762,
+										763
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"bs_sintax": "scss",
+							"buffer_scroll_name": "181a2f39",
+							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
+							"incomplete_sync": null,
+							"open_with_edit": true,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"tabs_extra_last_activated": 1487367472.56,
+							"tabs_extra_last_activated_sheet_index": 0,
+							"tabs_extra_spawned": true,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 82.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "sass/footer/_footer.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 662,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								634,
+								634
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										633,
+										634
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.curly"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										622,
+										623
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"bs_sintax": "scss",
+							"buffer_scroll_name": "d54846e7",
+							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tabs_extra_last_activated": 1487366436.93,
+							"tabs_extra_last_activated_sheet_index": 1,
+							"tabs_extra_spawned": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bs_sintax": "plain text",
+							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
+							"default_dir": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content",
+							"incomplete_sync": null,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tabs_extra_last_activated": 1487367472.68,
+							"tabs_extra_last_activated_sheet_index": 2
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 25550,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11916,
+								11924
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										11924,
+										11925
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/single_quote.png",
+										"brackethighlighter.quote"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										11915,
+										11916
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"bs_sintax": "plain text",
+							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
+							"default_dir": "/Users/GraphicDesigner/Sites/htdocs/cider/wp-content",
+							"incomplete_sync": null,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"tabs_extra_last_activated": 1487368740.13,
+							"tabs_extra_last_activated_sheet_index": 8,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 7074.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "functions.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11940,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5114,
+								5114
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										5213,
+										5214
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.round"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										4945,
+										4946
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"bs_sintax": "php",
+							"buffer_scroll_name": "c1ace825",
+							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"spell_check": true,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tabs_extra_last_activated": 1487371366.0,
+							"tabs_extra_last_activated_sheet_index": 9,
+							"tabs_extra_spawned": true,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3663.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "imgs/tag.svg",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 412,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								412,
+								412
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"bs_sintax": "plain text",
+							"buffer_scroll_name": "25c82fac",
+							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"spell_check": true,
+							"synced": false,
+							"syntax": "Packages/XML/XML.sublime-syntax",
+							"tabs_extra_last_activated": 1487370055.32,
+							"tabs_extra_last_activated_sheet_index": 10,
+							"tabs_extra_spawned": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
