@@ -664,8 +664,8 @@ input[type="reset"],
 input[type="submit"] {
   border: none;
   border-radius: 0;
-  background: #e6e6e6;
-  color: #fff;
+  background: #e6ccb7;
+  color: #513628;
   font-size: 12px;
   font-size: 0.75rem;
   line-height: 1;

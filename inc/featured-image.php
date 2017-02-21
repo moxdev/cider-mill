@@ -44,9 +44,3 @@ function cider_mill_featured_image() {
         }
     }
 }
-
-
-// <figure class="frontpage-featured-image center-aligned">
-//   <img class="background-image" src="http://bit.ly/1YrRsis" />
-//   <h1 class="text">SOME TEXT</h1>
-// </figure> -->

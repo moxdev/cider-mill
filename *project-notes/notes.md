@@ -1,3 +1,5 @@
+<a class="mm4" href="https://www.mm4solutions.com/" target="_blank" id="mms">Website by Millennium Marketing Solutions</a>
+
 # Colors
 $color__brand-brown: #513628;
 $color__brand-red: #a31f34;
@@ -30,4 +32,21 @@ $breakpoints: (
 32px = 2rem
 55px = 3.438rem
 
-<a class="mm4" href="https://www.mm4solutions.com/" target="_blank" id="mms">Website by Millennium Marketing Solutions</a>
+## Mobile
+12px = 0.75rem
+13px = 0.8125rem
+14px = 0.875rem
+15px = 0.9375rem
+16px = 1rem (base)
+17px = 1.063rem
+18px = 1.125rem
+19px = 1.188rem
+20px = 1.25rem
+21px = 1.313rem
+23px = 1.438rem
+26px = 1.625rem
+31px = 1.938rem
+32px = 2rem
+35px = 2.188rem
+40px = 2.5rem
+55px = 3.438rem

@@ -22,9 +22,9 @@ $color__link-visited: $color__brand-pink;
 $color__link-hover: $color__brand-brown;
 
 
-$color__button: #fff;
-$color__background-button: #e6e6e6;
-$color__border-button: #ccc #ccc #bbb;
+$color__button: $color__brand-brown;
+$color__background-button: $color__brand-pink;
+$color__border-button: none;
 $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
 

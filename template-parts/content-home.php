@@ -30,6 +30,7 @@
         <?php
             the_content();
 
+            // Displays the Content Tagline at the bottom of the content on the Home Page
             if ( function_exists( 'cider_mill_content_tagline' ) ) {
                 cider_mill_content_tagline();
             }

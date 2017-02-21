@@ -1,6 +1,6 @@
 <?php
 /**
- * Content Tagline shows at the bottom of the content on all pages for 'content-page.php'
+ * Content Tagline shows at the bottom of the content on all pages.
  *
  * @package Cider_Mill_Apartments
  */
