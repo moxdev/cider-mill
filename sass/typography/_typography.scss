@@ -3,6 +3,7 @@ body {
     font-family: $font__light;
     @include font-size(1);
     line-height: $line-height-body;
+    font-size: $font__size-body;
 }
 
 button,

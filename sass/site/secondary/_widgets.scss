@@ -1,30 +1,35 @@
 #secondary {
-    padding: 1em 0;
+    margin-top: 1em;
 
     .sidebar-wrapper {
         max-width: 300px;
         // padding: 1em 0;
-        line-height: 1;
+        line-height: 1.25;
 
         h1 {
             color: $color__brand-red;
             font-family: $font__bold;
             text-transform: uppercase;
-            margin: 0;
+            font-size: 1.938rem;
+            @include reset;
         }
 
         h2 {
             font-family: $font__semi;
-            margin: 0;
+            margin: .25em 0;
+            font-size: 1.25rem;
         }
 
         h4 {
             font-family: $font__regular;
             margin: 0;
+            font-size: 0.75rem;
+            line-height: 1.25;
         }
 
         p {
             margin: 0;
+            font-size: 0.875rem;
         }
 
         .sidebar-specials {
@@ -33,10 +38,18 @@
             border-top: 2px solid $color__brand-brown;
             border-bottom: 2px solid $color__brand-brown;
 
+            h1 {
+                font-size: 2.188rem;
+            }
+
+            h2 {
+                margin-top: 0;
+            }
+
         }
 
         .sidebar-events {
-            padding: 1em;
+            padding: 1em .5em;
             border-bottom: 2px solid $color__brand-brown;
 
 
@@ -45,7 +58,7 @@
         .sidebar-pets {
             display: flex;
             justify-content: space-around;
-            padding:1em;
+            padding:1em .5em;
             overflow: hidden;
             border-bottom: 2px solid $color__brand-brown;
 
@@ -58,8 +71,8 @@
             img {
                 flex: 1;
                 display: block;
-                width: 100px;
-                height: 100px;
+                max-width: 100px;
+                max-height: 100px;
                 padding-left: 5px;
             }
         }

@@ -16,9 +16,7 @@ function cider_mill_featured_image() {
                 <?php $caption =  get_post(get_post_thumbnail_id())->post_excerpt; ?>
 
                 <?php if( !empty($img) ) : ?>
-                    <div class="background-image">
-                        <?php echo $img; ?>
-                    </div>
+                    <?php echo $img; ?>
                 <?php endif; ?>
 
                 <?php if( !empty($caption) ) : ?>

@@ -8,19 +8,22 @@
         position: relative;       /* establish neares positioned ancenstor for absolute positioning */
         overflow: hidden;
 
-        .background-image {
+        img {
+            min-height: 200px;
 
-            img {
-
-            }
         }
 
         h1 {
             color:#fff;
+            font-size: 1.625rem;
             position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+            top: 2em;
+            right: 1em;
+            bottom: 0;
+            left: 1em;
+            // left: 10%;
+            // top: 50%;
+            // transform: translate(-10%, -50%);
             font-weight: bold;
             margin:0;
             padding:0;
@@ -35,12 +38,14 @@
     }
 
     .entry-header {
-        padding-top: 1.5em;
         line-height: 1;
+        text-align: center;
+        margin-top: 1em;
         h1 {
             color: $color__brand-red;
             font-family: $font__alex;
             font-size: 3.438rem;
+            @include reset;
 
             span {
                 color: $color__brand-brown;
