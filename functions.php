@@ -379,8 +379,6 @@ require get_template_directory() . '/inc/photo-gallery.php';
  */
 require get_template_directory() . '/inc/featured-image.php';
 
-
-
 /**
  * INCLUDE PLUGINS
  */
