@@ -1588,6 +1588,89 @@ object {
 /*--------------------------------------------------------------
 ## Floorplans
 --------------------------------------------------------------*/
+/* line 3, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
+.page-template-page-floorplans #floorplans-section {
+  text-align: center;
+}
+
+/* line 6, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
+.page-template-page-floorplans #floorplans-section h1 {
+  font-family: "AlexBrush-Regular", sans-serif;
+  color: #a31f34;
+  font-size: 2.5rem;
+  text-align: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+/* line 15, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
+.page-template-page-floorplans #floorplans-section h1:before, .page-template-page-floorplans #floorplans-section h1:after {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  height: 2px;
+  content: '\a0';
+  background-color: #a31f34;
+  position: relative;
+  top: 0.5em;
+}
+
+/* line 25, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
+.page-template-page-floorplans #floorplans-section h1:before {
+  margin-right: 10px;
+}
+
+/* line 29, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
+.page-template-page-floorplans #floorplans-section h1:after {
+  margin-left: 10px;
+}
+
+/* line 34, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
+.page-template-page-floorplans #floorplans-section h2 {
+  text-transform: uppercase;
+  font-size: 1.063rem;
+  margin-bottom: 1.5em;
+  font-family: "SourceSansPro-Regular", sans-serif;
+}
+
+/* line 41, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
+.page-template-page-floorplans #floorplans-section .description,
+.page-template-page-floorplans #floorplans-section .sqft,
+.page-template-page-floorplans #floorplans-section .availability-link button {
+  text-transform: uppercase;
+}
+
+/* line 47, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
+.page-template-page-floorplans #floorplans-section .description {
+  color: #a31f34;
+  font-family: "SourceSansPro-Bold", sans-serif;
+}
+
+/* line 51, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
+.page-template-page-floorplans #floorplans-section .sqft {
+  font-family: "SourceSansPro-Light", sans-serif;
+}
+
+/* line 56, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
+.page-template-page-floorplans #floorplans-section .availability-link {
+  font-family: "SourceSansPro-Regular", sans-serif;
+}
+
+/* line 67, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
+.page-template-page-floorplans #floorplans-section .floorplans-wrapper .fp-models .floorplan {
+  margin: 2em 0;
+}
+
+/* line 71, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
+.page-template-page-floorplans #floorplans-section .floorplans-wrapper .fp-models .one-bedroom-section,
+.page-template-page-floorplans #floorplans-section .floorplans-wrapper .fp-models .two-bedroom-section,
+.page-template-page-floorplans #floorplans-section .floorplans-wrapper .fp-models .three-bedroom-section {
+  margin-bottom: 4em;
+}
+
 /*--------------------------------------------------------------
 ## Gaithersburg Page
 --------------------------------------------------------------*/

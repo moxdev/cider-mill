@@ -44,7 +44,7 @@ function cider_mill_setup() {
         add_image_size( 'home-feature', 1600, 700, TRUE );
 	    add_image_size( 'featured-image', 1500, 500, TRUE );
 	    add_image_size( 'sidebar-image', 100, 100, TRUE );
-
+        add_image_size( 'floor-plan-image', 900, 9999, FALSE );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
