@@ -1,13 +1,11 @@
 #page {
 
     .site-content {
-        @include padding-left-right;
         background-color: #fff;
         border-bottom: 5px solid $color__brand-brown;
 
         .featured-image {
-            margin:0;
-            padding:0;
+            @include reset;
             img {
                 display: block;
                 width: 100%;
@@ -16,6 +14,7 @@
 
         .content-wrapper {
             @include max-width(1500px);
+            @include padding-left-right;
             display: flex;
             flex-direction: column;
 

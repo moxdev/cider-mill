@@ -50,3 +50,42 @@ $breakpoints: (
 35px = 2.188rem
 40px = 2.5rem
 55px = 3.438rem
+
+
+# Center text with flexbox
+```css
+ figure {
+     @include reset;
+     max-height: 300px;
+     display: flex;            /* establish flex container */
+     flex-direction: column;   /* stack flex items vertically */
+     position: relative;       /* establish neares positioned ancenstor for absolute positioning */
+     overflow: hidden;
+
+     img {
+         min-height: 200px;
+
+     }
+
+     h1 {
+         color:#fff;
+         font-size: 1.625rem;
+         position: absolute;
+         top: 2em;
+         right: 1em;
+         bottom: 0;
+         left: 1em;
+        transform: translate(-10%, -50%);
+         font-weight: bold;
+         margin:0;
+         padding:0;
+
+     }
+
+     .center-aligned {
+         display: flex;
+         align-items: center;
+         justify-content:center;
+     }
+ }
+````

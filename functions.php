@@ -41,8 +41,9 @@ function cider_mill_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'featured-image', 1500, 500, TRUE );
-	add_image_size( 'sidebar-image', 100, 100, TRUE );
+        add_image_size( 'home-feature', 1600, 700, TRUE );
+	    add_image_size( 'featured-image', 1500, 500, TRUE );
+	    add_image_size( 'sidebar-image', 100, 100, TRUE );
 
 
 	// This theme uses wp_nav_menu() in one location.
@@ -308,6 +309,11 @@ add_action( 'init', 'cider_mill_create_custom_taxonomies', 0 );
 // Remove option for no type from radio button for taxonomies plugin
 add_filter('radio-buttons-for-taxonomies-no-term-landmark_types', '__return_FALSE' );
 
+/**
+ * INCLUDE PLUGINS
+ */
+
+include_once( get_stylesheet_directory() . '/plugins/mm4-you-contact-form/mm4-you-cf.php' );
 
 /**
  * Implement the Custom Header feature.
@@ -379,9 +385,5 @@ require get_template_directory() . '/inc/photo-gallery.php';
  */
 require get_template_directory() . '/inc/featured-image.php';
 
-/**
- * INCLUDE PLUGINS
- */
 
-include_once( get_stylesheet_directory() . '/plugins/mm4-you-contact-form/mm4-you-cf.php' );
 

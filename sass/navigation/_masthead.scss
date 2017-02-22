@@ -6,37 +6,51 @@
     width: 100%;
     height: auto;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
     border-bottom: 5px solid $color__brand-pink;
     @include padding-left-right;
     .site-branding {
-        flex: 2;
-        #logo {
-            svg {
-                max-width: 120px;
-                display: block;
-                @include respond-to(small) {
-                    max-width: 200px;
-                    margin-bottom: .5em;
-                };
+        // flex: 1 0 50%;
+        .logo-wrapper {
+            margin-bottom: 5px;
+
+            a {
+
+                svg {
+                    max-width: 140px;
+                    vertical-align: top;
+
+                    @include respond-to(small) {
+                        max-width: 200px;
+                        // margin-bottom: .5em;
+                    }
+                }
             }
+
         }
-    }
+    } //.site-branding
     .main-navigation {
-        align-self: center;
+        // flex: 1 0 50%;
+        // align-self: center;
         .masthead-phone {
-            display: none;
+
             span {
                 color: #fff;
+                display: none;
             }
             a {
                 text-decoration: none;
                 color: #fff;
+                font-size:1.188rem;
+                font-family: $font__bold;
             }
         }
         button {
             display: block;
+            // margin-top: .25em;
+            // margin-bottom: .75em;
             margin-left: auto;
             background: $color__brand-red;
             font-family: $font__light;
