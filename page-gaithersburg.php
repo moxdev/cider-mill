@@ -13,10 +13,6 @@ get_header(); ?>
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
 
-        <?php if ( function_exists( 'mm4_area_map' ) ) {
-            mm4_area_map();
-        } ?>
-
             <?php
             while ( have_posts() ) : the_post();
 

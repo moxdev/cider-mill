@@ -32,6 +32,17 @@
                 order:1;
 
             }
+
+            @include respond-to('medium') {
+                flex-direction: row;
+                #primary {
+                    order:1;
+                }
+
+                #secondary {
+                    order:2;
+                }
+            }
         }
     }
 
