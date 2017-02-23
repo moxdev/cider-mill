@@ -47,14 +47,21 @@
         .description {
             color: $color__brand-red;
             font-family: $font__bold;
+            font-size: 1.25rem;
         }
         .sqft {
             font-family: $font__light;
+            font-size: 1.063rem;
 
         }
 
         .availability-link {
             font-family: $font__regular;
+            font-size: 0.9375rem;
+
+            button {
+                padding: 1em;
+            }
 
         }
 

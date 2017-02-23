@@ -937,7 +937,7 @@ a:hover, a:active {
 /* line 81, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/navigation/_masthead.scss */
 #masthead .toggled {
   position: fixed;
-  top: 0;
+  top: 20px;
   right: 0;
   bottom: 0;
   left: 0;
@@ -1647,28 +1647,125 @@ object {
 .page-template-page-floorplans #floorplans-section .description {
   color: #a31f34;
   font-family: "SourceSansPro-Bold", sans-serif;
+  font-size: 1.25rem;
 }
 
-/* line 51, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
+/* line 52, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
 .page-template-page-floorplans #floorplans-section .sqft {
   font-family: "SourceSansPro-Light", sans-serif;
+  font-size: 1.063rem;
 }
 
-/* line 56, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
+/* line 58, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
 .page-template-page-floorplans #floorplans-section .availability-link {
   font-family: "SourceSansPro-Regular", sans-serif;
+  font-size: 0.9375rem;
 }
 
-/* line 67, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
+/* line 62, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
+.page-template-page-floorplans #floorplans-section .availability-link button {
+  padding: 1em;
+}
+
+/* line 74, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
 .page-template-page-floorplans #floorplans-section .floorplans-wrapper .fp-models .floorplan {
   margin: 2em 0;
 }
 
-/* line 71, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
+/* line 78, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
 .page-template-page-floorplans #floorplans-section .floorplans-wrapper .fp-models .one-bedroom-section,
 .page-template-page-floorplans #floorplans-section .floorplans-wrapper .fp-models .two-bedroom-section,
 .page-template-page-floorplans #floorplans-section .floorplans-wrapper .fp-models .three-bedroom-section {
   margin-bottom: 4em;
+}
+
+/*--------------------------------------------------------------
+## Features & Amenities
+--------------------------------------------------------------*/
+/* line 6, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+.page-template-page-amenities #features-section h1,
+.page-template-page-amenities #amenities-section h1 {
+  font-family: "AlexBrush-Regular", sans-serif;
+  color: #a31f34;
+  font-size: 2.5rem;
+  text-align: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+/* line 15, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+.page-template-page-amenities #features-section h1:before, .page-template-page-amenities #features-section h1:after,
+.page-template-page-amenities #amenities-section h1:before,
+.page-template-page-amenities #amenities-section h1:after {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  height: 2px;
+  content: '\a0';
+  background-color: #a31f34;
+  position: relative;
+  top: 0.5em;
+}
+
+/* line 25, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+.page-template-page-amenities #features-section h1:before,
+.page-template-page-amenities #amenities-section h1:before {
+  margin-right: 10px;
+}
+
+/* line 29, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+.page-template-page-amenities #features-section h1:after,
+.page-template-page-amenities #amenities-section h1:after {
+  margin-left: 10px;
+}
+
+/* line 35, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+.page-template-page-amenities .features-wrapper,
+.page-template-page-amenities .amenities-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+}
+
+/* line 42, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+.page-template-page-amenities .highlight {
+  border: 1px solid red;
+  -ms-flex: 1 0 48%;
+      flex: 1 0 48%;
+  margin: 1px;
+  font-family: "SourceSansPro-Regular", sans-serif;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+/* line 54, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+.page-template-page-amenities .highlight .wrapper, .page-template-page-amenities .highlight a {
+  color: #513628;
+  padding: 10px;
+  font-family: "SourceSansPro-Regular", sans-serif;
+}
+
+/* line 61, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+.page-template-page-amenities .title {
+  text-transform: uppercase;
+}
+
+/* line 65, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+.page-template-page-amenities .disclaimer {
+  font-size: 0.8125rem;
+  font-family: "SourceSansPro-Regular", sans-serif;
 }
 
 /*--------------------------------------------------------------
