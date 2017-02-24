@@ -937,7 +937,7 @@ a:hover, a:active {
 /* line 81, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/navigation/_masthead.scss */
 #masthead .toggled {
   position: fixed;
-  top: 0;
+  top: 20px;
   right: 0;
   bottom: 0;
   left: 0;
@@ -1317,21 +1317,39 @@ a:hover, a:active {
       order: 1;
 }
 
-/* line 38, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+@media (min-width: 960px) {
+  /* line 15, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+  #page .site-content .content-wrapper {
+    -ms-flex-direction: row;
+        flex-direction: row;
+  }
+  /* line 38, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+  #page .site-content .content-wrapper #primary {
+    -ms-flex-order: 1;
+        order: 1;
+  }
+  /* line 42, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+  #page .site-content .content-wrapper #secondary {
+    -ms-flex-order: 2;
+        order: 2;
+  }
+}
+
+/* line 49, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
 #page .footer-tagline {
   padding-left: 1.5625rem;
   padding-right: 1.5625rem;
 }
 
 @media (min-width: 760px) {
-  /* line 38, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+  /* line 49, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
   #page .footer-tagline {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 }
 
-/* line 40, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+/* line 51, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
 #page .footer-tagline h1 {
   color: #ffffff;
   text-align: center;
@@ -1339,7 +1357,7 @@ a:hover, a:active {
   font-size: 1.625rem;
 }
 
-/* line 47, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+/* line 58, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
 #page .footer-tagline .lead {
   font-size: 2.5rem;
 }
@@ -1647,24 +1665,32 @@ object {
 .page-template-page-floorplans #floorplans-section .description {
   color: #a31f34;
   font-family: "SourceSansPro-Bold", sans-serif;
+  font-size: 1.25rem;
 }
 
-/* line 51, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
+/* line 52, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
 .page-template-page-floorplans #floorplans-section .sqft {
   font-family: "SourceSansPro-Light", sans-serif;
+  font-size: 1.063rem;
 }
 
-/* line 56, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
+/* line 58, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
 .page-template-page-floorplans #floorplans-section .availability-link {
   font-family: "SourceSansPro-Regular", sans-serif;
+  font-size: 0.9375rem;
 }
 
-/* line 67, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
+/* line 62, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
+.page-template-page-floorplans #floorplans-section .availability-link button {
+  padding: 1em;
+}
+
+/* line 74, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
 .page-template-page-floorplans #floorplans-section .floorplans-wrapper .fp-models .floorplan {
   margin: 2em 0;
 }
 
-/* line 71, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
+/* line 78, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-floorplans.scss */
 .page-template-page-floorplans #floorplans-section .floorplans-wrapper .fp-models .one-bedroom-section,
 .page-template-page-floorplans #floorplans-section .floorplans-wrapper .fp-models .two-bedroom-section,
 .page-template-page-floorplans #floorplans-section .floorplans-wrapper .fp-models .three-bedroom-section {
@@ -1672,19 +1698,112 @@ object {
 }
 
 /*--------------------------------------------------------------
+## Features & Amenities
+--------------------------------------------------------------*/
+/* line 6, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+.page-template-page-amenities #features-section h1,
+.page-template-page-amenities #amenities-section h1 {
+  font-family: "AlexBrush-Regular", sans-serif;
+  color: #a31f34;
+  font-size: 2.5rem;
+  text-align: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+/* line 15, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+.page-template-page-amenities #features-section h1:before, .page-template-page-amenities #features-section h1:after,
+.page-template-page-amenities #amenities-section h1:before,
+.page-template-page-amenities #amenities-section h1:after {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  height: 2px;
+  content: '\a0';
+  background-color: #a31f34;
+  position: relative;
+  top: 0.5em;
+}
+
+/* line 25, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+.page-template-page-amenities #features-section h1:before,
+.page-template-page-amenities #amenities-section h1:before {
+  margin-right: 10px;
+}
+
+/* line 29, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+.page-template-page-amenities #features-section h1:after,
+.page-template-page-amenities #amenities-section h1:after {
+  margin-left: 10px;
+}
+
+/* line 35, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+.page-template-page-amenities .features-wrapper,
+.page-template-page-amenities .amenities-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+}
+
+/* line 42, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+.page-template-page-amenities .highlight {
+  border: 1px solid red;
+  -ms-flex: 1 0 48%;
+      flex: 1 0 48%;
+  margin: 1px;
+  font-family: "SourceSansPro-Regular", sans-serif;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+/* line 54, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+.page-template-page-amenities .highlight .wrapper, .page-template-page-amenities .highlight a {
+  color: #513628;
+  padding: 10px;
+  font-family: "SourceSansPro-Regular", sans-serif;
+}
+
+/* line 61, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+.page-template-page-amenities .title {
+  text-transform: uppercase;
+}
+
+/* line 65, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+.page-template-page-amenities .disclaimer {
+  font-size: 0.8125rem;
+  font-family: "SourceSansPro-Regular", sans-serif;
+}
+
+/*--------------------------------------------------------------
 ## Gaithersburg Page
 --------------------------------------------------------------*/
 /* line 3, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-gaithersburg.scss */
 .page-template-page-gaithersburg #map-wrapper {
+  display: none;
   position: relative;
+  max-width: 1500px;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
-/* line 6, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-gaithersburg.scss */
+/* line 8, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-gaithersburg.scss */
 .page-template-page-gaithersburg #map-wrapper #map-canvas {
   height: 400px;
 }
 
-/* line 10, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-gaithersburg.scss */
+/* line 12, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-gaithersburg.scss */
 .page-template-page-gaithersburg #map-wrapper #reset-map {
   position: absolute;
   top: 1rem;
@@ -1695,17 +1814,103 @@ object {
   background-color: #a31f34;
 }
 
-/* line 19, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-gaithersburg.scss */
+/* line 21, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-gaithersburg.scss */
 .page-template-page-gaithersburg #map-wrapper #reset-map.active {
   opacity: 1;
 }
 
-/* line 25, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-gaithersburg.scss */
+/* line 27, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-gaithersburg.scss */
 .page-template-page-gaithersburg #map-wrapper #map-nav ul {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
       justify-content: center;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 33, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-gaithersburg.scss */
+.page-template-page-gaithersburg #map-wrapper #map-nav ul li {
+  -ms-flex: 1;
+      flex: 1;
+  text-align: center;
+  list-style-type: none;
+  height: 50px;
+  margin: 1px;
+  background-color: #e6ccb7;
+}
+
+/* line 41, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-gaithersburg.scss */
+.page-template-page-gaithersburg #map-wrapper #map-nav ul li a {
+  color: #a31f34;
+  text-transform: uppercase;
+  font-family: "SourceSansPro-Bold", sans-serif;
+  text-decoration: none;
+}
+
+/* line 51, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-gaithersburg.scss */
+.page-template-page-gaithersburg #map-wrapper #map-nav .recreation {
+  border-right: 1px solid #fff;
+}
+
+/* line 59, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-gaithersburg.scss */
+.page-template-page-gaithersburg #map-wrapper #map-nav .shopping {
+  border-left: 1px solid #fff;
+}
+
+/* line 66, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-gaithersburg.scss */
+.page-template-page-gaithersburg .community-listing-header {
+  color: #a31f34;
+  font-size: 1.25rem;
+  font-family: "SourceSansPro-Bold", sans-serif;
+  text-transform: uppercase;
+}
+
+/* line 73, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-gaithersburg.scss */
+.page-template-page-gaithersburg .community-listing {
+  padding: 0;
+  margin: 0;
+}
+
+/* line 76, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-gaithersburg.scss */
+.page-template-page-gaithersburg .community-listing li {
+  list-style-type: none;
+  margin-bottom: 2em;
+}
+
+/* line 80, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-gaithersburg.scss */
+.page-template-page-gaithersburg .community-listing li a {
+  color: #a31f34;
+}
+
+@media (min-width: 400px) {
+  /* line 87, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-gaithersburg.scss */
+  .page-template-page-gaithersburg .landmark-inner-wrapper {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+  }
+  /* line 92, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-gaithersburg.scss */
+  .page-template-page-gaithersburg .landmark-inner-wrapper .community-listing-wrapper {
+    -ms-flex: 1 0 50%;
+        flex: 1 0 50%;
+  }
+}
+
+@media (min-width: 960px) {
+  /* line 99, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-gaithersburg.scss */
+  .page-template-page-gaithersburg #map-wrapper {
+    display: block;
+  }
+  /* line 103, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-gaithersburg.scss */
+  .page-template-page-gaithersburg #landmark-listing {
+    display: none;
+  }
 }
 
 /*--------------------------------------------------------------

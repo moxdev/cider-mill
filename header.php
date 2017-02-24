@@ -64,9 +64,10 @@
 		<!-- Displays the Featured Image if it exists -->
 		<?php if ( function_exists( 'cider_mill_featured_image' ) ) {
 		    cider_mill_featured_image();
+		}
+
+		if( is_page_template( 'page-gaithersburg.php' ) && function_exists('mm4_area_map') ) {
+			mm4_area_map();
 		} ?>
 
 		<div class="content-wrapper">
-
-
-

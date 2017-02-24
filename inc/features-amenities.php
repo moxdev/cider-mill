@@ -22,31 +22,30 @@ function cider_mill_features_amenities() {
 
                         $img = get_sub_field('image');
                         $title = get_sub_field('title');
-                        $link = get_sub_field('link'); ?>
 
-                        <div class="feature-highlight">
+                        if(!empty($img) ) { ?>
 
-                            <?php if( !empty($img) ) : ?>
+                            <div class="highlight" style="background-image:url( <?php echo $img['sizes']['thumbnail']; ?> )">
+                                <div class="wrapper">
+                                    <div class="title"><?php echo $title; ?></div>
+                                    <div class="view"><a href="#">View</a></div>
+                                </div>
+                            </div><!-- highlight -->
 
-                                <img src="<?php echo $img['sizes']['thumbnail']; ?>"/>
+                        <?php
 
-                            <?php endif; ?>
+                        } else { ?>
 
-                            <?php if( !empty($title) ) : ?>
+                            <div class="highlight">
+                                <div class="wrapper">
+                                    <div class="title"><?php echo $title; ?></div>
+                                    <div class="view"><a href="#">View</a></div>
+                                </div>
+                            </div><!-- highlight -->
 
-                                <span><?php echo $title; ?></span>
+                        <?php }
 
-                            <?php endif; ?>
-
-                            <?php if( !empty($link) ) : ?>
-
-                                <span><?php echo $link; ?></span>
-
-                            <?php endif; ?>
-
-                        </div><!-- feature-highlight -->
-
-                    <?php endwhile; ?>
+                    endwhile; ?>
 
                 </div><!-- features-wrapper -->
                 <p class="disclaimer"><?php echo $f_disclaimer; ?></p>
@@ -57,41 +56,41 @@ function cider_mill_features_amenities() {
         if( have_rows('amenities') ): ?>
 
             <div id="amenities-section">
-                <h1>Apartment Amenities</h1>
+                <h1>Community Amenities</h1>
                 <div class="amenities-wrapper">
 
                     <?php while( have_rows('amenities') ): the_row();
 
                         $img = get_sub_field('image');
                         $title = get_sub_field('title');
-                        $link = get_sub_field('link'); ?>
 
-                        <div class="amenities-highlight">
+                        if(!empty($img) ) { ?>
 
-                            <?php if( !empty($img) ) : ?>
+                            <div class="highlight" style="background-image:url( <?php echo $img['sizes']['thumbnail']; ?> )">
+                                <div class="wrapper">
+                                    <div class="title"><?php echo $title; ?></div>
+                                    <div class="view"><a href="#">View</a></div>
+                                </div>
+                            </div><!-- highlight -->
 
-                                <img src="<?php echo $img['sizes']['thumbnail']; ?>"/>
+                        <?php
 
-                            <?php endif; ?>
+                        } else { ?>
 
-                            <?php if( !empty($title) ) : ?>
+                            <div class="highlight">
+                                <div class="wrapper">
+                                    <div class="title"><?php echo $title; ?></div>
+                                    <div class="view"><a href="#">View</a></div>
+                                </div>
+                            </div><!-- highlight -->
 
-                                <span><?php echo $title; ?></span>
+                        <?php }
 
-                            <?php endif; ?>
+                    endwhile; ?>
 
-                            <?php if( !empty($link) ) : ?>
-
-                                <span><?php echo $link; ?></span>
-
-                            <?php endif; ?>
-
-                        </div><!-- amenities-highlight -->
-
-                    <?php endwhile; ?>
-
-                </div><!-- amenities-wrapper -->
+                </div><!-- features-wrapper -->
                 <p class="disclaimer"><?php echo $a_disclaimer; ?></p>
+
             </div><!-- amenities-section -->
 
         <?php endif;

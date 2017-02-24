@@ -1,7 +1,9 @@
 .page-template-page-gaithersburg {
 
     #map-wrapper {
+        display: none;
         position: relative;
+        @include max-width(1500px);
 
         #map-canvas {
             height: 400px;
@@ -25,11 +27,83 @@
             ul {
                 display: flex;
                 justify-content:center;
+                align-content: flex-end;
+                @include reset;
+
+                li {
+                    flex: 1;
+                    text-align: center;
+                    list-style-type: none;
+                    height: 50px;
+                    margin: 1px;
+                    background-color: $color__brand-pink;
+
+                    a {
+                        color: $color__brand-red;
+                        text-transform: uppercase;
+                        font-family: $font__bold;
+                        text-decoration: none;
+                    }
+
+                }
+            }
+
+            .recreation {
+                border-right: 1px solid #fff;
+            }
+
+            .restaurants {
+
+            }
+
+            .shopping {
+                border-left: 1px solid #fff;
+
             }
         }
     }
 
+    .community-listing-header {
+        color: $color__brand-red;
+        font-size: 1.25rem;
+        font-family: $font__bold;
+        text-transform: uppercase;
+    }
 
+    .community-listing {
+        @include reset;
+
+        li {
+            list-style-type: none;
+            margin-bottom: 2em;
+
+            a {
+                color: $color__brand-red;
+            }
+        }
+    }
+
+    @include respond-to('small') {
+        .landmark-inner-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .community-listing-wrapper {
+                flex: 1 0 50%;
+            }
+        }
+    }
+
+    @include respond-to('medium') {
+        #map-wrapper {
+            display: block;
+        }
+
+        #landmark-listing {
+            display: none;
+        }
+    }
 }
 
 

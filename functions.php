@@ -385,5 +385,10 @@ require get_template_directory() . '/inc/photo-gallery.php';
  */
 require get_template_directory() . '/inc/featured-image.php';
 
+/**
+ * Load sidebar content for the global sidebar file.
+ */
+require get_template_directory() . '/inc/features-amenities.php';
+
 
 

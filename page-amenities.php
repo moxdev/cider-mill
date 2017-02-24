@@ -25,11 +25,11 @@ get_header(); ?>
 
             endwhile; // End of the loop.
 
+
+            // Displays the Features and Amenities sections if they exist
             if ( function_exists( 'cider_mill_features_amenities' ) ) {
                 cider_mill_features_amenities();
-            }
-
-            ?>
+            } ?>
 
         </main><!-- #main -->
     </div><!-- #primary -->
