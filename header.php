@@ -68,6 +68,12 @@
 
 		if( is_page_template( 'page-gaithersburg.php' ) && function_exists('mm4_area_map') ) {
 			mm4_area_map();
-		} ?>
+		}
+
+		if( is_page_template( 'page-photo-gallery.php' ) && function_exists('cider_mill_photo_gallery') ) {
+			cider_mill_photo_gallery();
+		}
+
+		?>
 
 		<div class="content-wrapper">

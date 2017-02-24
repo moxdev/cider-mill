@@ -13,10 +13,6 @@ get_header(); ?>
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
 
-            <?php if ( function_exists( 'cider_mill_photo_gallery' ) ) {
-                cider_mill_photo_gallery();
-            } ?>
-
             <?php
             while ( have_posts() ) : the_post();
 

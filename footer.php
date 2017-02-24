@@ -18,16 +18,18 @@
             <div class="footer-wrapper">
 
                 <div class="contact-section">
-                    <h1>Contact Us</h1>
-                    <?php $street = get_field('address', 'option');
-                        $city = get_field('city', 'option');
-                        $state = get_field('state', 'option');
-                        $zip = get_field('zip', 'option');
-                        $leasing = get_field('leasing', 'option');
-                        $phone = get_field('phone', 'option');
-                        $fax = get_field('fax', 'option'); ?>
 
-                    <div class="schema-section">
+                    <div class="contact-wrapper">
+
+                        <h1>Contact Us</h1>
+                        <?php $street = get_field('address', 'option');
+                            $city = get_field('city', 'option');
+                            $state = get_field('state', 'option');
+                            $zip = get_field('zip', 'option');
+                            $leasing = get_field('leasing', 'option');
+                            $phone = get_field('phone', 'option');
+                            $fax = get_field('fax', 'option'); ?>
+
                         <div itemscope itemtype="http://schema.org/LocalBusiness">
                             <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 
@@ -64,7 +66,9 @@
                             </div><!-- contact-numbers -->
 
                         </div><!-- itemscope -->
-                    </div><!-- schema-section -->
+
+                        <a class="resident-button" href="#"><button>for residents &raquo;</button></a>
+                    </div><!-- contact-wrapper-->
 
                     <?php if( have_rows( 'hours', 'option' ) ) : ?>
 

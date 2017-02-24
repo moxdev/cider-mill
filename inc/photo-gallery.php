@@ -16,14 +16,21 @@ function cider_mill_photo_gallery() {
             <div class="photo-gallery-section">
                 <div class="gallery-wrapper">
                     <ul>
+
                     <?php foreach( $images as $image ): ?>
+
                          <li>
-                            <?php if( $image ): ?>
-                                <a href="<?php echo $image['url']; ?>" class="fp-trigger" data-imagelightbox="c"><img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $img['alt']; ?>" description="<?php echo $image['description']; ?>"></a>
-                            <?php endif; ?>
-                            <p><?php echo $image['caption']; ?></p>
+                            <div class="image-wrapper">
+
+                                <?php if( $image ): ?>
+                                    <a href="<?php echo $image['url']; ?>" class="fp-trigger" data-imagelightbox="c"><img src="<?php echo $image['sizes']['gallery-image']; ?>" alt="<?php echo $img['alt']; ?>" description="<?php echo $image['description']; ?>"></a>
+                                <?php endif; ?>
+
+                            </div>
+
                         </li>
                     <?php endforeach; ?>
+
                     </ul>
 
             <?php endif; ?>

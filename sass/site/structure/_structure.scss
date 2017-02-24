@@ -1,8 +1,6 @@
 #page {
-
     .site-content {
         background-color: #fff;
-        border-bottom: 5px solid $color__brand-brown;
 
         .featured-image {
             @include reset;
@@ -33,16 +31,23 @@
 
             }
 
-            @include respond-to('medium') {
+            @include respond-to('tablet') {
                 flex-direction: row;
+                justify-content: space-between;
+                margin-bottom: 2em;
                 #primary {
                     order:1;
+                    margin-right: 2em;
                 }
 
                 #secondary {
                     order:2;
                 }
             }
+        }
+
+        @include respond-to('tablet') {
+            border-bottom: 5px solid $color__brand-brown;
         }
     }
 
@@ -58,5 +63,13 @@
         .lead {
             font-size:2.5rem;
         }
+    }
+
+    @include respond-to('medium') {
+        font-size: 1.2em
+    }
+
+    @include respond-to('large') {
+        font-size: 1.4em;
     }
 }
