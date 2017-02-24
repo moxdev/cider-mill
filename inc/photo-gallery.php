@@ -11,7 +11,8 @@ function cider_mill_photo_gallery() {
         if( function_exists('get_field') ) {
             $images = get_field('photo_gallery');
 
-            if( $images ): ?>
+            if( !empty( $images ) ): ?>
+
             <div class="photo-gallery-section">
                 <div class="gallery-wrapper">
                     <ul>
@@ -24,6 +25,7 @@ function cider_mill_photo_gallery() {
                         </li>
                     <?php endforeach; ?>
                     </ul>
+
             <?php endif; ?>
 
                 </div><!-- gallery-wrapper -->
