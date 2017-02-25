@@ -20,9 +20,10 @@ var projectURL = 'http://www.cidermill.dev/';
 module.exports = {
     browserSyncOptions: {
         proxy: projectURL,
-        browsers: ['google chrome'],
+        browsers: ['FirefoxDeveloperEdition.app'],
         open: true,
-        injectChanges: true
+        injectChanges: true,
+        notify: false
     },
     path: {
         root: './',
