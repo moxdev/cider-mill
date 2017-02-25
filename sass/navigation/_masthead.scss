@@ -37,6 +37,7 @@
             .masthead-phone {
                 text-align: right;
                 color: #fff;
+                font-family: $font__bold;
 
                 span {
                     display: none;
@@ -71,13 +72,18 @@
                 color: #fff;
 
                 ul {
+                    list-style-type: none;
+
                     .current-menu-item {
+
                         a {
                             color: $color__brand-pink;
                         }
                     }
+
                     li {
                         list-style: none;
+
                         a {
                             padding: 1.5em;
                             color: #fff;
@@ -89,6 +95,7 @@
                                 color: #fff;
                                 font-size: .5em;
                                 margin-right: 5px;
+                                vertical-align: middle;
                             }
                         }
                     }
@@ -105,12 +112,8 @@
         }
 
         @include respond-to('large') {
-            // margin-bottom: -10px;
             line-height: 1.2;
 
-            .site-branding {
-                // flex: 1 1 10%;
-            }
             .main-navigation {
                 flex: 5;
                 text-align: right;
@@ -121,18 +124,17 @@
 
                 .masthead-phone {
                     font-size: 1.313rem;
-                    font-family: $font__bold;
+
                     a {
                         font-size: 2.25rem;
                     }
                 }
 
                 .menu-menu-container {
-                    display: block;
+                    display: inline-flex;
 
                     ul {
                         display: inline-flex;
-                        list-style-type: none;
 
                         .residents-menu {
                             display: none;
@@ -148,13 +150,10 @@
                                     padding-right: 0;
                                 }
                             }
-
-
                         }
                     }
                 }
             }
         }
     }
-
 } // #masthead
