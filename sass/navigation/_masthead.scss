@@ -12,9 +12,10 @@
     border-bottom: 5px solid $color__brand-pink;
     @include padding-left-right;
     .site-branding {
-        // flex: 1 0 50%;
+        flex: 1 0 10%;
         .logo-wrapper {
-            margin-bottom: 5px;
+            max-width: 285px;
+            // margin-bottom: 5px;
 
             a {
 
@@ -32,7 +33,8 @@
         }
     } //.site-branding
     .main-navigation {
-        // flex: 1 0 50%;
+        flex: 3;
+        text-align: right;
         // align-self: center;
         .masthead-phone {
 
@@ -73,6 +75,13 @@
                         text-decoration: none;
                         color: #fff;
                         text-transform: capitalize;
+
+                        &:before {
+                            content: '\25b6';
+                            color: #fff;
+                            font-size: .5em;
+                            margin-right: 5px;
+                        }
                     }
                 }
             }
@@ -139,7 +148,9 @@
             }
         }
         .main-navigation {
-            display: block;
+            // display: block;
+            display: inline-flex;
+            flex-direction: column;
             .masthead-phone {
                 text-align: right;
                 display: block;
@@ -152,15 +163,19 @@
                 display: none;
             }
             .menu-menu-container {
+                display: inline-flex;
+                justify-content: flex-end;
+
                 ul {
                     display: inline-flex;
-                    margin: auto;
+                    // margin: auto;
 
                     .residents-menu {
                         display: none;
                     }
 
                     li {
+                        flex: 1 0 auto;
                         padding: .5em;
                         &:last-child {
                             padding-right: 0;
