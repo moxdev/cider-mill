@@ -12,6 +12,7 @@ function cider_mill_features_amenities() {
         $f_disclaimer = get_field( 'features_disclaimer' );
         $a_disclaimer = get_field( 'amenities_disclaimer' );
 
+        // FEATURES SECTION
         if( have_rows('features') ): ?>
 
             <div id="features-section">
@@ -27,8 +28,13 @@ function cider_mill_features_amenities() {
 
                             <div class="highlight has-img">
                                 <div class="highlight-inner">
-                                    <img src="http://placehold.it/500x500" alt="">
-                                    <span class="title"><?php echo $title; ?></span>
+
+                                    <img src="<?php echo $img['sizes']['gallery-image']; ?>" alt="<?php echo $img['alt']; ?>" description="<?php echo $img['description']; ?>">
+
+                                    <?php if( !empty($title) ) : ?>
+                                        <span class="title"><?php echo $title; ?></span>
+                                    <?php endif; ?>
+
                                     <button class="view">View</button>
                                     <button class="close">X</button>
                                 </div>
@@ -40,7 +46,12 @@ function cider_mill_features_amenities() {
 
                             <div class="highlight">
                                 <div class="highlight-inner">
-                                    <span class="title"><?php echo $title; ?></span>
+
+                                    <?php if( !empty($title) ) : ?>
+                                        <span class="title"><?php echo $title; ?></span>
+                                    <?php endif; ?>
+
+                                    <button class="hide-btn"></button>
                                 </div>
                             </div><!-- highlight -->
 
