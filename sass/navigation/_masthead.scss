@@ -8,6 +8,10 @@
     border-bottom: 5px solid $color__brand-pink;
     @include padding-left-right;
 
+    a, a:active, a:focus {
+        outline: none;
+    }
+
     .masthead-wrapper {
         display: flex;
         justify-content: space-between;
@@ -96,6 +100,62 @@
                                 font-size: .5em;
                                 margin-right: 5px;
                                 vertical-align: middle;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .toggled {
+            position:fixed;
+            top:0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            min-height:100vh;
+            min-width:100vh;
+            background-color: $color__brand-red;
+            color: #fff;
+            overflow:hidden;
+            z-index:9999;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+
+            .masthead-phone, .menu-toggle {
+                display: none;
+            }
+
+            .menu-menu-container {
+                display: block !important;;
+                text-align: left;
+                padding-top: 1.5em;
+
+                ul {
+                    display: block !important;
+                    list-style: none;
+                    margin: 0;
+                    padding-left: 1.5em;
+
+                    .current-menu-item {
+                        color:$color__brand-pink;
+                    }
+
+                    li {
+                        display: block !important;
+                        margin: 0;
+                        padding-bottom: 1em;
+
+                        a {
+                            color:#fff;
+                            display: block !important;
+                            padding:0;
+                            text-decoration:none;
+                            font-size: 1.313rem;
+                            text-transform: uppercase;
+
+                            &:hover, &:visited, &:active, :link {
+                                color: #fff;
                             }
                         }
                     }
