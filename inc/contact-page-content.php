@@ -70,7 +70,5 @@ function cider_mill_contact_page_content() { ?>
         endif; ?>
     </div><!-- hours-section -->
 
-
-
     <?php
 }

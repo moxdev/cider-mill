@@ -1,0 +1,190 @@
+// .site-branding {
+    //     flex: 1 0 10%;
+    //     .logo-wrapper {
+    //         max-width: 285px;
+    //         // margin-bottom: 5px;
+
+    //         a {
+
+    //             svg {
+    //                 max-width: 140px;
+    //                 vertical-align: top;
+
+    //                 @include respond-to(small) {
+    //                     max-width: 200px;
+    //                     // margin-bottom: .5em;
+    //                 }
+    //             }
+    //         }
+
+    //     }
+    // } //.site-branding
+    // .main-navigation {
+    //     flex: 3;
+    //     text-align: right;
+    //     // align-self: center;
+    //     .masthead-phone {
+
+    //         span {
+    //             color: #fff;
+    //             display: none;
+    //         }
+    //         a {
+    //             text-decoration: none;
+    //             color: #fff;
+    //             font-size:1.188rem;
+    //             font-family: $font__bold;
+    //         }
+    //     }
+    //     button {
+    //         display: block;
+    //         // margin-top: .25em;
+    //         // margin-bottom: .75em;
+    //         margin-left: auto;
+    //         background: $color__brand-red;
+    //         font-family: $font__light;
+    //         color: #fff;
+    //         font-size: .9rem;
+    //         padding: .5em .5em;
+    //         text-transform: uppercase;
+    //     }
+    //     .menu-menu-container {
+    //         ul {
+    //             display: none;
+    //             .current-menu-item {
+    //                 a {
+    //                     color: $color__brand-pink;
+    //                 }
+    //             }
+    //             li {
+    //                 list-style: none;
+    //                 a {
+    //                     text-decoration: none;
+    //                     color: #fff;
+    //                     text-transform: capitalize;
+
+    //                     &:before {
+    //                         content: '\25b6';
+    //                         color: #fff;
+    //                         font-size: .5em;
+    //                         margin-right: 5px;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    // .toggled {
+    //     position:fixed;
+    //     top:20px;
+    //     right: 0;
+    //     bottom: 0;
+    //     left: 0;
+    //     min-height:100vh;
+    //     min-width:100vh;
+    //     background:$color__brand-red;
+    //     overflow:hidden;
+    //     z-index:9999;
+    //     -webkit-transition: all 0.5s;
+    //     transition: all 0.5s;
+
+    //     .masthead-phone, .menu-toggle {
+    //         display: none;
+    //     }
+
+    //     .menu-menu-container {
+    //         text-align: left;
+    //         padding-top: 1.5em;
+
+    //         ul {
+    //             display: block !important;
+    //             list-style: none;
+    //             margin: 0 auto;
+    //             .current-menu-item {
+    //                 color: #fff;
+    //             }
+
+    //             li {
+    //                 display: block;
+
+    //                 a {
+    //                     color:#fff;
+    //                     display:block;
+    //                     padding:8px 0;
+    //                     text-decoration:none;
+    //                     font-size: 1.5rem;
+    //                     &:hover, &:visited, &:active, :link {
+    //                         color: #fff;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    // @include respond-to(medium) {
+    //     align-items: center;
+    //     .site-branding {
+    //         display: block;
+    //         text-align: left;
+    //         #logo {
+    //             svg {
+    //                 display: block;
+    //                 max-width: 275px;
+    //                 margin-bottom: 0;
+    //             }
+    //         }
+    //     }
+    //     .main-navigation {
+    //         // display: block;
+    //         display: inline-flex;
+    //         flex-direction: column;
+    //         .masthead-phone {
+    //             text-align: right;
+    //             display: block;
+    //             font-size: 1.188rem;
+    //             a {
+    //                 font-size: 1.838rem;
+    //             }
+    //         }
+    //         button {
+    //             display: none;
+    //         }
+    //         .menu-menu-container {
+    //             display: inline-flex;
+    //             justify-content: flex-end;
+
+    //             ul {
+    //                 display: inline-flex;
+    //                 // margin: auto;
+
+    //                 .residents-menu {
+    //                     display: none;
+    //                 }
+
+    //                 li {
+    //                     flex: 1 0 auto;
+    //                     padding: .5em;
+    //                     &:last-child {
+    //                         padding-right: 0;
+    //                     }
+    //                     a {
+    //                         font-size: 1.063rem;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    // @include respond-to(large) {
+    //     .main-navigation {
+    //         .menu-menu-container {
+    //             ul {
+    //                 li {
+    //                     a {
+    //                         font-size: 1.25rem;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }

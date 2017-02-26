@@ -21,7 +21,7 @@
             }
 
             #primary {
-                flex: 2;
+                flex: 1;
                 order:2;
             }
 
@@ -37,10 +37,12 @@
                 margin-bottom: 2em;
                 #primary {
                     order:1;
+                    flex: 2;
                     margin-right: 2em;
                 }
 
                 #secondary {
+                    flex: 1;
                     order:2;
                 }
             }

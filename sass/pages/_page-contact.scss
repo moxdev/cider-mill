@@ -1,0 +1,28 @@
+.page-template-page-contact {
+
+    #page {
+        .site-content {
+            .content-wrapper {
+
+                #primary {
+                    order: 1;
+                }
+
+                #secondary {
+                    order: 2;
+                }
+
+                .company-information-section, .hours-section {
+                    font-family: $font__bold;
+                    font-size: 1.125rem;
+                    line-height: 1;
+                }
+
+                .hours-section {
+                    margin: 1em 0;
+                }
+            }
+
+        }
+    }
+}
