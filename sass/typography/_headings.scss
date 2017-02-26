@@ -1,25 +1,17 @@
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
-    // line-height: 1.125;
     color: $color__brand-brown;
     @include reset;
 }
 
 h1 {
-    font-size: 1.438rem;
     margin: .5em 0;
     line-height: 1;
-    font-family: $font__bold;
-
-    @include respond-to('medium') {
-        font-size: 2.813rem;
-        margin-bottom: .25em;
-    }
 }
 
 h2 {
+    font-family: $font__bold;
     font-size: 1.438rem;
     margin: .5em 0;
     line-height: 1.25;
-    font-family: $font__bold;
 }

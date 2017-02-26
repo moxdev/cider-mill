@@ -23,6 +23,38 @@
             #primary {
                 flex: 1;
                 order:2;
+
+                h1 {
+                    font-family: $font__bold;
+                    font-size: 1.438rem;
+
+                    @include respond-to('small') {
+                        padding-right: 1em;
+
+                    }
+
+                    @include respond-to('small-land') {
+                        padding-right: 7em;
+                    }
+
+                    @media screen and (min-width:600px) {
+                        padding-right: 10em;
+                    }
+
+                    @include respond-to('tablet') {
+                        padding-right: 2em;
+                    }
+
+                    @include respond-to('medium') {
+                        font-size: 2.158rem;
+                        margin-bottom: .25em;
+                    }
+
+                    @include respond-to('large') {
+                        font-size: 2.813rem;
+                        margin-bottom: .25em;
+                    }
+                }
             }
 
             #secondary {

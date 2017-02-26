@@ -171,6 +171,13 @@
             }
         }
 
+        @include respond-to('tablet') {
+
+            .main-navigation {
+                flex: 2;
+            }
+        }
+
         @include respond-to('large') {
             line-height: 1.2;
 
