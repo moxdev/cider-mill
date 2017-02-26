@@ -123,7 +123,12 @@ function cider_mill_scripts() {
 
 	if ( is_page_template( 'page-contact.php' ) ) {
 
-		wp_enqueue_script( 'cider_mill-contact-directions-map', get_template_directory_uri() . '/plugins/map-directions.js', array('jquery'), false, true );
+        wp_enqueue_script( 'cider_mill-contact-directions-map', get_template_directory_uri() . '/plugins/map-directions.js', array('jquery'), false, true );
+    }
+
+    if ( is_page_template( 'page-amenities.php' ) ) {
+
+		wp_enqueue_script( 'cider_mill-features-amenities', get_template_directory_uri() . '/js/features-amenities.js', array(), false, true );
 	}
 
 	if ( is_page_template( 'page-floorplans.php' )  || is_page_template( 'page-photo-gallery.php' ) ) {

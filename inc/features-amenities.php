@@ -25,10 +25,12 @@ function cider_mill_features_amenities() {
 
                         if(!empty($img) ) { ?>
 
-                            <div class="highlight" style="background-image:url( <?php echo $img['sizes']['thumbnail']; ?> )">
-                                <div class="wrapper">
-                                    <div class="title"><?php echo $title; ?></div>
-                                    <div class="view"><a href="#">View</a></div>
+                            <div class="highlight has-img">
+                                <div class="highlight-inner">
+                                    <img src="http://placehold.it/500x500" alt="">
+                                    <span class="title"><?php echo $title; ?></span>
+                                    <button class="view">View</button>
+                                    <button class="close">X</button>
                                 </div>
                             </div><!-- highlight -->
 
@@ -37,9 +39,8 @@ function cider_mill_features_amenities() {
                         } else { ?>
 
                             <div class="highlight">
-                                <div class="wrapper">
-                                    <div class="title"><?php echo $title; ?></div>
-                                    <div class="view"><a href="#">View</a></div>
+                                <div class="highlight-inner">
+                                    <span class="title"><?php echo $title; ?></span>
                                 </div>
                             </div><!-- highlight -->
 
@@ -53,10 +54,12 @@ function cider_mill_features_amenities() {
 
         <?php endif;
 
+        // AMENITIES SECTION =================================================
         if( have_rows('amenities') ): ?>
 
             <div id="amenities-section">
                 <h1>Community Amenities</h1>
+
                 <div class="amenities-wrapper">
 
                     <?php while( have_rows('amenities') ): the_row();
@@ -66,10 +69,12 @@ function cider_mill_features_amenities() {
 
                         if(!empty($img) ) { ?>
 
-                            <div class="highlight" style="background-image:url( <?php echo $img['sizes']['thumbnail']; ?> )">
-                                <div class="wrapper">
-                                    <div class="title"><?php echo $title; ?></div>
-                                    <div class="view"><a href="#">View</a></div>
+                            <div class="highlight has-img">
+                                <div class="highlight-inner">
+                                    <img src="http://placehold.it/500x500" alt="">
+                                    <span class="title"><?php echo $title; ?></span>
+                                    <button class="view">View</button>
+                                    <button class="close">X</button>
                                 </div>
                             </div><!-- highlight -->
 
@@ -78,9 +83,8 @@ function cider_mill_features_amenities() {
                         } else { ?>
 
                             <div class="highlight">
-                                <div class="wrapper">
-                                    <div class="title"><?php echo $title; ?></div>
-                                    <div class="view"><a href="#">View</a></div>
+                                <div class="highlight-inner">
+                                    <span class="title"><?php echo $title; ?></span>
                                 </div>
                             </div><!-- highlight -->
 
