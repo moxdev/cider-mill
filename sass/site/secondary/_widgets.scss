@@ -48,8 +48,11 @@
                 margin-top: 0;
             }
 
-            @include respond-to('tablet') {
-                text-align: center;
+            @include respond-to('small-land') {
+                text-align:center;
+            }
+
+            @include respond-to('medium') {
 
                 h1 {
                     font-size: 3rem;
@@ -64,7 +67,6 @@
                     margin-bottom: .5em;
                 }
             }
-
         }
 
         .sidebar-events {

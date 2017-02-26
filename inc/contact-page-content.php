@@ -1,6 +1,6 @@
 <?php
 /**
- * Content Tagline shows at the bottom of the content on all pages for 'content-page.php'
+ * Shows the contact information for 'page-contact.php'
  *
  * @package Cider_Mill_Apartments
  */
@@ -8,67 +8,70 @@
 
 function cider_mill_contact_page_content() { ?>
 
-    <div class="company-information-section">
+    <div class="contact-info-wrapper">
 
-        <?php $street = get_field('address', 'option');
-            $city = get_field('city', 'option');
-            $state = get_field('state', 'option');
-            $zip = get_field('zip', 'option');
-            $leasing = get_field('leasing', 'option');
-            $phone = get_field('phone', 'option');
-            $fax = get_field('fax', 'option'); ?>
+        <div class="company-information-section">
 
-        <div class="schema-section">
-            <div itemscope itemtype="http://schema.org/LocalBusiness">
-                <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+            <?php $street = get_field('address', 'option');
+                $city = get_field('city', 'option');
+                $state = get_field('state', 'option');
+                $zip = get_field('zip', 'option');
+                $leasing = get_field('leasing', 'option');
+                $phone = get_field('phone', 'option');
+                $fax = get_field('fax', 'option'); ?>
 
-                    <?php if( !empty($street) ) : ?>
-                        <span itemprop="streetAddress"><?php echo $street; ?><br></span>
-                    <?php endif; ?>
+            <div class="schema-section">
+                <div itemscope itemtype="http://schema.org/LocalBusiness">
+                    <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 
-                    <?php if( !empty($city) ) : ?>
-                        <span itemprop="addressLocality"><?php echo $city; ?></span>,
-                    <?php endif; ?>
+                        <?php if( !empty($street) ) : ?>
+                            <span itemprop="streetAddress"><?php echo $street; ?><br></span>
+                        <?php endif; ?>
 
-                    <?php if( !empty($state) ) : ?>
-                        <span itemprop="addressRegion"><?php echo $state; ?></span>
-                    <?php endif; ?>
+                        <?php if( !empty($city) ) : ?>
+                            <span itemprop="addressLocality"><?php echo $city; ?></span>,
+                        <?php endif; ?>
 
-                    <?php if( !empty($zip) ) : ?>
-                        <span itemprop="postalCode"><?php echo $zip; ?><br></span>
-                    <?php endif; ?>
+                        <?php if( !empty($state) ) : ?>
+                            <span itemprop="addressRegion"><?php echo $state; ?></span>
+                        <?php endif; ?>
 
-                    <?php if( !empty($leasing) ) : ?>
-                        Leasing: <span itemprop="telephone"><?php echo $leasing; ?><br></span>
-                    <?php endif; ?>
+                        <?php if( !empty($zip) ) : ?>
+                            <span itemprop="postalCode"><?php echo $zip; ?><br></span>
+                        <?php endif; ?>
 
-                    <?php if( !empty($phone) ) : ?>
-                        Phone: <span itemprop="telephone"><?php echo $phone; ?><br></span>
-                    <?php endif; ?>
+                        <?php if( !empty($leasing) ) : ?>
+                            Leasing: <span itemprop="telephone"><a href="tel:<?php echo $leasing; ?>"><?php echo $leasing; ?></a><br></span>
+                        <?php endif; ?>
 
-                    <?php if( !empty($fax) ) : ?>
-                        Fax: <span itemprop="faxNumber"><?php echo $fax; ?><br></span>
-                    <?php endif; ?>
-                </div><!-- itemprop="address" -->
-            </div><!-- itemscope -->
-        </div><!-- schema-section -->
-    </div><!-- company-information-section -->
+                        <?php if( !empty($phone) ) : ?>
+                            Phone: <span itemprop="telephone"><a href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a><br></span>
+                        <?php endif; ?>
 
-    <div class="hours-section">
-        <?php if( have_rows('hours', 'option') ): ?>
+                        <?php if( !empty($fax) ) : ?>
+                            Fax: <span itemprop="faxNumber"><?php echo $fax; ?><br></span>
+                        <?php endif; ?>
+                    </div><!-- itemprop="address" -->
+                </div><!-- itemscope -->
+            </div><!-- schema-section -->
+        </div><!-- company-information-section -->
 
-            <?php while( have_rows('hours', 'option') ): the_row();
+        <div class="hours-section">
+            <?php if( have_rows('hours', 'option') ): ?>
 
-                $day = get_sub_field( 'day' );
-                $open = get_sub_field( 'open' );
-                $close = get_sub_field( 'close' ); ?>
+                <?php while( have_rows('hours', 'option') ): the_row();
 
-                <span><?php echo $day ?>: </span><span><?php echo $open ?> - </span><span><?php echo $close ?></span><br>
+                    $day = get_sub_field( 'day' );
+                    $open = get_sub_field( 'open' );
+                    $close = get_sub_field( 'close' ); ?>
 
-            <?php endwhile;
+                    <span><?php echo $day ?>: </span><span><?php echo $open ?> - </span><span><?php echo $close ?></span><br>
 
-        endif; ?>
-    </div><!-- hours-section -->
+                <?php endwhile;
 
+            endif; ?>
+        </div><!-- hours-section -->
+
+    </div>
     <?php
 }

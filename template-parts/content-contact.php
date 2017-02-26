@@ -26,6 +26,10 @@
 		<?php
 			the_content();
 
+			if ( function_exists( 'mm4_you_contact_form' ) ) {
+			    mm4_you_contact_form();
+			}
+
 			if ( function_exists( 'cider_mill_content_tagline' ) ) {
 			    cider_mill_content_tagline();
 			}

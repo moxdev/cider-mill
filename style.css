@@ -1085,8 +1085,7 @@ a:hover, a:active {
   }
   /* line 193, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/navigation/_masthead.scss */
   #masthead .masthead-wrapper .main-navigation .menu-menu-container {
-    display: -ms-inline-flexbox;
-    display: inline-flex;
+    display: inline-block;
   }
   /* line 196, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/navigation/_masthead.scss */
   #masthead .masthead-wrapper .main-navigation .menu-menu-container ul {
@@ -1273,33 +1272,36 @@ a:hover, a:active {
   margin-top: 0;
 }
 
-@media (min-width: 760px) {
+@media (min-width: 560px) {
   /* line 36, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/secondary/_widgets.scss */
   #secondary .sidebar-wrapper .sidebar-specials {
     text-align: center;
   }
-  /* line 54, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/secondary/_widgets.scss */
+}
+
+@media (min-width: 960px) {
+  /* line 57, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/secondary/_widgets.scss */
   #secondary .sidebar-wrapper .sidebar-specials h1 {
     font-size: 3rem;
     line-height: .9;
   }
-  /* line 59, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/secondary/_widgets.scss */
+  /* line 62, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/secondary/_widgets.scss */
   #secondary .sidebar-wrapper .sidebar-specials h2 {
     font-size: 1.375rem;
   }
-  /* line 63, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/secondary/_widgets.scss */
+  /* line 66, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/secondary/_widgets.scss */
   #secondary .sidebar-wrapper .sidebar-specials h4 {
     margin-bottom: .5em;
   }
 }
 
-/* line 70, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/secondary/_widgets.scss */
+/* line 72, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/secondary/_widgets.scss */
 #secondary .sidebar-wrapper .sidebar-events {
   padding: 1em .5em;
   border-bottom: 2px solid #513628;
 }
 
-/* line 77, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/secondary/_widgets.scss */
+/* line 79, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/secondary/_widgets.scss */
 #secondary .sidebar-wrapper .sidebar-pets {
   display: -ms-flexbox;
   display: flex;
@@ -1310,14 +1312,14 @@ a:hover, a:active {
   border-bottom: 2px solid #513628;
 }
 
-/* line 84, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/secondary/_widgets.scss */
+/* line 86, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/secondary/_widgets.scss */
 #secondary .sidebar-wrapper .sidebar-pets h1 {
   -ms-flex: 2;
       flex: 2;
   padding-right: 5px;
 }
 
-/* line 90, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/secondary/_widgets.scss */
+/* line 92, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/secondary/_widgets.scss */
 #secondary .sidebar-wrapper .sidebar-pets img {
   -ms-flex: 1;
       flex: 1;
@@ -1360,7 +1362,7 @@ a:hover, a:active {
 
 /* line 13, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
 #page .site-content .content-wrapper {
-  max-width: 1500px;
+  max-width: 1200px;
   margin-left: auto !important;
   margin-right: auto !important;
   padding-left: 1.5625rem;
@@ -1400,6 +1402,20 @@ a:hover, a:active {
       order: 1;
 }
 
+@media screen and (min-width: 600px) {
+  /* line 33, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+  #page .site-content .content-wrapper #secondary .sidebar-wrapper {
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 760px) {
+  /* line 39, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+  #page .site-content .content-wrapper #secondary .sidebar-wrapper {
+    margin: 0;
+  }
+}
+
 @media (min-width: 760px) {
   /* line 13, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
   #page .site-content .content-wrapper {
@@ -1409,20 +1425,22 @@ a:hover, a:active {
         justify-content: space-between;
     margin-bottom: 2em;
   }
-  /* line 38, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+  /* line 51, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
   #page .site-content .content-wrapper #primary {
     -ms-flex-order: 1;
         order: 1;
     -ms-flex: 2;
         flex: 2;
-    margin-right: 2em;
+    padding-right: 3em;
   }
-  /* line 44, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+  /* line 57, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
   #page .site-content .content-wrapper #secondary {
     -ms-flex: 1;
         flex: 1;
     -ms-flex-order: 2;
         order: 2;
+    min-width: 275px;
+    max-width: 300px;
   }
 }
 
@@ -1433,31 +1451,38 @@ a:hover, a:active {
   }
 }
 
-/* line 56, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+/* line 71, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
 #page .footer-tagline {
   padding-left: 1.5625rem;
   padding-right: 1.5625rem;
+  text-align: center;
 }
 
 @media (min-width: 760px) {
-  /* line 56, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+  /* line 71, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
   #page .footer-tagline {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 }
 
-/* line 58, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+/* line 75, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
 #page .footer-tagline h1 {
   color: #ffffff;
-  text-align: center;
   font-family: "AlexBrush-Regular", sans-serif;
   font-size: 1.625rem;
 }
 
-/* line 65, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+/* line 81, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
 #page .footer-tagline .lead {
   font-size: 2.5rem;
+}
+
+@media (min-width: 760px) {
+  /* line 71, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+  #page .footer-tagline {
+    text-align: left;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1891,7 +1916,7 @@ object {
 .page-template-page-gaithersburg #map-wrapper {
   display: none;
   position: relative;
-  max-width: 1500px;
+  max-width: 1200px;
   margin-left: auto !important;
   margin-right: auto !important;
 }
@@ -2122,28 +2147,137 @@ object {
 /*--------------------------------------------------------------
 ## Contact Page
 --------------------------------------------------------------*/
+/* line 3, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/pages/_page-contact.scss */
+.page-template-page-contact .honey {
+  display: none !important;
+}
+
 /* line 7, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/pages/_page-contact.scss */
+.page-template-page-contact form {
+  display: block;
+}
+
+/* line 10, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/pages/_page-contact.scss */
+.page-template-page-contact form input, .page-template-page-contact form textarea {
+  border: 1px solid #e5e5e5;
+  width: 100%;
+  margin-bottom: 1em;
+  color: #333;
+}
+
+/* line 17, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/pages/_page-contact.scss */
+.page-template-page-contact form input[type="submit"] {
+  background-color: #408b40;
+  color: #fff;
+  padding: 1em;
+  font-family: "SourceSansPro-Bold", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* line 30, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/pages/_page-contact.scss */
+.page-template-page-contact #page .site-content .content-wrapper {
+  margin-bottom: 2em;
+}
+
+/* line 33, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/pages/_page-contact.scss */
+.page-template-page-contact #page .site-content .content-wrapper a {
+  text-decoration: none;
+  color: #513628;
+}
+
+/* line 37, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/pages/_page-contact.scss */
+.page-template-page-contact #page .site-content .content-wrapper a:hover, .page-template-page-contact #page .site-content .content-wrapper a:active, .page-template-page-contact #page .site-content .content-wrapper a:focus {
+  color: #e6ccb7;
+}
+
+/* line 41, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/pages/_page-contact.scss */
+.page-template-page-contact #page .site-content .content-wrapper a:visited {
+  color: #513628;
+}
+
+/* line 46, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/pages/_page-contact.scss */
 .page-template-page-contact #page .site-content .content-wrapper #primary {
   -ms-flex-order: 1;
       order: 1;
 }
 
-/* line 11, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/pages/_page-contact.scss */
+/* line 51, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/pages/_page-contact.scss */
+.page-template-page-contact #page .site-content .content-wrapper #primary .contact-info-wrapper .company-information-section, .page-template-page-contact #page .site-content .content-wrapper #primary .contact-info-wrapper .hours-section {
+  font-family: "SourceSansPro-Bold", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.1;
+}
+
+/* line 57, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/pages/_page-contact.scss */
+.page-template-page-contact #page .site-content .content-wrapper #primary .contact-info-wrapper .hours-section {
+  margin: 1em 0;
+}
+
+@media (min-width: 760px) {
+  /* line 49, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/pages/_page-contact.scss */
+  .page-template-page-contact #page .site-content .content-wrapper #primary .contact-info-wrapper {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    max-width: 400px;
+    margin-bottom: 2em;
+  }
+  /* line 68, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/pages/_page-contact.scss */
+  .page-template-page-contact #page .site-content .content-wrapper #primary .contact-info-wrapper .hours-section {
+    margin: 0;
+  }
+}
+
+@media (min-width: 760px) {
+  /* line 79, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/pages/_page-contact.scss */
+  .page-template-page-contact #page .site-content .content-wrapper #primary .entry-content form input[type="submit"] {
+    max-width: 250px;
+  }
+}
+
+/* line 87, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/pages/_page-contact.scss */
 .page-template-page-contact #page .site-content .content-wrapper #secondary {
   -ms-flex-order: 2;
       order: 2;
 }
 
-/* line 15, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/pages/_page-contact.scss */
-.page-template-page-contact #page .site-content .content-wrapper .company-information-section, .page-template-page-contact #page .site-content .content-wrapper .hours-section {
-  font-family: "SourceSansPro-Bold", sans-serif;
-  font-size: 1.125rem;
-  line-height: 1;
+/* line 92, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/pages/_page-contact.scss */
+.page-template-page-contact #page .site-content .content-wrapper #secondary .map-wrapper #map-canvas {
+  min-width: 200px;
+  min-height: 200px;
+  border: 1px solid #333;
 }
 
-/* line 21, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/pages/_page-contact.scss */
-.page-template-page-contact #page .site-content .content-wrapper .hours-section {
-  margin: 1em 0;
+/* line 99, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/pages/_page-contact.scss */
+.page-template-page-contact #page .site-content .content-wrapper #secondary .map-wrapper form label {
+  color: #a31f34;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  font-family: "SourceSansPro-Bold", sans-serif;
+}
+
+/* line 104, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/pages/_page-contact.scss */
+.page-template-page-contact #page .site-content .content-wrapper #secondary .map-wrapper form label input {
+  font-family: "SourceSansPro-Light", sans-serif;
+}
+
+@media (min-width: 760px) {
+  /* line 87, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/pages/_page-contact.scss */
+  .page-template-page-contact #page .site-content .content-wrapper #secondary {
+    padding-top: 1em;
+  }
+  /* line 114, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/pages/_page-contact.scss */
+  .page-template-page-contact #page .site-content .content-wrapper #secondary .map-wrapper {
+    margin-bottom: 2em;
+  }
+  /* line 119, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/pages/_page-contact.scss */
+  .page-template-page-contact #page .site-content .content-wrapper #secondary .map-wrapper form input[type="submit"] {
+    max-width: 150px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -2180,6 +2314,7 @@ object {
   font-size: 0.8125rem;
   padding-top: 1em;
   padding-bottom: 1em;
+  line-height: 1.25;
 }
 
 @media (min-width: 760px) {
@@ -2190,7 +2325,7 @@ object {
   }
 }
 
-/* line 16, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
+/* line 17, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
 .footer-wrapper h1 {
   color: #fff;
   font-size: 1.063rem;
@@ -2199,46 +2334,47 @@ object {
 }
 
 @media (min-width: 760px) {
-  /* line 16, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
+  /* line 17, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
   .footer-wrapper h1 {
     font-size: 1.2em;
+    line-height: 1.5;
   }
 }
 
-/* line 30, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
+/* line 32, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
 .footer-wrapper .contact-section .contact-wrapper .contact-numbers {
   padding-top: 1em;
 }
 
-/* line 34, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
+/* line 36, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
 .footer-wrapper .contact-section .hours {
   margin-top: 1em;
 }
 
 @media (min-width: 760px) {
-  /* line 34, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
+  /* line 36, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
   .footer-wrapper .contact-section .hours {
     margin-top: 0;
   }
 }
 
-/* line 42, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
+/* line 44, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
 .footer-wrapper .contact-section .resident-button {
   display: none;
 }
 
-/* line 45, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
+/* line 47, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
 .footer-wrapper .contact-section .resident-button button {
   text-transform: uppercase;
   margin-top: 2em;
-  padding: 1em;
+  padding: .5em 1em;
   font-family: "SourceSansPro-Regular", sans-serif;
 }
 
 @media (min-width: 760px) {
-  /* line 27, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
+  /* line 29, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
   .footer-wrapper .contact-section {
-    max-width: 500px;
+    max-width: 325px;
     -ms-flex: 1;
         flex: 1;
     text-align: left;
@@ -2247,34 +2383,34 @@ object {
     -ms-flex-pack: justify;
         justify-content: space-between;
   }
-  /* line 62, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
+  /* line 64, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
   .footer-wrapper .contact-section .resident-button {
     display: block;
   }
 }
 
-/* line 68, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
+/* line 70, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
 .footer-wrapper .icons-section {
   margin-top: 2em;
 }
 
-/* line 71, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
+/* line 73, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
 .footer-wrapper .icons-section .social h1 {
   margin-bottom: .5em;
 }
 
-/* line 75, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
+/* line 77, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
 .footer-wrapper .icons-section .social a {
   padding: 5px;
 }
 
-/* line 79, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
+/* line 81, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
 .footer-wrapper .icons-section .social svg {
   max-width: 42px;
 }
 
 @media (min-width: 760px) {
-  /* line 70, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
+  /* line 72, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
   .footer-wrapper .icons-section .social {
     display: -ms-flexbox;
     display: flex;
@@ -2285,30 +2421,30 @@ object {
   }
 }
 
-/* line 90, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
+/* line 92, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
 .footer-wrapper .icons-section .brand {
-  margin-top: 1.5em;
+  margin-top: 1.25em;
 }
 
-/* line 93, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
+/* line 95, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
 .footer-wrapper .icons-section .brand svg {
   margin-left: 5px;
   margin-right: 5px;
 }
 
-/* line 100, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
+/* line 102, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
 .footer-wrapper .icons-section .translate {
   margin-top: 1.5em;
 }
 
-/* line 105, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
+/* line 107, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
 .footer-wrapper .icons-section .mm4 {
   margin-top: 1.5em;
   margin-bottom: 1.5em;
   font-size: 0.75rem;
 }
 
-/* line 110, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
+/* line 112, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
 .footer-wrapper .icons-section .mm4 a {
   text-decoration: none;
   color: #fff;
@@ -2316,7 +2452,7 @@ object {
 }
 
 @media (min-width: 760px) {
-  /* line 68, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
+  /* line 70, /Users/mox/Sites/desktopserver/www.cidermill.dev/wp-content/themes/cider_mill/sass/footer/_footer.scss */
   .footer-wrapper .icons-section {
     -ms-flex: 1;
         flex: 1;
@@ -2331,8 +2467,7 @@ object {
     border-top: 5px solid #fff;
     -ms-flex-direction: row;
         flex-direction: row;
-    font-size: 1.1em;
-    line-height: 1.25;
+    padding-bottom: 2.5em;
   }
 }
 

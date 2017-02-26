@@ -12,6 +12,7 @@
     font-size: 0.8125rem;
     padding-top: 1em;
     padding-bottom: 1em;
+    line-height: 1.25;
 
     h1 {
         color: #fff;
@@ -21,6 +22,7 @@
 
         @include respond-to('tablet') {
             font-size: 1.2em;
+            line-height: 1.5
         }
     }
 
@@ -45,14 +47,14 @@
             button {
                 text-transform: uppercase;
                 margin-top: 2em;
-                padding: 1em;
+                padding: .5em 1em;
                 font-family: $font__regular;
             }
 
         }
 
         @include respond-to('tablet') {
-            max-width: 500px;
+            max-width: 325px;
             flex: 1;
             // margin: auto;
             text-align: left;
@@ -88,7 +90,7 @@
         }
 
         .brand {
-            margin-top: 1.5em;
+            margin-top: 1.25em;
 
             svg {
                 margin-left: 5px;
@@ -125,7 +127,6 @@
     @include respond-to('tablet') {
         border-top: 5px solid #fff;
         flex-direction: row;
-        font-size: 1.1em;
-        line-height: 1.25;
+        padding-bottom: 2.5em;
     }
 } // site-footer

@@ -24,28 +24,11 @@ get_header(); ?>
                 endif;
 
             endwhile; // End of the loop.
-
-            if ( function_exists( 'mm4_you_contact_form' ) ) {
-                mm4_you_contact_form();
-            }
-
             ?>
-
-            <div class="map-wrapper">
-                <div style="width:200px; height:200px;" id="map-canvas"></div>
-                <form id="get-directions">
-                    <label>Starting Address:
-                        <input type="text" id="start">
-                        <input type="hidden" id="end" value="38.800410,-76.987104">
-                    </label>
-                    <div id="response-panel"></div>
-                    <input type="submit" value="Get Directions">
-                </form>
-            </div> <!-- map-wrapper -->
 
         </main><!-- #main -->
     </div><!-- #primary -->
 
 <?php
-get_sidebar();
+get_sidebar(contact);
 get_footer();

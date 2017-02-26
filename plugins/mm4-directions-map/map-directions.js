@@ -5,7 +5,7 @@ var directionsForm = 'get-directions';
 var mapResponses = 'response-panel';
 
 // Google Maps API Key
-var apiKey = 'AIzaSyBH96bPjiEv8k96XGcglk9hdZvKVbbQa_s';
+var apiKey = 'AIzaSyDqcS80RSqBcZepAEhhxKHkSzYLZeNI0Ho';
 
 var directionsDisplay;
 var directionsService;
@@ -49,7 +49,7 @@ function initMap(map) {
 	});
 
 	var marker = new google.maps.Marker({
-		position: {lat: latitude, lng: longitude},
+		position: {lat: 39.156413, lng: -77.201441},
 		map: map,
 	});
 

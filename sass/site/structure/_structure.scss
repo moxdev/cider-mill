@@ -11,7 +11,7 @@
         }
 
         .content-wrapper {
-            @include max-width(1500px);
+            @include max-width(1200px);
             @include padding-left-right;
             display: flex;
             flex-direction: column;
@@ -29,6 +29,19 @@
                 flex: 1;
                 order:1;
 
+                @media screen and (min-width:600px) {
+                    .sidebar-wrapper {
+                        margin: 0 auto;
+                    }
+                }
+
+                @include respond-to('tablet') {
+                    .sidebar-wrapper {
+                        margin:0;
+                    }
+                }
+
+
             }
 
             @include respond-to('tablet') {
@@ -38,12 +51,14 @@
                 #primary {
                     order:1;
                     flex: 2;
-                    margin-right: 2em;
+                    padding-right: 3em;
                 }
 
                 #secondary {
                     flex: 1;
                     order:2;
+                    min-width: 275px;
+                    max-width: 300px;
                 }
             }
         }
@@ -55,15 +70,20 @@
 
     .footer-tagline {
         @include padding-left-right;
+        text-align: center;
+
         h1 {
             color: #ffffff;
-            text-align: center;
             font-family: $font__alex;
             font-size: 1.625rem;
         }
 
         .lead {
             font-size:2.5rem;
+        }
+
+        @include respond-to('tablet') {
+            text-align: left;
         }
     }
 
