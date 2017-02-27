@@ -129,7 +129,11 @@ function buildMap(data) {
 	}
 
 	for(var j = 0; j < locations.length; j++) {
-		var image = catIconPath + locations[j][9] + '.png';
+		// var image = catIconPath + locations[j][9] + '.svg';
+		var image = {
+			url: catIconPath + locations[j][9] + '.svg',
+			scaledSize: new google.maps.Size(50, 50)
+		};
 		var marker = new google.maps.Marker({
 			position: new google.maps.LatLng(locations[j][2], locations[j][3]),
 			map: map,

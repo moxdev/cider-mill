@@ -6,7 +6,7 @@
         @include max-width(1400px);
 
         #map-canvas {
-            height: 400px;
+            min-height: 500px;
         }
 
         #reset-map {
@@ -17,6 +17,9 @@
             transition:opacity .25s;
             opacity: 0;
             background-color: $color__brand-red;
+            color: #fff;
+            font-size: 1rem;
+            padding: .5em 1em;
 
             &.active {
                 opacity: 1;
@@ -24,41 +27,77 @@
         }
 
         #map-nav {
+            background-color: $color__brand-pink;
             ul {
                 display: flex;
                 justify-content:center;
-                align-content: flex-end;
                 @include reset;
+                overflow: hidden;
+                margin-right: -1px;
+                padding-top: .5em;
 
                 li {
                     flex: 1;
                     text-align: center;
                     list-style-type: none;
-                    height: 50px;
-                    margin: 1px;
-                    background-color: $color__brand-pink;
+                    height: auto;
+                    display: flex;
+                    justify-content: center;
+                    border-right: 1px solid #fff;
 
                     a {
                         color: $color__brand-red;
                         text-transform: uppercase;
                         font-family: $font__bold;
+                        font-size: 1.188rem;
                         text-decoration: none;
-                    }
+                        position: relative;
+                        align-self: flex-end;
+                        text-align: center;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
 
+                        &:before {
+                            display: block;
+                            text-align: center;
+                        }
+
+                        &:active,
+                        &:focus,
+                        &.active {
+                          background-image: none;
+                          outline: 0;
+                          -webkit-box-shadow: none;
+                                  box-shadow: none;
+                        }
+                    }
                 }
             }
 
             .recreation {
-                border-right: 1px solid #fff;
+                a {
+                    &:before {
+                        content: url('imgs/recreation-40.png');
+                    }
+                }
             }
 
             .restaurants {
 
+                a {
+                    &:before {
+                        content: url('imgs/restaurant-30.png');
+                    }
+                }
             }
 
             .shopping {
-                border-left: 1px solid #fff;
-
+                a {
+                    &:before {
+                        content: url('imgs/shopping-40.png');
+                    }
+                }
             }
         }
     }
