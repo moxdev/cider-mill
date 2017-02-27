@@ -1,14 +1,17 @@
 .page-template-page-amenities {
 
     .feature-amenities-wrapper {
-
-        @include max-width(1200px);
-        @include padding-left-right;
         margin-bottom: 3em;
+    }
+
+    .section-header {
+        margin-bottom: 1em;
     }
 
     .features-wrapper,
     .amenities-wrapper {
+        @include max-width(1400px);
+        @include padding-left-right;
         display: flex;
         flex-wrap:wrap;
         margin: 0 -1px;
@@ -16,15 +19,6 @@
 
     .has-img {
         background-color: transparent;
-    }
-
-    button {
-        background-color: transparent;
-        text-decoration: underline;
-
-        &:hover {
-            cursor: pointer;
-        }
     }
 
     .highlight {
@@ -70,12 +64,12 @@
 
         img,
         span,
-        button {
+        .view {
             transition: opacity .25s ease-in-out ;
         }
 
         span,
-        button {
+        .view {
             position: relative;
             z-index: 5;
         }
@@ -116,6 +110,15 @@
                 cursor: pointer;
             }
         }
+
+        .view {
+            background-color: transparent;
+            text-decoration: underline;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
     }
 
     .highlight-inner.active img,
@@ -139,6 +142,23 @@
 
     .title {
         text-transform: uppercase;
+        font-size: 1rem;
+
+        @include respond-to('small') {
+            font-size: 1.125rem;
+        }
+
+        @include respond-to('large') {
+            font-size: 1.563rem;
+        }
+    }
+
+    .view {
+        font-size: 0.8125rem;
+
+        @include respond-to('large') {
+            font-size: 1rem;
+        }
     }
 
     // for equal spacing of text inside highlight

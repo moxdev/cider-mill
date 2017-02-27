@@ -3,7 +3,7 @@
     #floorplans-section {
         text-align: center;
         // @include padding-left-right;
-        // @include max-width(1200px);
+        // @include max-width(1400px);
 
         .view-btn {
             text-transform: uppercase;
@@ -11,6 +11,10 @@
             // margin-bottom: 1em;
             font-family: $font__regular;
             background-color: transparent;
+
+            @include respond-to('medium') {
+                display: none;
+            }
         }
 
         .description,
@@ -55,7 +59,12 @@
                 .three-bedroom-section {
                     margin-bottom: 4em;
                     @include padding-left-right;
-                    @include max-width(1200px);
+                    @include max-width(1400px);
+
+                    @include respond-to('small-land') {
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
                 }
 
                 .fp-models-wrapper {
@@ -69,27 +78,25 @@
                         display: flex;
                         flex-direction: row;
                         flex-wrap: wrap;
-                        justify-content: space-between;
+                        justify-content: space-around;
 
                         .floorplan {
                             width: 50%;
-                            padding: 1em;
+                            padding: 2em;
                         }
                     }
 
-                    @include respond-to('medium') {
+                    @include respond-to('tablet') {
 
                         .floorplan {
-
-                            // width: 100%;
-                            // padding: 2em;
+                            width: 33%;
                         }
                     }
 
                     @include respond-to('large') {
 
                         .floorplan {
-                            // padding: 3em;
+                            // padding: 2.5em;
                         }
                     }
                 }

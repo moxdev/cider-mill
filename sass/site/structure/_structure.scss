@@ -4,6 +4,7 @@
 
         .featured-image {
             @include reset;
+            @include max-width(1400px);
             img {
                 display: block;
                 width: 100%;
@@ -11,7 +12,7 @@
         }
 
         .content-wrapper {
-            @include max-width(1200px);
+            @include max-width(1400px);
             @include padding-left-right;
             display: flex;
             flex-direction: column;

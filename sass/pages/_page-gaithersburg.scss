@@ -3,7 +3,7 @@
     #map-wrapper {
         display: none;
         position: relative;
-        @include max-width(1200px);
+        @include max-width(1400px);
 
         #map-canvas {
             height: 400px;

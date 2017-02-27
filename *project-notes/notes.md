@@ -58,6 +58,7 @@ $breakpoints: (
 21px = 1.313rem
 22px = 1.375rem
 23px = 1.438rem
+25px = 1.563rem
 36px = 2.25rem
 45px = 2.813rem
 48px = 3rem
