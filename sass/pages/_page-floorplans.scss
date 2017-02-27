@@ -2,40 +2,15 @@
 
     #floorplans-section {
         text-align: center;
+        // @include padding-left-right;
+        // @include max-width(1200px);
 
-        h1 {
-            font-family: $font__alex;
-            color: $color__brand-red;
-            font-size: 2.5rem;
-            text-align: center;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-
-            &:before,
-            &:after {
-              flex-grow: 1;
-              height: 2px;
-              content: '\a0';
-              background-color: $color__brand-red;
-              position: relative;
-              top: 0.5em;
-            }
-
-            &:before {
-              margin-right:10px;
-            }
-
-            &:after {
-              margin-left:10px;
-            }
-        }
-
-        h2 {
+        .view-btn {
             text-transform: uppercase;
             font-size: 1.063rem;
-            margin-bottom: 1.5em;
+            // margin-bottom: 1em;
             font-family: $font__regular;
+            background-color: transparent;
         }
 
         .description,
@@ -61,24 +36,62 @@
 
             button {
                 padding: 1em;
+                margin-top: .5em;
             }
 
         }
 
-
+        .hidden {
+            // display: none !important;
+            // border: 1px solid red;
+        }
 
         .floorplans-wrapper {
 
             .fp-models {
 
-                .floorplan {
-                    margin: 2em 0;
-                }
-
                 .one-bedroom-section,
                 .two-bedroom-section,
                 .three-bedroom-section {
                     margin-bottom: 4em;
+                    @include padding-left-right;
+                    @include max-width(1200px);
+                }
+
+                .fp-models-wrapper {
+                    padding-top: .5em;
+
+                    .floorplan {
+                        padding: 1em 0;
+                    }
+
+                    @include respond-to('small-land') {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+
+                        .floorplan {
+                            width: 50%;
+                            padding: 1em;
+                        }
+                    }
+
+                    @include respond-to('medium') {
+
+                        .floorplan {
+
+                            // width: 100%;
+                            // padding: 2em;
+                        }
+                    }
+
+                    @include respond-to('large') {
+
+                        .floorplan {
+                            // padding: 3em;
+                        }
+                    }
                 }
             }
         }

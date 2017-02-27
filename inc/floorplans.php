@@ -9,13 +9,15 @@
 function cider_mill_one_bedroom_floorplan() {
     if( have_rows('one_bedroom_floor_plans', 'options') ): ?>
 
+        <header class="section-header">
+            <h2>One Bedroom</h2>
+        </header>
+
         <div class="one-bedroom-section">
 
-        <h1>One Bedroom</h1>
+            <button class="view-btn view">view floor plans &#43;</button>
 
-            <div class="hide-floor-plan">
-
-                <a><h2>hide floor plans &#43;</h2></a>
+            <div class="fp-models-wrapper">
 
                 <?php while ( have_rows('one_bedroom_floor_plans', 'options') ) : the_row();
 
@@ -46,23 +48,24 @@ function cider_mill_one_bedroom_floorplan() {
 
                 <?php endwhile; ?>
 
-            </div><!-- hide-floor-plan -->
+            </div><!-- fp-models-wrapper -->
         </div><!-- one-bedroom-section -->
     <?php endif;
 }
 
 function cider_mill_two_bedroom_floorplan() {
     if( have_rows('two_bedroom_floor_plans', 'options') ): ?>
+        <header class="section-header">
+            <h2>Two Bedroom</h2>
+        </header>
 
         <div class="two-bedroom-section">
 
-        <h1>Two Bedroom</h1>
+            <button class="view-btn view">view floor plans &#43;</button>
 
-            <div class="hide-floor-plan">
+            <div class="fp-models-wrapper">
 
-                <a><h2>hide floor plans &#43;</h2></a>
-
-                <?php while ( have_rows('one_bedroom_floor_plans', 'options') ) : the_row();
+                <?php while ( have_rows('two_bedroom_floor_plans', 'options') ) : the_row();
 
                     $desc = get_sub_field('description', 'options');
                     $sqft = get_sub_field('square_footage', 'options');
@@ -84,14 +87,14 @@ function cider_mill_two_bedroom_floorplan() {
                         <?php endif; ?>
 
                         <?php if( !empty($url) ) : ?>
-                            <a  class="availability-link" href="<?php echo $url; ?>"><button>view all availability &raquo;</button></a>
+                            <a class="availability-link" href="<?php echo $url; ?>"><button>view all availability &raquo;</button></a>
                         <?php endif; ?>
 
                     </div>
 
                 <?php endwhile; ?>
 
-            </div><!-- hide-floor-plan -->
+            </div><!-- fp-models-wrapper -->
         </div><!-- two-bedroom-section -->
     <?php endif;
 }
@@ -99,15 +102,17 @@ function cider_mill_two_bedroom_floorplan() {
 function cider_mill_three_bedroom_floorplan() {
     if( have_rows('three_bedroom_floor_plans', 'options') ): ?>
 
+        <header class="section-header">
+            <h2>Three Bedroom</h2>
+        </header>
+
         <div class="three-bedroom-section">
 
-        <h1>Three Bedroom</h1>
+            <button class="view-btn view">view floor plans &#43;</button>
 
-            <div class="hide-floor-plan">
+            <div class="fp-models-wrapper">
 
-                <a><h2>hide floor plans &#43;</h2></a>
-
-                <?php while ( have_rows('one_bedroom_floor_plans', 'options') ) : the_row();
+                <?php while ( have_rows('three_bedroom_floor_plans', 'options') ) : the_row();
 
                     $desc = get_sub_field('description', 'options');
                     $sqft = get_sub_field('square_footage', 'options');
@@ -129,14 +134,14 @@ function cider_mill_three_bedroom_floorplan() {
                         <?php endif; ?>
 
                         <?php if( !empty($url) ) : ?>
-                            <a  class="availability-link" href="<?php echo $url; ?>"><button>view all availability &raquo;</button></a>
+                            <a class="availability-link" href="<?php echo $url; ?>"><button>view all availability &raquo;</button></a>
                         <?php endif; ?>
 
                     </div>
 
                 <?php endwhile; ?>
 
-            </div><!-- hide-floor-plan -->
+            </div><!-- fp-models-wrapper -->
         </div><!-- three-bedroom-section -->
     <?php endif;
 }
@@ -150,16 +155,15 @@ function cider_mill_floorplan_listing() { ?>
                     cider_mill_one_bedroom_floorplan();
                 } ?>
 
-            <?php if ( function_exists( 'cider_mill_two_bedroom_floorplan' ) ) {
-                cider_mill_two_bedroom_floorplan();
-            } ?>
+                <?php if ( function_exists( 'cider_mill_two_bedroom_floorplan' ) ) {
+                    cider_mill_two_bedroom_floorplan();
+                } ?>
 
-            <?php if ( function_exists( 'cider_mill_three_bedroom_floorplan' ) ) {
-                cider_mill_three_bedroom_floorplan();
-            } ?>
+                <?php if ( function_exists( 'cider_mill_three_bedroom_floorplan' ) ) {
+                    cider_mill_three_bedroom_floorplan();
+                } ?>
 
             </div>
-
 
         </div><!-- floorplans-wrapper -->
     </div><!-- floorplans-section -->

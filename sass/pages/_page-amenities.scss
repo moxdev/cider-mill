@@ -7,38 +7,6 @@
         margin-bottom: 3em;
     }
 
-    #features-section,
-    #amenities-section {
-
-        h1 {
-            font-family: $font__alex;
-            color: $color__brand-red;
-            font-size: 2.5rem;
-            text-align: center;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-
-            &:before,
-            &:after {
-              flex-grow: 1;
-              height: 2px;
-              content: '\a0';
-              background-color: $color__brand-red;
-              position: relative;
-              top: 0.5em;
-            }
-
-            &:before {
-              margin-right:10px;
-            }
-
-            &:after {
-              margin-left:10px;
-            }
-        }
-    }
-
     .features-wrapper,
     .amenities-wrapper {
         display: flex;

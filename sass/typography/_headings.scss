@@ -15,3 +15,41 @@ h2 {
     margin: .5em 0;
     line-height: 1.25;
 }
+
+.section-header {
+    background-color: #fff;
+    position: relative;
+    text-align: center;
+
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: $color__brand-red;
+        position: absolute;
+        z-index: 1;
+    }
+
+    &:before {
+        top: 17px ;
+    }
+
+    &:after {
+        bottom: 23px;
+    }
+
+    h2 {
+        @include reset;
+        font-family: $font__alex;
+        color: $color__brand-red;
+        background-color: #fff;
+        font-size: 2.5rem;
+        text-align: center;
+        padding: 0 .4em;
+        display: inline-block;
+        position: relative;
+        z-index: 5;
+    }
+}

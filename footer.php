@@ -17,7 +17,10 @@
             <div class="feature-amenities-wrapper">
                 <?php echo cider_mill_features_amenities(); ?>
             </div>
-        <?php
+        <?php } ?>
+
+        <?php if (is_page_template( 'page-floorplans.php' ) && function_exists( 'cider_mill_floorplan_listing' ) ) {
+            cider_mill_floorplan_listing();
         } ?>
 
 	</div><!-- #content -->
@@ -137,6 +140,32 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+
+<!-- <script type="text/javascript">
+    var viewBtns = document.querySelectorAll('.view-btn');
+
+    for(var i = 0; i < viewBtns.length; i++) {
+        viewBtns[i].addEventListener("click", viewFloorplans);
+    }
+
+    // hasClass, takes two params: element and classname
+    function hasClass(el, cls) {
+      return el.className && new RegExp("(\\s|^)" + cls + "(\\s|$)").test(el.className);
+    }
+
+    function viewFloorplans() {
+
+        var hidden = document.getElementsByClassName("hidden");
+        var fpWrapper = document.getElementsByClassName("fp-models-wrapper");
+
+        if (hasClass(hidden, "hidden")) {
+            alert("yeah buddy!");
+        } else {
+            alert("Not today my friend");
+        }
+    }
+
+</script> -->
 
 </body>
 </html>

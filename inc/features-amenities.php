@@ -16,7 +16,9 @@ function cider_mill_features_amenities() {
         if( have_rows('features') ): ?>
 
             <div id="features-section">
-                <h1>Apartment Features</h1>
+                <header class="section-header">
+                    <h2>Apartment Features</h2>
+                </header>
                 <div class="features-wrapper">
 
                     <?php while( have_rows('features') ): the_row();
@@ -69,11 +71,14 @@ function cider_mill_features_amenities() {
         if( have_rows('amenities') ): ?>
 
             <div id="amenities-section">
-                <h1>Community Amenities</h1>
+
+                <header class="section-header">
+                    <h2>Community Amenities</h2>
+                </header>
 
                 <div class="amenities-wrapper">
 
-                    <?php while( have_rows('amenities') ): the_row();
+                    <?php while( have_rows('features') ): the_row();
 
                         $img = get_sub_field('image');
                         $title = get_sub_field('title');
@@ -82,8 +87,13 @@ function cider_mill_features_amenities() {
 
                             <div class="highlight has-img">
                                 <div class="highlight-inner">
-                                    <img src="http://placehold.it/500x500" alt="">
-                                    <span class="title"><?php echo $title; ?></span>
+
+                                    <img src="<?php echo $img['sizes']['gallery-image']; ?>" alt="<?php echo $img['alt']; ?>" description="<?php echo $img['description']; ?>">
+
+                                    <?php if( !empty($title) ) : ?>
+                                        <span class="title"><?php echo $title; ?></span>
+                                    <?php endif; ?>
+
                                     <button class="view">View</button>
                                     <button class="close">X</button>
                                 </div>
@@ -95,7 +105,12 @@ function cider_mill_features_amenities() {
 
                             <div class="highlight">
                                 <div class="highlight-inner">
-                                    <span class="title"><?php echo $title; ?></span>
+
+                                    <?php if( !empty($title) ) : ?>
+                                        <span class="title"><?php echo $title; ?></span>
+                                    <?php endif; ?>
+
+                                    <button class="hide-btn">button</button>
                                 </div>
                             </div><!-- highlight -->
 
