@@ -72,8 +72,11 @@
                         margin:0;
                     }
                 }
+            }
 
-
+            .feature-amenities-wrapper {
+                flex:1;
+                order: 3;
             }
 
             @include respond-to('tablet') {
@@ -91,6 +94,10 @@
                     order:2;
                     min-width: 275px;
                     max-width: 300px;
+                }
+
+                .feature-amenities-wrapper {
+                    display: block;
                 }
             }
         }

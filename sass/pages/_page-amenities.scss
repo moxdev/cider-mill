@@ -1,5 +1,12 @@
 .page-template-page-amenities {
 
+    .feature-amenities-wrapper {
+
+        @include max-width(1200px);
+        @include padding-left-right;
+        margin-bottom: 3em;
+    }
+
     #features-section,
     #amenities-section {
 
@@ -55,7 +62,7 @@
     .highlight {
         border: 1px solid #FFF;
         background-color: rgba(0, 0, 0, .2);
-        flex: 0 1 50%;
+        width: 50%;
         position: relative;
         overflow: hidden;
         font-family: $font__regular;
@@ -67,7 +74,15 @@
         }
 
         @include respond-to('small-land') {
-            flex: 0 1 33%;
+            width: 33%;
+        }
+
+        @include respond-to('tablet') {
+            width: 25%;
+        }
+
+        @include respond-to('medium') {
+            width: 20%;
         }
     }
 

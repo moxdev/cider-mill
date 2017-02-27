@@ -10,7 +10,16 @@
  */
 
 ?>
-    </div><!-- .content-wrapper -->
+        </div><!-- .content-wrapper -->
+        <!-- // Displays the Features and Amenities sections if they exist -->
+
+        <?php if (is_page_template( 'page-amenities.php' ) && function_exists( 'cider_mill_features_amenities' ) ) { ?>
+            <div class="feature-amenities-wrapper">
+                <?php echo cider_mill_features_amenities(); ?>
+            </div>
+        <?php
+        } ?>
+
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">

@@ -51,7 +51,7 @@ function cider_mill_features_amenities() {
                                         <span class="title"><?php echo $title; ?></span>
                                     <?php endif; ?>
 
-                                    <button class="hide-btn"></button>
+                                    <button class="hide-btn">button</button>
                                 </div>
                             </div><!-- highlight -->
 
