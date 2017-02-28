@@ -60,10 +60,12 @@ $breakpoints: (
 23px = 1.438rem
 25px = 1.563rem
 36px = 2.25rem
+41px = 2.563rem
 45px = 2.813rem
 48px = 3rem
+63px = 3.938rem
 65px = 4.063rem
-
+95px = 5.938rem
 
 # Center text with flexbox
 ```css

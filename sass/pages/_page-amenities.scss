@@ -23,7 +23,7 @@
 
     .highlight {
         border: 1px solid #FFF;
-        background-color: rgba(0, 0, 0, .2);
+        background-color: rgba(0, 0, 0, .1);
         width: 50%;
         position: relative;
         overflow: hidden;
@@ -103,11 +103,17 @@
             white-space: nowrap;
             vertical-align: middle;
             border-radius: 50%;
-            // font-size: 1em;
             border: 1px solid #fff;
+            z-index: 2;
 
             &:hover {
                 cursor: pointer;
+            }
+
+            @include respond-to(medium) {
+                width: 35px;
+                height: 35px;
+                font-size: 1.5em;
             }
         }
 

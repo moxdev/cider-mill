@@ -41,7 +41,7 @@ function cider_mill_one_bedroom_floorplan() {
                         <?php endif; ?>
 
                         <?php if( !empty($url) ) : ?>
-                            <a class="availability-link" href="<?php echo $url; ?>"><button>view all availability &raquo;</button></a>
+                            <a class="availability-link" href="<?php echo $url; ?>" target="_blank"><button>view all availability &raquo;</button></a>
                         <?php endif; ?>
 
                     </div>
@@ -87,7 +87,7 @@ function cider_mill_two_bedroom_floorplan() {
                         <?php endif; ?>
 
                         <?php if( !empty($url) ) : ?>
-                            <a class="availability-link" href="<?php echo $url; ?>"><button>view all availability &raquo;</button></a>
+                            <a class="availability-link" href="<?php echo $url; ?>" target="_blank"><button>view all availability &raquo;</button></a>
                         <?php endif; ?>
 
                     </div>
@@ -134,7 +134,7 @@ function cider_mill_three_bedroom_floorplan() {
                         <?php endif; ?>
 
                         <?php if( !empty($url) ) : ?>
-                            <a class="availability-link" href="<?php echo $url; ?>"><button>view all availability &raquo;</button></a>
+                            <a class="availability-link" href="<?php echo $url; ?>" target="_blank"><button>view all availability &raquo;</button></a>
                         <?php endif; ?>
 
                     </div>

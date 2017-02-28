@@ -129,4 +129,8 @@
         flex-direction: row;
         padding-bottom: 2.5em;
     }
+
+    @include respond-to('large') {
+        font-size: 1em;
+    }
 } // site-footer

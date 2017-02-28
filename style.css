@@ -1132,22 +1132,31 @@ a:hover, a:active {
   #masthead .masthead-wrapper .main-navigation .menu-menu-container ul {
     display: -ms-inline-flexbox;
     display: inline-flex;
+    padding: 0;
   }
-  /* line 206, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/navigation/_masthead.scss */
+  /* line 207, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/navigation/_masthead.scss */
   #masthead .masthead-wrapper .main-navigation .menu-menu-container ul .residents-menu {
     display: none;
   }
-  /* line 210, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/navigation/_masthead.scss */
+  /* line 211, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/navigation/_masthead.scss */
   #masthead .masthead-wrapper .main-navigation .menu-menu-container ul li {
     font-size: 1.313rem;
   }
-  /* line 213, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/navigation/_masthead.scss */
+  /* line 214, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/navigation/_masthead.scss */
   #masthead .masthead-wrapper .main-navigation .menu-menu-container ul li a {
     font-size: .9em;
   }
-  /* line 216, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/navigation/_masthead.scss */
+  /* line 217, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/navigation/_masthead.scss */
   #masthead .masthead-wrapper .main-navigation .menu-menu-container ul li a:last-child {
     padding-right: 0;
+  }
+}
+
+@media (min-width: 960px) {
+  /* line 3, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/navigation/_masthead.scss */
+  #masthead {
+    padding-top: 1em;
+    padding-bottom: 1em;
   }
 }
 
@@ -1342,7 +1351,14 @@ a:hover, a:active {
   border-bottom: 2px solid #513628;
 }
 
-/* line 79, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/secondary/_widgets.scss */
+@media (min-width: 960px) {
+  /* line 77, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/secondary/_widgets.scss */
+  #secondary .sidebar-wrapper .sidebar-events p {
+    font-size: 1rem;
+  }
+}
+
+/* line 85, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/secondary/_widgets.scss */
 #secondary .sidebar-wrapper .sidebar-pets {
   display: -ms-flexbox;
   display: flex;
@@ -1353,14 +1369,14 @@ a:hover, a:active {
   border-bottom: 2px solid #513628;
 }
 
-/* line 86, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/secondary/_widgets.scss */
+/* line 92, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/secondary/_widgets.scss */
 #secondary .sidebar-wrapper .sidebar-pets h1 {
   -ms-flex: 2;
       flex: 2;
   padding-right: 5px;
 }
 
-/* line 92, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/secondary/_widgets.scss */
+/* line 98, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/secondary/_widgets.scss */
 #secondary .sidebar-wrapper .sidebar-pets img {
   -ms-flex: 1;
       flex: 1;
@@ -1488,7 +1504,7 @@ a:hover, a:active {
   }
 }
 
-/* line 61, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+/* line 60, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
 #page .site-content .content-wrapper #secondary {
   -ms-flex: 1;
       flex: 1;
@@ -1497,25 +1513,17 @@ a:hover, a:active {
 }
 
 @media screen and (min-width: 600px) {
-  /* line 66, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+  /* line 65, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
   #page .site-content .content-wrapper #secondary .sidebar-wrapper {
     margin: 0 auto;
   }
 }
 
 @media (min-width: 760px) {
-  /* line 72, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+  /* line 71, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
   #page .site-content .content-wrapper #secondary .sidebar-wrapper {
     margin: 0;
   }
-}
-
-/* line 78, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
-#page .site-content .content-wrapper .feature-amenities-wrapper {
-  -ms-flex: 1;
-      flex: 1;
-  -ms-flex-order: 3;
-      order: 3;
 }
 
 @media (min-width: 760px) {
@@ -1526,6 +1534,7 @@ a:hover, a:active {
     -ms-flex-pack: justify;
         justify-content: space-between;
     margin-bottom: 2em;
+    overflow-x: hidden;
   }
   /* line 87, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
   #page .site-content .content-wrapper #primary {
@@ -1533,9 +1542,10 @@ a:hover, a:active {
         order: 1;
     -ms-flex: 2;
         flex: 2;
-    padding-right: 3em;
+    margin-right: 1em;
+    font-size: 1.3em;
   }
-  /* line 93, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+  /* line 94, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
   #page .site-content .content-wrapper #secondary {
     -ms-flex: 1;
         flex: 1;
@@ -1544,9 +1554,21 @@ a:hover, a:active {
     min-width: 275px;
     max-width: 300px;
   }
-  /* line 100, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+  /* line 101, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
   #page .site-content .content-wrapper .feature-amenities-wrapper {
     display: block;
+  }
+}
+
+@media (min-width: 960px) {
+  /* line 107, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+  #page .site-content .content-wrapper #primary {
+    -ms-flex-order: 1;
+        order: 1;
+    -ms-flex: 2;
+        flex: 2;
+    margin-right: 1em;
+    font-size: 1.375rem;
   }
 }
 
@@ -1557,7 +1579,7 @@ a:hover, a:active {
   }
 }
 
-/* line 111, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+/* line 121, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
 #page .footer-tagline {
   padding-left: 1.5625rem;
   padding-right: 1.5625rem;
@@ -1565,29 +1587,40 @@ a:hover, a:active {
 }
 
 @media (min-width: 760px) {
-  /* line 111, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+  /* line 121, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
   #page .footer-tagline {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 }
 
-/* line 115, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+/* line 125, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
 #page .footer-tagline h1 {
   color: #ffffff;
   font-family: "AlexBrush-Regular", sans-serif;
   font-size: 1.625rem;
 }
 
-/* line 121, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+/* line 131, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
 #page .footer-tagline .lead {
   font-size: 2.5rem;
 }
 
 @media (min-width: 760px) {
-  /* line 111, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+  /* line 121, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
   #page .footer-tagline {
     text-align: left;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 140, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+  #page .footer-tagline h1 {
+    font-size: 2.813rem;
+  }
+  /* line 144, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/site/structure/_structure.scss */
+  #page .footer-tagline .lead {
+    font-size: 4.063rem;
   }
 }
 
@@ -1775,6 +1808,7 @@ object {
   padding-right: 1.5625rem;
   color: #FFF;
   font-size: 1.625rem;
+  font-family: "SourceSansPro-Bold", sans-serif;
   padding-top: 2.25em;
   padding-bottom: 2.25em;
   text-shadow: 0 0 20px black;
@@ -1791,25 +1825,94 @@ object {
 @media (min-width: 400px) {
   /* line 7, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_frontpage.scss */
   .page-template-frontpage .page-header-front-page.has-thumb h1 {
-    font-size: 3em;
+    font-size: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 560px) {
+  /* line 7, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_frontpage.scss */
+  .page-template-frontpage .page-header-front-page.has-thumb h1 {
+    font-size: 2.5em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+}
+
+@media screen and (min-width: 620px) {
+  /* line 7, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_frontpage.scss */
+  .page-template-frontpage .page-header-front-page.has-thumb h1 {
+    font-size: 3em;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+
+@media (min-width: 760px) {
   /* line 7, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_frontpage.scss */
   .page-template-frontpage .page-header-front-page.has-thumb h1 {
     font-size: 3.5em;
+    text-align: center;
   }
 }
 
-/* line 26, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_frontpage.scss */
+@media (min-width: 960px) {
+  /* line 7, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_frontpage.scss */
+  .page-template-frontpage .page-header-front-page.has-thumb h1 {
+    font-size: 3.938rem;
+  }
+}
+
+@media (min-width: 1500px) {
+  /* line 7, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_frontpage.scss */
+  .page-template-frontpage .page-header-front-page.has-thumb h1 {
+    padding-top: 3em;
+    padding-bottom: 3em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  /* line 7, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_frontpage.scss */
+  .page-template-frontpage .page-header-front-page.has-thumb h1 {
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;
+    font-size: 4em;
+    padding-left: 4em;
+    padding-right: 4em;
+  }
+}
+
+@media screen and (min-width: 1730px) {
+  /* line 7, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_frontpage.scss */
+  .page-template-frontpage .page-header-front-page.has-thumb h1 {
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;
+    font-size: 4em;
+    padding-left: 7em;
+    padding-right: 7em;
+  }
+}
+
+@media screen and (min-width: 2140px) {
+  /* line 7, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_frontpage.scss */
+  .page-template-frontpage .page-header-front-page.has-thumb h1 {
+    font-size: 5em;
+    padding-left: 7em;
+    padding-right: 7em;
+  }
+}
+
+/* line 75, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_frontpage.scss */
 .page-template-frontpage .entry-header {
   line-height: 1;
   text-align: center;
   margin-top: 1em;
 }
 
-/* line 30, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_frontpage.scss */
+/* line 79, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_frontpage.scss */
 .page-template-frontpage .entry-header h1 {
   color: #a31f34;
   font-family: "AlexBrush-Regular", sans-serif;
@@ -1818,18 +1921,46 @@ object {
   margin: 0;
 }
 
-/* line 36, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_frontpage.scss */
+/* line 85, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_frontpage.scss */
 .page-template-frontpage .entry-header h1 span {
   color: #513628;
   font-family: "SourceSansPro-Bold", sans-serif;
   font-size: 2rem;
 }
 
-/* line 42, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_frontpage.scss */
+/* line 91, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_frontpage.scss */
 .page-template-frontpage .entry-header h2 {
   padding: 0;
   margin: 0;
   font-size: 1.313rem;
+  font-family: "SourceSansPro-Light", sans-serif;
+  margin-bottom: .5em;
+}
+
+@media (min-width: 760px) {
+  /* line 75, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_frontpage.scss */
+  .page-template-frontpage .entry-header {
+    text-align: left;
+  }
+  /* line 101, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_frontpage.scss */
+  .page-template-frontpage .entry-header h1 {
+    font-size: 5.938rem;
+  }
+  /* line 104, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_frontpage.scss */
+  .page-template-frontpage .entry-header h1 span {
+    font-size: 3.438rem;
+  }
+  /* line 109, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_frontpage.scss */
+  .page-template-frontpage .entry-header h2 {
+    font-size: 2.3rem;
+  }
+}
+
+@media (min-width: 960px) {
+  /* line 115, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_frontpage.scss */
+  .page-template-frontpage .entry-header h2 {
+    font-size: 2.563rem;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -2000,7 +2131,7 @@ object {
 /* line 24, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
 .page-template-page-amenities .highlight {
   border: 1px solid #FFF;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
   width: 50%;
   position: relative;
   overflow: hidden;
@@ -2101,6 +2232,7 @@ object {
   vertical-align: middle;
   border-radius: 50%;
   border: 1px solid #fff;
+  z-index: 2;
 }
 
 /* line 109, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
@@ -2108,78 +2240,87 @@ object {
   cursor: pointer;
 }
 
-/* line 114, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+@media (min-width: 960px) {
+  /* line 89, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+  .page-template-page-amenities .highlight-inner .close {
+    width: 35px;
+    height: 35px;
+    font-size: 1.5em;
+  }
+}
+
+/* line 120, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
 .page-template-page-amenities .highlight-inner .view {
   background-color: transparent;
   text-decoration: underline;
 }
 
-/* line 118, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+/* line 124, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
 .page-template-page-amenities .highlight-inner .view:hover {
   cursor: pointer;
 }
 
-/* line 124, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+/* line 130, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
 .page-template-page-amenities .highlight-inner.active img,
 .page-template-page-amenities .highlight-inner.active .close {
   opacity: 1;
 }
 
-/* line 129, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+/* line 135, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
 .page-template-page-amenities .hihglight-inner.active .close:hover {
   cursor: pointer;
 }
 
-/* line 133, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+/* line 139, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
 .page-template-page-amenities .highlight-inner.active span,
 .page-template-page-amenities .highlight-inner.active .view {
   opacity: 0;
 }
 
-/* line 138, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+/* line 144, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
 .page-template-page-amenities .highlight-inner.active span,
 .page-template-page-amenities .highlight-inner.active .view:hover {
   cursor: default;
 }
 
-/* line 143, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+/* line 149, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
 .page-template-page-amenities .title {
   text-transform: uppercase;
   font-size: 1rem;
 }
 
 @media (min-width: 400px) {
-  /* line 143, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+  /* line 149, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
   .page-template-page-amenities .title {
     font-size: 1.125rem;
   }
 }
 
 @media (min-width: 1200px) {
-  /* line 143, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+  /* line 149, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
   .page-template-page-amenities .title {
     font-size: 1.563rem;
   }
 }
 
-/* line 156, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+/* line 162, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
 .page-template-page-amenities .view {
   font-size: 0.8125rem;
 }
 
 @media (min-width: 1200px) {
-  /* line 156, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+  /* line 162, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
   .page-template-page-amenities .view {
     font-size: 1rem;
   }
 }
 
-/* line 165, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+/* line 171, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
 .page-template-page-amenities .hide-btn {
   visibility: hidden;
 }
 
-/* line 169, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
+/* line 175, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/pages/_page-amenities.scss */
 .page-template-page-amenities .disclaimer {
   font-size: 0.8125rem;
   font-family: "SourceSansPro-Regular", sans-serif;
@@ -2787,6 +2928,13 @@ object {
     -ms-flex-direction: row;
         flex-direction: row;
     padding-bottom: 2.5em;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 3, /Users/GraphicDesigner/Sites/htdocs/cider/wp-content/themes/cider_mill/sass/footer/_footer.scss */
+  .footer-wrapper {
+    font-size: 1em;
   }
 }
 

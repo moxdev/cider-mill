@@ -9,16 +9,65 @@
             @include padding-left-right;
             color:#FFF;
             font-size:1.625rem;
+            font-family:$font__bold;
             padding-top: 2.25em;
             padding-bottom: 2.25em;
             text-shadow:0 0 20px rgba(0, 0, 0, 1);
 
             @include respond-to(small) {
-                font-size: 3em;
+                font-size: 2em;
+                padding-left: 1em;
+                padding-right: 1em;
             }
 
-            @include respond-to(large) {
+            @include respond-to(small-land) {
+                font-size: 2.5em;
+                padding-left: 1.5em;
+                padding-right: 1.5em;
+            }
+
+            @media screen and (min-width:620px) {
+                font-size: 3em;
+                padding-left: 1em;
+                padding-right: 1em;
+            }
+
+            @include respond-to(tablet) {
                 font-size: 3.5em;
+                text-align: center;
+            }
+
+            @include respond-to(medium) {
+                font-size: 3.938rem;
+            }
+
+            @include respond-to(x-large) {
+                padding-top: 3em;
+                padding-bottom: 3em;
+                padding-left: 1.5em;
+                padding-right: 1.5em;
+            }
+
+            @media screen and (min-width:1440px) {
+                padding-top: 2.5em;
+                padding-bottom: 2.5em;
+                font-size: 4em;
+                padding-left: 4em;
+                padding-right: 4em;
+            }
+
+            @media screen and (min-width:1730px) {
+                padding-top: 2.5em;
+                padding-bottom: 2.5em;
+                font-size: 4em;
+                padding-left: 7em;
+                padding-right: 7em;
+            }
+
+            @media screen and (min-width:2140px) {
+                font-size: 5em;
+                padding-left: 7em;
+                padding-right: 7em;
             }
         }
     }
@@ -42,6 +91,30 @@
         h2 {
             @include reset;
             font-size: 1.313rem;
+            font-family: $font__light;
+            margin-bottom: .5em;
+        }
+
+        @include respond-to(tablet) {
+            text-align: left;
+
+            h1 {
+                font-size: 5.938rem;
+
+                span {
+                    font-size: 3.438rem;
+                }
+            }
+
+            h2 {
+                font-size: 2.3rem;
+            }
+        }
+
+        @include respond-to(medium) {
+            h2 {
+                font-size: 2.563rem;
+            }
         }
     }
 }

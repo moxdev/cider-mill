@@ -78,7 +78,7 @@ function cider_mill_features_amenities() {
 
                 <div class="amenities-wrapper">
 
-                    <?php while( have_rows('features') ): the_row();
+                    <?php while( have_rows('amenities') ): the_row();
 
                         $img = get_sub_field('image');
                         $title = get_sub_field('title');
