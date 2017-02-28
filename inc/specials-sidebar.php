@@ -13,17 +13,17 @@ function cider_mill_specials_sidebar() {
 
                 if( get_row_layout() == 'sidebar_specials'):
 
-                    $sp_h1 = get_sub_field('specials_heading', 'options');
-                    $sp_h2 = get_sub_field('specials_subheading', 'options');
+                    $sp_h2 = get_sub_field('specials_heading', 'options');
+                    $sp_h3 = get_sub_field('specials_subheading', 'options');
                     $sp_disclaimer = get_sub_field('specials_disclaimer', 'options'); ?>
 
                     <div class="sidebar-specials">
-                        <?php if( !empty($sp_h1) ): ?>
-                            <h1 class="header"><?php echo $sp_h1; ?></h1>
+                        <?php if( !empty($sp_h2) ): ?>
+                            <h2 class="header"><?php echo $sp_h2; ?></h2>
                         <?php endif; ?>
 
-                        <?php if( !empty($sp_h2) ): ?>
-                            <h2 class="subheader"><?php echo $sp_h2; ?></h2>
+                        <?php if( !empty($sp_h3) ): ?>
+                            <h3 class="subheader"><?php echo $sp_h3; ?></h3>
                         <?php endif; ?>
 
                         <?php if( !empty($sp_disclaimer) ): ?>
@@ -33,17 +33,17 @@ function cider_mill_specials_sidebar() {
 
                 <?php elseif( get_row_layout() == 'sidebar_event' ):
 
-                    $ev_h1 = get_sub_field('event_heading');
-                    $ev_h2 = get_sub_field('event_subheading');
+                    $ev_h2 = get_sub_field('event_heading');
+                    $ev_h3 = get_sub_field('event_subheading');
                     $ev_text = get_sub_field('event_information'); ?>
 
                     <div class="sidebar-events">
-                        <?php if( !empty($ev_h1 ) ): ?>
-                            <h1 class="header"><?php echo $ev_h1; ?></h1>
+                        <?php if( !empty($ev_h2 ) ): ?>
+                            <h2 class="header"><?php echo $ev_h2; ?></h2>
                         <?php endif; ?>
 
-                        <?php if( !empty($ev_h2 ) ): ?>
-                            <h2 class="sub-header"><?php echo $ev_h2; ?></h2>
+                        <?php if( !empty($ev_h3 ) ): ?>
+                            <h3 class="sub-header"><?php echo $ev_h3; ?></h3>
                         <?php endif; ?>
 
                         <?php if( !empty($ev_text ) ): ?>
@@ -53,12 +53,12 @@ function cider_mill_specials_sidebar() {
 
                 <?php elseif( get_row_layout() == 'sidebar_pet_friendly' ):
 
-                    $pf_h1 = get_sub_field('pet_friendly_heading');
+                    $pf_h2 = get_sub_field('pet_friendly_heading');
                     $pf_image = get_sub_field('pet_friendly_image'); ?>
 
                     <div class="sidebar-pets">
-                        <?php if( !empty($pf_h1) ): ?>
-                            <h1 class="header"><?php echo $pf_h1; ?></h1>
+                        <?php if( !empty($pf_h2) ): ?>
+                            <h2 class="header"><?php echo $pf_h2; ?></h2>
                         <?php endif; ?>
 
                         <?php if( !empty($pf_image) ): ?>

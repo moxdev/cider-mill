@@ -62,7 +62,7 @@ function cider_mill_features_amenities() {
                     endwhile; ?>
 
                 </div><!-- features-wrapper -->
-                <p class="disclaimer"><?php echo $f_disclaimer; ?></p>
+                <div class="disclaimer"><?php echo $f_disclaimer; ?></div>
             </div><!-- features-section -->
 
         <?php endif;

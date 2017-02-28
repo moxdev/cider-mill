@@ -113,6 +113,7 @@
             right: 0;
             bottom: 0;
             left: 0;
+            text-align: center;
             min-height:100vh;
             min-width:100vh;
             background-color: $color__brand-red;
@@ -128,7 +129,6 @@
 
             .menu-menu-container {
                 display: block !important;;
-                text-align: left;
                 padding-top: 1.5em;
 
                 ul {
@@ -136,6 +136,8 @@
                     list-style: none;
                     margin: 0;
                     padding-left: 1.5em;
+                    padding-top: 3em;
+                    text-align: left;
 
                     .current-menu-item {
                         color:$color__brand-pink;

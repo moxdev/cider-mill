@@ -4,7 +4,7 @@
 
         .featured-image {
             @include reset;
-            @include max-width(1400px);
+            @include max-width(1100px);
             img {
                 display: block;
                 width: 100%;
@@ -12,7 +12,7 @@
         }
 
         .content-wrapper {
-            @include max-width(1400px);
+            @include max-width(1100px);
             @include padding-left-right;
             display: flex;
             flex-direction: column;
@@ -61,17 +61,17 @@
                 flex: 1;
                 order:1;
 
-                @media screen and (min-width:600px) {
-                    .sidebar-wrapper {
-                        margin: 0 auto;
-                    }
-                }
+                // @media screen and (min-width:600px) {
+                //     .sidebar-wrapper {
+                //         margin: 0 auto;
+                //     }
+                // }
 
-                @include respond-to('tablet') {
-                    .sidebar-wrapper {
-                        margin:0;
-                    }
-                }
+                // @include respond-to('tablet') {
+                //     .sidebar-wrapper {
+                //         margin:0;
+                //     }
+                // }
             }
 
             // .feature-amenities-wrapper {
@@ -79,7 +79,7 @@
             //     order: 3;
             // }
 
-            @include respond-to('tablet') {
+            @include respond-to('medium') {
                 flex-direction: row;
                 justify-content: space-between;
                 margin-bottom: 2em;
@@ -113,7 +113,7 @@
             }
         }
 
-        @include respond-to('tablet') {
+        @include respond-to('medium') {
             border-bottom: 5px solid $color__brand-brown;
         }
     }

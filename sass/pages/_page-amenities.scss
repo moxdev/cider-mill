@@ -5,12 +5,16 @@
     }
 
     .section-header {
-        margin-bottom: 1em;
+        margin-bottom: 1.250em;
+
+        @include respond-to(medium) {
+            margin-bottom: 1.688em;
+        }
     }
 
     .features-wrapper,
     .amenities-wrapper {
-        @include max-width(1400px);
+        @include max-width(1200px);
         @include padding-left-right;
         display: flex;
         flex-wrap:wrap;

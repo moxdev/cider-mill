@@ -95,9 +95,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "modules/clearings";
 
 /*--------------------------------------------------------------
-# Widgets
+# Sidebar
 --------------------------------------------------------------*/
-@import "site/secondary/widgets";
+@import "site/secondary/sidebar";
+
+/*--------------------------------------------------------------
+## Homepage Sidebar
+--------------------------------------------------------------*/
+@import "site/secondary/homepage-sidebar";
 
 /*--------------------------------------------------------------
 # Content

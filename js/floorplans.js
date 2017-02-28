@@ -1,26 +1,34 @@
-var viewBtns = document.querySelectorAll('.view-btn');
+jQuery(window).load(function() {
 
-for(var i = 0; i < viewBtns.length; i++) {
-    viewBtns[i].addEventListener("click", viewFloorplans);
-}
+    jQuery(".view-btn").click(function() {
 
-// hasClass, takes two params: element and classname
-function hasClass(el, cls) {
-  return el.className && new RegExp("(\\s|^)" + cls + "(\\s|$)").test(el.className);
-}
+        if(jQuery(this).hasClass('view')) {
 
-function viewFloorplans() {
+            jQuery(".fp-models-wrapper").slideToggle("slow");
+            jQuery(".view-btn").text("hide floor plans");
+        } else {
 
-    var hidden = document.getElementsByClassName("hidden");
-    var fpWrapper = document.getElementsByClassName("fp-models-wrapper");
+            jQuery(".fp-models-wrapper").slideToggle("slow");
+        }
 
-    if (hasClass(hidden, "hidden")) {
-        alert("yeah buddy!");
-    } else {
-        alert("Not today my friend");
-    }
-}
+    });
 
+    // var accordion_expand = function() {
+    //     var parent = jQuery(this).parent();
+
+    //     if(jQuery(this).hasClass('view')) {
+    //         jQuery(parent).closest('.fp-models-wrapper').css('display', 'none');
+    //         jQuery(this).removeClass('view');
+    //         jQuery(".view-btn").text('view floor plans');
+    //     } else {
+    //         jQueryclosest('.fp-models-wrapper').css('display', 'block');
+    //         jQuery(this).addClass('view');
+    //         jQuery(this).text('view floor plans');
+    //     }
+    // };
+
+    // jQuery('.view-btn').on('click', accordion_expand);
+});
 
 
 
@@ -29,18 +37,19 @@ function viewFloorplans() {
 // var accordion_expand = function() {
 //     var parent = jQuery(this).parent();
 
-//     if(jQuery(this).hasClass('active')) {
-//         jQuery(parent).children().not('.btn, .accordion-header').css('display', 'none');
-//         jQuery(this).removeClass('active');
-//         jQuery(this).text('Read Full Bio');
+//     if(jQuery(this).hasClass('view')) {
+//         jQuery(parent).children().not('.fp-models-wrapper').css('display', 'none');
+//         jQuery(this).removeClass('view');
+//         jQuery(".view-btn").text('floor plans');
 //     } else {
 //         jQuery(parent).children().css('display', 'block');
-//         jQuery(this).addClass('active');
-//         jQuery(this).text('Read Less');
+//         jQuery(this).addClass('view');
+//         jQuery(this).text('view floor plans');
 //     }
 // };
 
-// jQuery('.accordion .show-less').on('click', accordion_expand);
+// jQuery('.view-btn').on('click', accordion_expand);
+
 
 // jQuery('#custom-archive-widget span.select, #custom-category-widget > span.select').on('click', function() {
 //     if(jQuery(this).hasClass('active')) {
@@ -51,6 +60,8 @@ function viewFloorplans() {
 //         jQuery(this).next().css('display', 'block');
 //     }
 // });
+
+
 
 // // hasClass, takes two params: element and classname
 // function hasClass(el, cls) {

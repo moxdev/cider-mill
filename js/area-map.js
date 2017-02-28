@@ -6,15 +6,22 @@ var myMap = 'map-canvas';
 var apiKey = 'AIzaSyDqcS80RSqBcZepAEhhxKHkSzYLZeNI0Ho';
 
 // Paths to JSON data
-var markersFeed = 'http://localhost:8888/cider/wp-json/wp/v2/area_landmarks/?filter[posts_per_page]=-1';
+var markersFeed = '/wp-json/wp/v2/area_landmarks?per_page=100';
 
-// Specify whether you want to add category controls for landmarks to the map (true/false).
-// If you do, add the path to your category feed and the path to your image directory where your icons are stored
+// Specify whether you want to add category controls for landmarks to the map (true/false) and whether you want to add the number of landmarks in a category to the controls (true/false).
 var addCats = true;
-var catsFeed = 'http://localhost:8888/cider/wp-json/wp/v2/landmark_types';
-var catIconPath = 'http://localhost:8888/cider/wp-content/themes/cider_mill/imgs/';
+var catCount = false;
+var catsFeed = '/wp-json/wp/v2/landmark_types';
+
+// Specify whether you want to add a static community marker to the map (true/false).
+var addCommMarker = true;
+var locationOptionsFeed = '/wp-json/acf/v2/options';
+
+// Set the path to the icons in your theme
+var iconPath = '/wp-content/themes/cider_mill/imgs/';
 
 var map;
+var commMarker;
 var bounds;
 var infowindow;
 var currentInfoWindow = null;
@@ -27,126 +34,163 @@ var resetBtn = document.getElementById('reset-map');
 // Check to see if there is an HTML element on our page to load the map into (#map-canvas).
 // If there is, call the Google Maps API with our API key and a callback function
 document.addEventListener('DOMContentLoaded', function () {
-	if (document.getElementById(myMap)) {
-		var lang;
-		if (document.querySelector('html').lang) {
-			lang = document.querySelector('html').lang;
-		} else {
-			lang = 'en';
-		}
+    if (document.getElementById(myMap)) {
+        var lang;
+        if (document.querySelector('html').lang) {
+            lang = document.querySelector('html').lang;
+        } else {
+            lang = 'en';
+        }
 
-		var map_js_file = document.createElement('script');
-		map_js_file.type = 'text/javascript';
-		map_js_file.src = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey + '&callback=callback&language=' + lang;
-		document.getElementsByTagName('body')[0].appendChild(map_js_file);
-	}
+        /*var cluster_js_file = document.createElement('script');
+        cluster_js_file.type = 'text/javascript';
+        cluster_js_file.src = 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js';
+        document.getElementsByTagName('body')[0].appendChild(cluster_js_file);*/
+
+        var map_js_file = document.createElement('script');
+        map_js_file.type = 'text/javascript';
+        map_js_file.src = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey + '&callback=callback&language=' + lang;
+        document.getElementsByTagName('body')[0].appendChild(map_js_file);
+    }
 });
 
 // Build the map, push to the markers array for using "bounds," push to the locations array for use with category navigation
-function buildMap(data) {
-	bounds = new google.maps.LatLngBounds();
+function buildMap(data, location) {
+    //console.log(data);
+    bounds = new google.maps.LatLngBounds();
 
-	var mapStyles =[{
-		featureType: "poi",
-		elementType: "labels",
-		stylers: [{
-			visibility: "off" }
-		]}
-	];
+    // If "addCommMarker" is true, add a static marker to the map for our community
+    function addCommunityMarker(lat, lng) {
+        commMarker = new google.maps.Marker({
+            position: {lat: lat, lng: lng},
+            map: map,
+            zIndex: 1000,
+            icon: iconPath + 'static-comm-marker.png'
+        });
+    }
 
-	map = new google.maps.Map(document.getElementById('map-canvas'), {
-		mapTypeControl: false,
-		scrollwheel: false,
-		panControl: false,
-		rotateControl: false,
-		streetViewControl: false,
-		zoomControlOptions: {
-			position: google.maps.ControlPosition.RIGHT_BOTTOM
-		},
-		styles: mapStyles,
-	});
+    if(addCommMarker) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var staticLocationObj = JSON.parse(xhr.responseText);
+                var lat = Number(staticLocationObj.acf.latitude);
+                var lng = Number(staticLocationObj.acf.longitude);
+                addCommunityMarker(lat, lng);
+            }
+        };
 
-	for(var i = 0; i < data.length; i++) {
-		var title = data[i].title.rendered;
-		var add = data[i].acf.address;
-		var add2 = data[i].acf.address_2;
-		var phone = data[i].acf.phone;
-		var website = data[i].acf.website;
-		var details = data[i].acf.additional_details;
-		var latitude = data[i].acf.latitude;
-		var longitude = data[i].acf.longitude;
-		var category = 'cat-' + data[i].landmark_types[0];
+        xhr.open('GET', location, true);
+        xhr.send();
+    }
 
-		if(title !== '') {
-			title = '<strong class="window-heading">' + title + '</strong>';
-		} else {
-			title = '';
-		}
+    var mapStyles =[
+        {
+            featureType: "poi",
+            elementType: "labels",
+            stylers: [{
+                visibility: "off"
+            }]
+        }, {
+            featureType: 'transit',
+            elementType: 'labels',
+            stylers: [{
+                visibility: "off"
+            }]
+        }
+    ];
 
-		if(add !== '') {
-			add = '<br>' + add;
-		} else {
-			add = '';
-		}
+    map = new google.maps.Map(document.getElementById('map-canvas'), {
+        mapTypeControl: false,
+        scrollwheel: false,
+        panControl: false,
+        rotateControl: false,
+        streetViewControl: false,
+        zoomControlOptions: {
+            position: google.maps.ControlPosition.RIGHT_BOTTOM
+        },
+        styles: mapStyles,
+    });
 
-		if(add2 !== '') {
-			add2 = '<br>' + add2;
-		} else {
-			add2 = '';
-		}
+    for(var i = 0; i < data.length; i++) {
+        var title = data[i].title.rendered;
+        var add = data[i].acf.address;
+        var add2 = data[i].acf.address_2;
+        var phone = data[i].acf.phone;
+        var website = data[i].acf.website;
+        var details = data[i].acf.additional_details;
+        var latitude = data[i].acf.latitude;
+        var longitude = data[i].acf.longitude;
+        var category = 'cat-' + data[i].landmark_types[0];
 
-		if(phone !== '') {
-			phone = '<br>' + phone;
-		} else {
-			phone = '';
-		}
+        if(title !== '') {
+            title = '<strong class="window-heading">' + title + '</strong>';
+        } else {
+            title = '';
+        }
 
-		if(website !== '') {
-			website = '<br><a target="_blank" href="' + website + '">Website &raquo;</a>';
-		} else {
-			website = '';
-		}
+        if(add !== '') {
+            add = '<br>' + add;
+        } else {
+            add = '';
+        }
 
-		if(details !== '') {
-			details = '<br><br>' + details;
-		} else {
-			details = '';
-		}
+        if(add2 !== '') {
+            add2 = '<br>' + add2;
+        } else {
+            add2 = '';
+        }
 
-		locations.push([i, title, latitude, longitude, add, add2, phone, website, details, category]);
-	}
+        if(phone !== '') {
+            phone = '<br>' + phone;
+        } else {
+            phone = '';
+        }
 
-	function openInfoWindow(marker) {
-		marker.addListener('click', function() {
-			infowindow = new google.maps.InfoWindow();
-			if (currentInfoWindow !== null) {
-			 	currentInfoWindow.close();
-			}
-			currentInfoWindow = infowindow;
-			infowindow.setContent(marker.html);
-			infowindow.open(map, marker);
-		});
-	}
+        if(website !== '') {
+            website = '<br><a target="_blank" href="' + website + '">Website &raquo;</a>';
+        } else {
+            website = '';
+        }
 
-	for(var j = 0; j < locations.length; j++) {
-		var image = catIconPath + locations[j][9] + '.svg';
-		// var image = {
-		// 	url: catIconPath + locations[j][9] + '.svg',
-		// 	scaledSize: new google.maps.Size(50, 50)
-		// };
-		var marker = new google.maps.Marker({
-			position: new google.maps.LatLng(locations[j][2], locations[j][3]),
-			map: map,
-			icon: image,
-			html: '<strong class="heading">' + locations[j][1] + '</strong>' + locations[j][4] + locations[j][5] + locations[j][6] + locations[j][7] + locations[j][8],
-		});
-		markers.push(marker);
-		bounds.extend(marker.getPosition());
+        if(details !== '') {
+            details = '<br><br>' + details;
+        } else {
+            details = '';
+        }
 
-		openInfoWindow(marker);
-	}
+        locations.push([i, title, latitude, longitude, add, add2, phone, website, details, category]);
+    }
 
-	map.fitBounds(bounds);
+    function openInfoWindow(marker) {
+        marker.addListener('click', function() {
+            infowindow = new google.maps.InfoWindow();
+            if (currentInfoWindow !== null) {
+                currentInfoWindow.close();
+            }
+            currentInfoWindow = infowindow;
+            infowindow.setContent(marker.html);
+            infowindow.open(map, marker);
+        });
+    }
+
+    for(var j = 0; j < locations.length; j++) {
+        var image = iconPath + locations[j][9] + '.png';
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[j][2], locations[j][3]),
+            map: map,
+            icon: image,
+            html: '<strong class="heading">' + locations[j][1] + '</strong>' + locations[j][4] + locations[j][5] + locations[j][6] + locations[j][7] + locations[j][8],
+        });
+        markers.push(marker);
+        bounds.extend(marker.getPosition());
+
+        openInfoWindow(marker);
+    }
+
+    //var markerCluster = new MarkerClusterer(map, markers, {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+
+    map.fitBounds(bounds);
 }
 
 // Build the category navigation
@@ -154,116 +198,117 @@ var catNav = document.createElement('nav');
 catNav.id = 'map-nav';
 
 function buildCats(data, map) {
-	var mapWrapper = document.getElementById(map).parentNode;
-	mapWrapper.appendChild(catNav, document.getElementById(map));
-	var catNavUl = document.createElement('ul');
-	catNav.appendChild(catNavUl);
+    var mapWrapper = document.getElementById(map).parentNode;
+    mapWrapper.appendChild(catNav, document.getElementById(map));
+    var catNavUl = document.createElement('ul');
+    catNav.appendChild(catNavUl);
 
-	// View/hide markers on the map and swap active class on category nav
-	function catClick(href, ul) {
-		href.addEventListener('click', function(event) {
-			event.preventDefault();
-			if(infowindow) {
-				infowindow.close();
-			}
-			var cat = (this.parentElement.getAttribute('id'));
+    // View/hide markers on the map and swap active class on category nav
+    function catClick(href, ul) {
+        href.addEventListener('click', function(event) {
+            event.preventDefault();
+            if(infowindow) {
+                infowindow.close();
+            }
+            var cat = (this.parentElement.getAttribute('id'));
 
-			for(var i = 0; i < locations.length; i++) {
-				if (locations[i][9] === cat) {
-					markers[i].setVisible(true);
-					markers[i].setOptions({zIndex:1100});
-				} else if (locations[i][9] !== cat) {
-					markers[i].setVisible(false);
-				}
-			}
+            for(var i = 0; i < locations.length; i++) {
+                if (locations[i][9] === cat) {
+                    markers[i].setVisible(true);
+                    markers[i].setOptions({zIndex:1100});
+                } else if (locations[i][9] !== cat) {
+                    markers[i].setVisible(false);
+                }
+            }
 
-			var children = [];
-			children = ul.children;
-			for(var j = 0; j < children.length; j++) {
-				children[j].firstChild.classList.remove('active');
-			}
+            var children = [];
+            children = ul.children;
+            for(var j = 0; j < children.length; j++) {
+                children[j].firstChild.classList.remove('active');
+            }
 
-			this.classList.add('active');
-			resetBtn.classList.add('active');
-		});
-	}
+            this.classList.add('active');
+            resetBtn.classList.add('active');
 
-	for(var i = 0; i < data.length; i++) {
-		var listItem = document.createElement('li');
-		listItem.id = 'cat-' + data[i].id;
-		listItem.classList.add(data[i].slug);
-		var listItemHref = document.createElement('a');
-		listItemHref.href = '#';
-		listItemHref.innerText = data[i].name;
-		listItem.appendChild(listItemHref);
-		catNavUl.appendChild(listItem);
+        });
+    }
 
-		catClick(listItemHref, catNavUl);
-	}
+    for(var i = 0; i < data.length; i++) {
+        if(data[i].count > 0) {
+            var listItem = document.createElement('li');
+            listItem.id = 'cat-' + data[i].id;
+            listItem.classList.add(data[i].slug);
+            var listItemHref = document.createElement('a');
+            listItemHref.href = '#';
+            listItemHref.innerHTML = !catCount ? data[i].name : '<span class="count">' + data[i].count + '</span>' + data[i].name;
+            listItem.appendChild(listItemHref);
+            catNavUl.appendChild(listItem);
+
+            catClick(listItemHref, catNavUl);
+        }
+    }
 }
 
 // Grab our JSON data of landmarks and if successful, call the function to build our map
 function initMap(feed) {
-	var xhr = new XMLHttpRequest();
-	xhr.onreadystatechange = function(){
-		if (xhr.readyState === 4 && xhr.status === 200) {
-			landmarksObj = JSON.parse(xhr.responseText);
-			document.getElementById('map-canvas').innerHTML = '';
-			buildMap(landmarksObj);
-		} else {
-			document.getElementById('map-canvas').innerHTML = 'Error Loading Data';
-		}
-	};
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            landmarksObj = JSON.parse(xhr.responseText);
+            document.getElementById('map-canvas').innerHTML = '';
+            buildMap(landmarksObj, locationOptionsFeed);
+        } else {
+            document.getElementById('map-canvas').innerHTML = 'Error Loading Data';
+        }
+    };
 
-	xhr.overrideMimeType('application/json');
-	xhr.open('GET', feed, true);
-	xhr.send();
-	document.getElementById('map-canvas').innerHTML = 'Loading map...';
+    xhr.open('GET', feed, true);
+    xhr.send();
+    document.getElementById('map-canvas').innerHTML = 'Loading map...';
 }
 
 // Grab our JSON data of categories and if successful, call the function to build our category nav
 function initCats(feed) {
-	var xhr = new XMLHttpRequest();
-	xhr.onreadystatechange = function(){
-		if (xhr.readyState === 4 && xhr.status === 200) {
-			catsObj = JSON.parse(xhr.responseText);
-			buildCats(catsObj, myMap);
-		}
-	};
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            catsObj = JSON.parse(xhr.responseText);
+            buildCats(catsObj, myMap);
+        }
+    };
 
-	xhr.overrideMimeType('application/json');
-	xhr.open('GET', feed, true);
-	xhr.send();
+    xhr.open('GET', feed, true);
+    xhr.send();
 }
 
 // Callback function called after Google Maps API loads that makes calls to fetch our landmark and category data
 function callback() {
-	initMap(markersFeed);
-	if(addCats === true) {
-		initCats(catsFeed);
-	}
+    initMap(markersFeed);
+    if(addCats) {
+        initCats(catsFeed);
+    }
 }
 
 // Reset Controls
 function resetMap(map, btn) {
-	for(var i = 0; i < locations.length; i++) {
-		markers[i].setVisible(true);
-	}
+    for(var i = 0; i < locations.length; i++) {
+        markers[i].setVisible(true);
+    }
 
-	map.fitBounds(bounds);
+    map.fitBounds(bounds);
 
-	if(infowindow) {
-		infowindow.close();
-	}
+    if(infowindow) {
+        infowindow.close();
+    }
 
-	var mapNavItems = catNav.children[0].childNodes;
-	for(var j = 0; j < mapNavItems.length; j++) {
-		mapNavItems[j].firstChild.classList.remove('active');
-	}
+    var mapNavItems = catNav.children[0].childNodes;
+    for(var j = 0; j < mapNavItems.length; j++) {
+        mapNavItems[j].firstChild.classList.remove('active');
+    }
 
-	btn.classList.remove('active');
+    btn.classList.remove('active');
 }
 
 resetBtn.addEventListener('click', function() {
-	resetMap(map, this);
+    resetMap(map, this);
 });

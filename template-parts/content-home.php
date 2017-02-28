@@ -17,8 +17,8 @@
                 <?php $secondary = get_field( 'secondary_headline_text' ); ?>
                 <?php $tag = get_field( 'headline_tagline' ); ?>
 
-                <h1><?php echo $headline; ?><span> <?php echo $secondary; ?></span></h1>
-                <h2><?php echo $tag; ?></h2><?php
+                <h2><?php echo $headline; ?><span> <?php echo $secondary; ?></span></h2>
+                <h3><?php echo $tag; ?></h3><?php
 
                 } elseif ( get_field ( 'on_page_title' )){
                     echo '<h1 class="entry-title">' . get_field( 'on_page_title' ) . '</h1>';

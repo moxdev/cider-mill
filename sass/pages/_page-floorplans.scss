@@ -3,7 +3,7 @@
     #floorplans-section {
         text-align: center;
         // @include padding-left-right;
-        // @include max-width(1400px);
+        // @include max-width(1100px);
 
         .view-btn {
             text-transform: uppercase;
@@ -59,7 +59,7 @@
                 .three-bedroom-section {
                     margin-bottom: 4em;
                     @include padding-left-right;
-                    @include max-width(1400px);
+                    @include max-width(1100px);
 
                     @include respond-to('small-land') {
                         padding-left: 0;
@@ -69,6 +69,7 @@
 
                 .fp-models-wrapper {
                     padding-top: .5em;
+                    display: none;
 
                     .floorplan {
                         padding: 1em 0;
