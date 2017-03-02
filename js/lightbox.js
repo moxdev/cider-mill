@@ -17,7 +17,7 @@ jQuery(window).load(function() {
     }
 
     closeButtonOnPlans = function( instance ) {
-        jQuery( '<div class="wrapper"><button type="button" id="imagelightbox-close" title="Close">&lt; Return to Floor Plans</button></div>' ).appendTo( '#imagelightbox-overlay' ).on( 'click touchend', function(){ jQuery( this ).remove(); instance.quitImageLightbox(); return false; });
+        jQuery( '<div class="wrapper"><button type="button" id="imagelightbox-close" title="Close">X</button></div>' ).appendTo( '#imagelightbox-overlay' ).on( 'click touchend', function(){ jQuery( this ).remove(); instance.quitImageLightbox(); return false; });
     }
 
     closeButtonOnGallery = function( instance ) {

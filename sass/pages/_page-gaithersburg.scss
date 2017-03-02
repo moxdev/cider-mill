@@ -104,7 +104,7 @@
 
     .community-listing-header {
         color: $color__brand-red;
-        font-size: 1.25rem;
+        font-size: 1.333rem;
         font-family: $font__bold;
         text-transform: uppercase;
     }
@@ -116,8 +116,13 @@
             list-style-type: none;
             margin-bottom: 2em;
 
+            span {
+                font-size: 0.9333rem;
+            }
+
             a {
                 color: $color__brand-red;
+                font-size: 0.9333rem;
             }
         }
     }

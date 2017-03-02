@@ -41,16 +41,17 @@ function cider_mill_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
-        add_image_size( 'home-feature', 1600, 700, TRUE );
-	    add_image_size( 'featured-image', 1500, 500, TRUE );
+        add_image_size( 'home-feature', 1200, 550, TRUE );
+	    add_image_size( 'featured-image', 1200, 420, TRUE );
 	    add_image_size( 'sidebar-image', 100, 100, TRUE );
         add_image_size( 'floor-plan-image', 900, 9999, FALSE );
         add_image_size( 'gallery-image', 300, 300, TRUE );
 
 	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'cider_mill' ),
-	) );
+	   register_nav_menus( array(
+            'menu-1' => esc_html__( 'Primary', 'cider_mill' ),
+            'menu-2' => esc_html__( 'Mobile', 'cider_mill' )
+        ) );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -117,7 +118,7 @@ function cider_mill_scripts() {
 	//         // The last parameter set to TRUE states that it should be loaded in the footer.
 	wp_register_script('jquery', '/wp-includes/js/jquery/jquery.js', FALSE, FALSE, TRUE);
 
-	wp_enqueue_script( 'cider_mill-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'cider_mill-navigation', get_template_directory_uri() . '/js/mobile-menu.js', array('jquery'), '20151215', true );
 
 	wp_enqueue_script( 'cider_mill-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -400,6 +401,11 @@ require get_template_directory() . '/inc/featured-image.php';
  * Load sidebar content for the global sidebar file.
  */
 require get_template_directory() . '/inc/features-amenities.php';
+
+/**
+ * Load sidebar content for the global sidebar file.
+ */
+require get_template_directory() . '/inc/apartment-availability.php';
 
 
 

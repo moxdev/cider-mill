@@ -1,34 +1,15 @@
 #secondary {
-    margin-top: 1.5em;
+
     margin-bottom: .5em;
 
     .sidebar-wrapper {
         line-height: 1.25;
 
         h2 {
+            line-height: 1;
             color: $color__brand-red;
-            font-family: $font__bold;
             text-transform: uppercase;
-            font-size: 1.938rem;
-            @include reset;
-        }
-
-        h3 {
-            font-family: $font__semi;
-            margin: .25em 0;
-            font-size: 1.25rem;
-        }
-
-        h4 {
-            font-family: $font__regular;
-            margin: 0;
-            font-size: 0.75rem;
-            line-height: 1.25;
-        }
-
-        p {
-            margin: 0;
-            font-size: 0.875rem;
+            font-family: $font__bold;
         }
 
         .sidebar-specials {
@@ -39,11 +20,23 @@
             min-height: 180px;
 
             h2 {
-                font-size: 2.188rem;
+                color: $color__brand-red;
+                font-family: $font__bold;
+                text-transform: uppercase;
+                font-size: 2.333rem;
+                @include reset;
             }
 
             h3 {
-                margin-top: 0;
+                font-family: $font__semi;
+                font-size:  1.333rem;
+            }
+
+            h4 {
+                font-family: $font__regular;
+                margin: 1rem 0;
+                font-size: 0.8rem;
+                line-height: 1.25;
             }
 
             @include respond-to('small-land') {
@@ -53,16 +46,13 @@
             @include respond-to('medium') {
 
                 h2 {
-                    font-size: 3rem;
+                    font-size:  3.2rem;
                     line-height: .9;
                 }
 
                 h3 {
-                    font-size: 1.375rem;
-                }
-
-                h4 {
-                    margin-bottom: .5em;
+                    font-size: 1.467rem;
+                    line-height: 1.2;
                 }
             }
         }
@@ -70,6 +60,28 @@
         .sidebar-events {
             padding: 1em .5em;
             border-bottom: 2px solid $color__brand-brown;
+
+            h2 {
+                @include reset;
+                font-size: 2.067rem;
+                color: $color__brand-red;
+                font-family: $font__bold;
+                text-transform: uppercase;
+
+            }
+
+            h3 {
+                font-family: $font__semi;
+                font-size:  1.333rem;
+                padding: 0;
+                padding-top: .5rem;
+                line-height: 1;
+            }
+
+            p {
+                font-size: 0.9333rem;
+                line-height: 1.4;
+            }
 
             @include respond-to(medium) {
                 p {
@@ -88,7 +100,9 @@
             h2 {
                 flex: 2 0 50%;
                 padding-right: 5px;
-
+                font-size: 2.067rem;
+                color: $color__brand-red;
+                text-transform: uppercase;
             }
 
             img {
@@ -100,12 +114,42 @@
             }
         }
 
+        @media screen and (min-width:650px) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .sidebar-specials {
+                width: 100%;
+            }
+
+            .sidebar-events {
+                width: 50%;
+            }
+
+            .sidebar-pets {
+                width: 50%;
+
+                h2 {
+                    margin: 0;
+                }
+            }
+        }
+
         @include respond-to('medium') {
+            display: block;
             max-width: 325px;
             line-height: 1;
+
+            .sidebar-events {
+                width: 100%;
+            }
+
+            .sidebar-pets {
+                width: 100%;
+            }
         }
+
+
     }
 }
-
-
-// max-width: 300px;

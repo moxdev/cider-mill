@@ -17,20 +17,29 @@
 }
 
 #imagelightbox-close {
-    position:relative;
-    z-index:9999;
-    background: none;
-    // color: $color__text-alt;
-    // font-family: $font__bold;
-    text-transform: none;
+    position: absolute;
+    top: .3em;
+    right: .3em;
+    color: #fff;
+    font-size:  1.733rem;
+    background-color: $color__brand-red;
+    font-family: $font__bold;
+    text-decoration: none;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
     padding: 0;
-    border: none;
-    font-size: 1.125em;
-    margin: 1em .5em;
-    // margin-left: 2em;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow:
+        0 0 0 1px hsl(0, 0%, 100%);
+    z-index: 2;
 
-    &:hover, &:active {
-        cursor:pointer;
+    &:hover {
+        cursor: pointer;
     }
 }
 
@@ -48,19 +57,29 @@
 }
 
 .imagelightbox-arrow {
-    display: none;
+    // display: none;
     position:fixed;
     z-index:9999;
-    border:none;
+    font-size:  1.733rem;
     border-radius: 100%;
-    padding: 10px 13px 7px;
-    font-size:1.5em;
+    // padding: 10px 13px 7px;
+    // font-size:1.5em;
     line-height:1;
     text-align:center;
-    background:#282828;
-    // font-family: $font__regular;
+    background-color:$color__brand-red;
+    font-family: $font__bold;
     color: #fff;
-    right: 20px;
+    // right: 20px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow:
+        0 0 0 1px hsl(0, 0%, 100%);
 
     &:hover {
         background:#515151;
@@ -69,11 +88,21 @@
 }
 
 .imagelightbox-arrow-left {
-    top:42%;
+    top:50%;
+    left:10px;
+
+    @include respond-to(medium) {
+        left: 20%;
+    }
 }
 
 .imagelightbox-arrow-right {
     top:50%;
+    right: 10px;
+
+    @include respond-to(medium) {
+        right: 20%;
+    }
 }
 
 #imagelightbox-loading,

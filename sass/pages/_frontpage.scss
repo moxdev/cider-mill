@@ -8,7 +8,7 @@
             @include reset;
             @include padding-left-right;
             color:#FFF;
-            font-size:1.625rem;
+            font-size:1.733rem;
             font-family:$font__bold;
             padding-top: 2.25em;
             padding-bottom: 2.25em;
@@ -73,71 +73,87 @@
         }
     }
 
-    #primary {
+    #page {
+        .site-content {
+            .content-wrapper {
+                max-width: 1300px;
+                #primary {
 
-        @include respond-to(medium) {
-            padding-left: 2em;
+                    @include respond-to(medium) {
+                        padding-left: 4.5em;
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        padding-right: 2em;
+                    }
+                }
+            }
         }
     }
+
 
     .content-wrapper {
         // background-image: url(imgs/deco-background.svg);
         // background-repeat: no-repeat;
-        // background-attachment: scroll;
-        // background-position: 96% 244px;
-        // background-size: 50px 200px;
+        // background-attachment: fixed;
+        // background-position: 90% -203px;
+
+        // @include respond-to(small-land) {
+        //     background-position: 90% -150px;
+        // }
 
         @include respond-to(medium) {
             background-image: url(imgs/deco-background.svg);
             background-repeat: no-repeat;
             background-attachment: scroll;
-            background-position: top left;
+            background-position: 0px -224px;
+            background-size: auto 170%;
+            margin-bottom: -20px;
         }
     }
 
     .entry-header {
         line-height: 1;
         text-align: center;
-        margin-top: 1em;
+        @include reset;
         h2 {
             color: $color__brand-red;
             font-family: $font__alex;
-            font-size: 3.438rem;
+            font-size: 3.667rem;
             @include reset;
 
             span {
                 color: $color__brand-brown;
                 font-family: $font__bold;
-                font-size: 2rem;
+                font-size: 2.133rem;
             }
         }
         h3 {
             @include reset;
-            font-size: 1.313rem;
+            font-size: 1.4rem;
             font-family: $font__light;
-            margin-bottom: .5em;
+            margin-bottom: 1rem;
         }
 
         @include respond-to(medium) {
             text-align: left;
 
             h2 {
-                font-size: 5.938rem;
+                font-size: 6.333rem;
 
                 span {
-                    font-size: 3.438rem;
+                    font-size: 3.667rem;
                 }
             }
 
             h3 {
-                font-size: 2.3rem;
+                font-size: 2.733rem;
             }
         }
 
-        @include respond-to(medium) {
-            h3 {
-                font-size: 2.563rem;
-            }
-        }
+        // @include respond-to(medium) {
+        //     h3 {
+        //         font-size: 2.563rem;
+        //     }
+        // }
     }
 }

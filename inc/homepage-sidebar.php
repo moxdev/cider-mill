@@ -34,7 +34,7 @@ function cider_mill_homepage_sidebar() {
                 <?php elseif( get_row_layout() == 'sidebar_event' ):
 
                     $ev_h2 = get_sub_field('event_heading');
-                    $ev_h2 = get_sub_field('event_subheading');
+                    $ev_h3 = get_sub_field('event_subheading');
                     $ev_text = get_sub_field('event_information'); ?>
 
                     <div class="sidebar-events">
@@ -47,7 +47,7 @@ function cider_mill_homepage_sidebar() {
                         <?php endif; ?>
 
                         <?php if( !empty($ev_text ) ): ?>
-                            <p class="header"><?php echo $ev_text; ?></p>
+                            <p><?php echo $ev_text; ?></p>
                         <?php endif; ?>
                     </div>
 

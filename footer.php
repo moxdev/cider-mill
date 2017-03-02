@@ -33,7 +33,7 @@
 
                     <div class="contact-wrapper">
 
-                        <h1>Contact Us</h1>
+                        <h2>Contact Us</h2>
                         <?php $street = get_field('address', 'option');
                             $city = get_field('city', 'option');
                             $state = get_field('state', 'option');
@@ -79,13 +79,15 @@
 
                         </div><!-- itemscope -->
 
-                        <a class="resident-button" href="#"><button>for residents &raquo;</button></a>
+                        <!-- <a class="resident-button" href="#"><button>for residents &raquo;</button></a> -->
+                        <a class="resident-button" href="<?php echo esc_url( get_permalink( get_page_by_title( 'Residents Corner' ) ) ); ?>"><?php esc_html_e( 'Residents Corner &raquo;', 'textdomain' ); ?></a>
+
                     </div><!-- contact-wrapper-->
 
                     <?php if( have_rows( 'hours', 'option' ) ) : ?>
 
                         <div class="hours">
-                            <h1>Hours of Operation</h1>
+                            <h2>Hours of Operation</h2>
 
                             <?php while( have_rows('hours', 'option') ): the_row();
                                 $day = get_sub_field('day', 'option');
@@ -101,7 +103,7 @@
 
                 <div class="icons-section">
                     <div class="social">
-                        <h1>Let's Connect</h1>
+                        <h2>Let's Connect</h2>
                         <div class="icons">
                             <a href="https://www.facebook.com/CiderMillApartments/"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="27" viewBox="0 0 28 27"><title>Facebook Icon</title><g id="facebook-icon" data-name="facebook"><g id="social"><image width="28" height="27" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAbCAYAAABvCO8sAAAACXBIWXMAAAsSAAALEgHS3X78AAAA0ElEQVRIS2P4////ZCD++5/2AGTHZIb/9LEMBv4yEFJBbTBkLTwDxKlAbADECkCsCGV3oCukhoVdQMz0H2IWOk5AV0yphXuAmPE/dstoYqHvf0xLOP5DghWES9A1UGqh8H9Uy8KB+Bc+DZRaiO67NfiVU9/CDfiVDwELVwBxAxJGtzACTf4kugGkWhjwH9MSfBgjTmlt4Tl0A2ht4Qd0A0i1kJQ4bMVmAKkWogN0C6meStHBqIUYYNRCQmBoWEhJu5RUC8HtUkpa3qRYCG55AwDtTjeiqYI47QAAAABJRU5ErkJggg=="/></g></g></svg></a>
 
@@ -135,7 +137,7 @@
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
     <div class="footer-tagline">
-        <h1><span class="lead">Love...</span> Your Lifestyle</h1>
+        <h2><span class="lead">Love...</span> Your Lifestyle</h2>
     </div>
 </div><!-- #page -->
 

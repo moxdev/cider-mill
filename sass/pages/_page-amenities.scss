@@ -12,6 +12,10 @@
         }
     }
 
+    #features-section {
+        margin-bottom: 4em;
+
+    }
     .features-wrapper,
     .amenities-wrapper {
         @include max-width(1200px);
@@ -92,22 +96,25 @@
 
         .close {
             position: absolute;
-            top: .5em;
-            right: .5em;
+            top: .3em;
+            right: .3em;
             opacity: 0;
             color: #fff;
+            font-size:  1.733rem;
             background-color: $color__brand-red;
             font-family: $font__bold;
             text-decoration: none;
             display: inline-block;
-            width: 20px;
-            height: 20px;
+            width: 40px;
+            height: 40px;
             padding: 0;
             text-align: center;
             white-space: nowrap;
             vertical-align: middle;
             border-radius: 50%;
-            border: 1px solid #fff;
+            border: 3px solid #fff;
+            box-shadow:
+                0 0 0 1px hsl(0, 0%, 100%);
             z-index: 2;
 
             &:hover {
@@ -115,9 +122,9 @@
             }
 
             @include respond-to(medium) {
-                width: 35px;
-                height: 35px;
-                font-size: 1.5em;
+                width: 45px;
+                height: 45px;
+                font-size: 1.667rem;
             }
         }
 
@@ -127,6 +134,10 @@
 
             &:hover {
                 cursor: pointer;
+            }
+
+            @include respond-to(medium) {
+                font-size: 1.067rem;
             }
         }
     }
@@ -152,19 +163,17 @@
 
     .title {
         text-transform: uppercase;
-        font-size: 1rem;
+        font-size: 1.2rem;
+        line-height: 1.1;
+        font-family: $font__regular;
 
-        @include respond-to('small') {
-            font-size: 1.125rem;
-        }
-
-        @include respond-to('large') {
-            font-size: 1.563rem;
+        @include respond-to(medium) {
+            font-size: 1.667rem;
         }
     }
 
     .view {
-        font-size: 0.8125rem;
+        font-size: 0.8667rem;
 
         @include respond-to('large') {
             font-size: 1rem;
@@ -180,6 +189,10 @@
         font-size: 0.8125rem;
         font-family: $font__regular;
         text-align: center;
-        margin-top: 1em;
+        padding-top: 1em;
+
+        @include respond-to(medium) {
+            font-size: 1rem;
+        }
     }
 }

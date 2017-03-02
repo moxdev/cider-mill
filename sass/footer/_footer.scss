@@ -14,7 +14,7 @@
     padding-bottom: 1em;
     line-height: 1.25;
 
-    h1 {
+    h2 {
         color: #fff;
         font-size: 1.063rem;
         margin-bottom: 0;
@@ -43,14 +43,15 @@
 
         .resident-button {
             display: none;
-
-            button {
-                text-transform: uppercase;
-                margin-top: 2em;
-                padding: .5em 1em;
-                font-family: $font__regular;
-            }
-
+            text-transform: uppercase;
+            margin-top: 2em;
+            text-decoration: none;
+            padding: .5em 1em;
+            font-family: $font__regular;
+            background: $color__background-button;
+            color: $color__button;
+            line-height: 1;
+            font-size: 15px;
         }
 
         @include respond-to('tablet') {
@@ -70,7 +71,7 @@
     .icons-section {
         margin-top: 2em;
         .social {
-            h1 {
+            h2 {
                 margin-bottom: .5em;
             }
 

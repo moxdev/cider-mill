@@ -11,17 +11,39 @@
             border: 1px solid #e5e5e5;
             width: 100%;
             margin-bottom: 1em;
-            color: #333;
+            color: #dedede;
+
+            &:focus {
+                outline: none;
+                border: 1px solid #408b40;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+            }
         }
 
         input[type="submit"] {
             background-color: #408b40;
             color: #fff;
-            padding: 1em;
+            font-size: 1.067rem;
+            padding: .7em 1em;
             font-family: $font__bold;
-            // font-size: 1rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+        }
+    }
+
+    .entry-content {
+        form {
+            input[type="submit"] {
+                width: 90%;
+            }
+        }
+    }
+
+    .map-wrapper {
+        form {
+            input[type="submit"] {
+                width: 60%;
+            }
         }
     }
 
@@ -49,13 +71,18 @@
                     .contact-info-wrapper {
 
                         .company-information-section, .hours-section {
-                            font-family: $font__bold;
-                            font-size: 1.125rem;
+                            font-family: $font__semi;
+                            font-size: 1.2rem;
                             line-height: 1.1;
+
+                            @include respond-to(medium) {
+                                font-size: 1.333rem;
+                            }
                         }
 
                         .hours-section {
                             margin: 1em 0;
+
                         }
 
                         @include respond-to('tablet') {
@@ -64,6 +91,10 @@
                             justify-content: space-between;
                             max-width: 400px;
                             margin-bottom: 2em;
+
+                            @include respond-to(medium) {
+                                max-width: 500px;
+                            }
 
                             .hours-section {
                                 margin: 0;
@@ -78,6 +109,10 @@
 
                                 input[type="submit"] {
                                     max-width: 250px;
+
+                                    @include respond-to(medium) {
+                                        max-width: 275px;
+                                    }
                                 }
                             }
                         }
@@ -88,6 +123,7 @@
                     order: 2;
 
                     .map-wrapper {
+                        margin-bottom: 1rem;
 
                         #map-canvas {
                             min-width: 200px;
@@ -117,6 +153,10 @@
 
                                 input[type="submit"] {
                                     max-width: 150px;
+
+                                    @include respond-to(medium) {
+                                        max-width: 175px;
+                                    }
                                 }
                             }
                         }
