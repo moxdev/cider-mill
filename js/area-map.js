@@ -3,7 +3,7 @@
 var myMap = 'map-canvas';
 
 // Google Maps API Key
-var apiKey = 'AIzaSyDqcS80RSqBcZepAEhhxKHkSzYLZeNI0Ho';
+var apiKey = 'AIzaSyD5TJ1YYjXpKTF_s0O8KttPH7SnLuVl8xc';
 
 // Paths to JSON data
 var markersFeed = '/wp-json/wp/v2/area_landmarks?per_page=100';
@@ -61,11 +61,20 @@ function buildMap(data, location) {
 
     // If "addCommMarker" is true, add a static marker to the map for our community
     function addCommunityMarker(lat, lng) {
+        var infowindow = new google.maps.InfoWindow({
+          content: '<div id="content">'+ '<h2 id="firstHeading" class="firstHeading">Cider Mill Apartments</h2>' + '</div>'
+        });
+
         commMarker = new google.maps.Marker({
-            position: {lat: lat, lng: lng},
+            position: {lat: 39.156403, lng: -77.201815},
             map: map,
             zIndex: 1000,
+            animation: google.maps.Animation.DROP,
             icon: iconPath + 'static-comm-marker.png'
+        });
+
+        commMarker.addListener('click', function() {
+          infowindow.open(map, commMarker);
         });
     }
 
@@ -252,7 +261,7 @@ function buildCats(data, map) {
 // Grab our JSON data of landmarks and if successful, call the function to build our map
 function initMap(feed) {
     var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function(){
+     xhr.onreadystatechange = function(){
         if (xhr.readyState === 4 && xhr.status === 200) {
             landmarksObj = JSON.parse(xhr.responseText);
             document.getElementById('map-canvas').innerHTML = '';

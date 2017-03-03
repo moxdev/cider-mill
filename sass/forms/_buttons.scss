@@ -10,12 +10,21 @@ input[type="submit"] {
 	line-height: 1;
 	padding: .6em 1em .4em;
 
-	&:hover {
-		border-color: $color__border-button-hover;
+	&:active,
+	&::focus,
+	&:active {
+	  background-image: none;
+	  outline: 0;
+	  -webkit-box-shadow: none;
+	          box-shadow: none;
 	}
 
-	&:active,
-	&:focus {
-		border-color: $color__border-button-focus;
-	}
+	// &:hover {
+	// 	border-color: $color__border-button-hover;
+	// }
+
+	// &:active,
+	// &:focus {
+	// 	border-color: none;
+	// }
 }

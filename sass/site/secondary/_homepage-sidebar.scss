@@ -1,7 +1,10 @@
 .home {
 
     #secondary {
-
+        background-image: url(imgs/original-deco-background.svg);
+        background-repeat: no-repeat;
+        background-attachment: local;
+        background-position: 95% 15px;
         margin-bottom: .5em;
 
         .sidebar-wrapper {
@@ -83,6 +86,7 @@
                 p {
                     font-size: 0.9333rem;
                     line-height: 1.4;
+                    padding-right: 4em;
                 }
 
                 @include respond-to(medium) {
@@ -100,7 +104,6 @@
                 border-bottom: 2px solid $color__brand-brown;
 
                 h2 {
-                    flex: 2 0 50%;
                     padding-right: 5px;
                     font-size: 2.067rem;
                     color: $color__brand-red;
@@ -108,10 +111,9 @@
                 }
 
                 img {
-                    flex: 1 0 50%;
                     display: block;
-                    max-width: 100px;
-                    max-height: 100px;
+                    width: 100px;
+                    height: 100px;
                     padding-left: 5px;
                 }
             }
@@ -147,11 +149,56 @@
                     width: 100%;
                 }
             }
+        }
 
 
+        @include respond-to(small) {
+            background-position: 95% -94px;
+            .sidebar-wrapper {
+                .sidebar-events {
+
+                    h2 {
+                        padding-right: 2em;
+                    }
+
+                    p {
+                        padding-right: 3.5em;
+                    }
+                }
+            }
+        }
+
+        @include respond-to(small-land) {
+            background-position: 95% -188px;
+            .sidebar-wrapper {
+                .sidebar-events {
+
+                    h2 {
+                        padding-right: 2em;
+                    }
+
+                    p {
+                        padding-right: 3.5em;
+                    }
+                }
+            }
+        }
+
+        @include respond-to(medium) {
+            background-image: none;
+            .sidebar-wrapper {
+                .sidebar-events {
+
+                    h2 {
+                        padding-right: 0;
+                    }
+
+                    p {
+                        padding-right: 0;
+                    }
+                }
+            }
         }
     }
-
-
 }
 
