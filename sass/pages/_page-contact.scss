@@ -15,14 +15,14 @@
 
             &:focus {
                 outline: none;
-                border: 1px solid #408b40;
+                border: 1px solid $color__brand-red;
                 -webkit-box-shadow: none;
                 box-shadow: none;
             }
         }
 
         input[type="submit"] {
-            background-color: #408b40;
+            background-color: $color__brand-red;
             color: #fff;
             font-size: 1.067rem;
             padding: .7em 1em;

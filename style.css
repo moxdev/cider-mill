@@ -2955,12 +2955,12 @@ object {
 /* line 16, sass/pages/_page-contact.scss */
 .page-template-page-contact form input:focus, .page-template-page-contact form textarea:focus {
   outline: none;
-  border: 1px solid #408b40;
+  border: 1px solid #a31f34;
   box-shadow: none;
 }
 /* line 24, sass/pages/_page-contact.scss */
 .page-template-page-contact form input[type="submit"] {
-  background-color: #408b40;
+  background-color: #a31f34;
   color: #fff;
   font-size: 1.067rem;
   padding: .7em 1em;
